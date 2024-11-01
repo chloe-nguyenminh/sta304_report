@@ -20,4 +20,9 @@ random_indices <- sample(1:nrow(data_cleaned), n)
 sample_data <- data_cleaned[random_indices, ]
 sample_data
 
-# new changes to chi square tests
+# new changes to ANOVA
+sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
+                                                levels = c("Never", "Sometimes", "Always")))
+
+anova_result <- aov(stress_numeric ~ factor(academic_workload), data = sample_data)
+summary(anova_result)
