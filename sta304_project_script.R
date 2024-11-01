@@ -19,3 +19,5 @@ set.seed(1)
 random_indices <- sample(1:nrow(data_cleaned), n)
 sample_data <- data_cleaned[random_indices, ]
 sample_data
+
+# new changes to chi square tests
