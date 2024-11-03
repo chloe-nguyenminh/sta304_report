@@ -20,9 +20,16 @@ random_indices <- sample(1:nrow(data_cleaned), n)
 sample_data <- data_cleaned[random_indices, ]
 sample_data
 
-# new changes to ANOVA between stress and academic workload
+sample_data$academic_workload <-as.numeric(factor(sample_data$academic_workload,levels =c(1,2,3,4,5)))
+
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
                                                 levels = c("Never", "Sometimes", "Always")))
+
+new_table <- table(sample_data$academic_workload,sample_data$stress_numeric)
+chisq_result <- chisq.test(new_table)
+print(chisq_result)
+
+# new changes to ANOVA between stress and academic workload
 
 anova_result <- aov(stress_numeric ~ factor(academic_workload), data = sample_data)
 summary(anova_result)
@@ -45,3 +52,4 @@ sample_data$study_category <- cut(sample_data$hours_study,
 
 anova_social <- aov(stress_numeric ~ factor(missed_social_events), data = sample_data)
 print(summary(anova_social))
+
