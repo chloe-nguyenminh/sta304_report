@@ -1,6 +1,6 @@
 ---
 title: "STA304 Report"
-author: "Chau Nguyen, John Luc, Adam Tadj, Raymond Hwang, Sabrina Seiler"
+author: "Chau Nguyen, John Luc, Adam Tadj, Sunwoo Hwang, Sabrina Seiler"
 date: "Nov 11, 2024"
 ---
 
