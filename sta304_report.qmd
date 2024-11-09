@@ -77,20 +77,6 @@ $$
 
 To randomize our sampling process, we used R's random sampling function `sample()` with a fixed seed (`set.seed(1)`) to randomly select participants from the full dataset.
 
-```{r}
-#| label: sample-size-calculation
-#| echo: true
-#| warning: false
-
-# R code for calculating sample size
-N <- 200  # Total number of students
-B <- 0.25  # Bound of error
-D <- (B^2) / 4  # Width of confidence interval
-sigma <- sd(data_cleaned$academic_workload)  # Standard deviation of academic workload
-n <- ceiling((N * sigma^2) / ((N - 1) * D + sigma^2))  # Sample size calculation
-n
-```
-
 ### 5) Summary of Questions
 
 The survey will consist of a series of questions designed to capture key variables, including:
