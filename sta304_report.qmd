@@ -1,0 +1,37 @@
+---
+title: "STA304 Report"
+author: "Chau Nguyen, John Luc, Adam Tadj, Raymond Hwang, Sabrina Seiler"
+date: "Nov 11, 2024"
+---
+
+# Abstract
+
+This study investigates the association between academic workload and student mental health, specifically examining stress levels, sleep quality, and work-life balance among STA304H5 students at our university. The aim is to analyze how these factors correlate with various mental health indicators. Data collection will be based on the structured questionnaire method, while data analyses will be based on chi-square tests of independence, multiple linear regression, and analysis of variance to identify which of those relationships and trends are statistically significant.
+
+# Introduction
+
+The academic workload faced by university students has increasingly become one of the critical variables for university students concerning mental health. Given a broader context of increasing academic demons, many students experience heightened stress levels, which impact various aspects of their well-being, including sleep quality, work-life balance, and several mental health issues.
+
+First, commonly reported mental health issues, including anxiety, depression and stress, have been found to correlate with academic pressures in highly competitive or rigorous programs where students may feel unable to meet academic and personal expectations (Beiter et al., 2015). Second, research indicates that students experiencing high academic workload tend to report poorer sleep quality and shorter sleep duration, which, in turn, can exacerbate mental health problems and academic performance challenges (Hershner & Chervin, 2014; Galambos et al., 2009). Third, students’ living environments and their ability to maintain a balanced lifestyle can also significantly impact mental health, since living in a more supportive and conducive environment positions students to better manage academic responsibilities and personal well-being (Kim & Koh, 2018).
+
+Given the above potential factors, we seek to address the following research questions in this report:
+Is there an association between students’ academic workload and amount of mental health issues?
+Null Hypothesis: There is no association between academic workload and the amount of mental health issues
+Alternative Hypothesis: There’s a significant association between academic workload and the amount of mental health issues.
+How does the academic workload affect the quality/length of sleep and its subsequent impact on students' mental health?
+Null Hypothesis: Academic workload does not affect the quality or length of sleep, nor does it affect students' mental health.
+Alternative Hypothesis: Academic workload significantly affects the quality and/or amount of sleep students get, which affects mental health.
+Is mental health affected by students’ living situations or students’ ability to maintain work-life balance?
+Null Hypothesis: Students' mental health is not affected by their living situation or their ability to maintain a work-life balance.
+Alternative Hypothesis: Students' mental health is significantly affected by their living situation and their ability to maintain a work-life balance.
+
+This study focuses on students enrolled in STA304H5 during Fall 2024, aiming to provide valuable insights into the effects of academic workload on their overall well-being. By exploring these relationships, the findings may inform strategies to enhance student support services and improve academic experiences.
+
+# Methodology
+
+
+# Analysis
+
+
+
+# Discussion and Results
