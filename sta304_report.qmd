@@ -1,5 +1,3 @@
-install.packages("reactable")
-library(reactable)
 ---
 title: "STA304 Report"
 author: "Chau Nguyen, John Luc, Adam Tadj, Sunwoo Hwang, Sabrina Seiler"
