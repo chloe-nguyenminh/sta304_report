@@ -1,6 +1,24 @@
 
-Generate Sample
+# 4. Analysis
 
+## a. Relevant graphs & tables
+
+```{r}
+library(ggplot2)
+scatterplot <- ggplot(sample_data, aes(x = hours_study, y = hours_sleep)) +
+  geom_point(color = "#56B4E9", size = 3) +  # Use points with specified color and size
+  # geom_smooth(method = "lm", color = "red", se = FALSE) +  # Add regression line (linear model)
+  labs(title = "Scatterplot of Hours Sleep vs Hours Study",
+       x = "Hours of Sleep", 
+       y = "Hours of Study") +
+  theme_minimal()
+```
+## b. Sample size Computations
+## c. Necessary Assumptions
+## d. Computation and statistical test output
+## e. Extra statistical information
+
+Generate Sample
 ```{r}
 my_data = read.csv('STA304 Group Project Dataset.csv', header = TRUE, sep=',')
 # my_data
@@ -15,7 +33,7 @@ data_cleaned <- data_cleaned[-c(3, 12),]
 N = 200
 B = .25
 D = (B^2)/4
-sigma = sd(data_cleaned$academic_workload)
+sigma = sd(data_cleaned$academic_workload)  
 n = ceiling((N*sigma^2) / ((N-1)*D + sigma^2))
 n
 
@@ -78,20 +96,25 @@ summary(time1.lm) # 0.0160, 0.0616, F: 0.02051
 mental_health.lm <- lm(stress_binary ~ academic_workload, data = sample_data) # 0.00201, 0.00925, F: 0.009247
 summary(mental_health.lm)
 
-library(nnet)
-# Multinomial logistic regression
-stress_model_multi <- multinom(stress ~ hours_sleep + academic_workload, data = sample_data)
-summary(stress_model_multi)
-# Calculate z-scores and p-values for each coefficient
-z_scores <- summary(stress_model_multi)$coefficients / summary(stress_model_multi)$standard.errors
-p_values <- 2 * (1 - pnorm(abs(z_scores)))  # Two-tailed p-values
-z_scores
-p_values
+# library(nnet)
+# # Multinomial logistic regression (Classification)
+# stress_model_multi <- multinom(stress ~ hours_sleep + academic_workload, data = sample_data)
+# summary(stress_model_multi)
+# # Calculate z-scores and p-values for each coefficient
+# z_scores <- summary(stress_model_multi)$coefficients / summary(stress_model_multi)$standard.errors
+# p_values <- 2 * (1 - pnorm(abs(z_scores)))  # Two-tailed p-values
+# z_scores
+# p_values
 
-p_values <- p_values * 0.01
+# p_values <- p_values * 0.01
 ```
+
+
+# Appendix (R-code)
+
+
 
 Anova:
 variation in academic workload is significantly related to variation in stress.
-variation in academic workload is significantly related to variation in stress.
+variations in hours of sleep do not significantly relate to variations in stress levels.
 stress levels** and **missed social events** do not have a significant relationship.
