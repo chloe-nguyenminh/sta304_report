@@ -20,11 +20,42 @@ random_indices <- sample(1:nrow(data_cleaned), n)
 sample_data <- data_cleaned[random_indices, ]
 sample_data
 
-sample_data$workload <-as.numeric(factor(sample_data$academic_workload,levels =c(1,2,3,4,5)))
+########################ANOVA Test##############################
+# ANOVA between stress and academic workload
+#Requirements: Equal variances
+#Conduct Barlett's test to check equal variances between academic workload and stress
+bartlett.test(academic_workload ~ stress, data = sample_data)
+print(barlett_result$p.value)
 
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
                                                 levels = c("Never", "Sometimes", "Always")))
-                                                
+
+anova_result <- aov(stress_numeric ~ factor(academic_workload), data = sample_data)
+summary(anova_result)
+
+# ANOVA between stress and hours_sleep
+sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
+                                                levels = c("Never", "Sometimes", "Always")))
+
+sample_data$sleep_category <- cut(sample_data$hours_sleep, 
+                                  breaks = c(0, 6, 8, Inf),
+                                  labels = c("Less than 6", "6-8", "More than 8"))
+
+anova_result <- aov(stress_numeric ~ sleep_category, data = sample_data)
+summary(anova_result)
+
+# ANOVA between stress and missed social events
+sample_data$study_category <- cut(sample_data$hours_study, 
+                                  breaks = c(0, 10, 20, Inf),
+                                  labels = c("Low", "Medium", "High"))
+
+anova_social <- aov(stress_numeric ~ factor(missed_social_events), data = sample_data)
+print(summary(anova_social))
+
+############################Chi Square Test###################################
+
+sample_data$workload <-as.numeric(factor(sample_data$academic_workload,levels =c(1,2,3,4,5)))
+                                 
 sample_data$anxiety_numeric <- as.numeric(factor(sample_data$anxiety,levels = c("Never", "Sometimes", "Always")))
 
 sample_data$concentration_numeric <- as.numeric(factor(sample_data$concentration,levels = c("Never", "Sometimes", "Always")))
