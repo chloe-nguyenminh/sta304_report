@@ -24,14 +24,15 @@ sample_data
 bartlett.test(academic_workload ~ stress, data = sample_data)
 print(barlett_result$p.value)
 
-# new changes to ANOVA between stress and academic workload
+########################ANOVA Test##############################
+# ANOVA between stress and academic workload
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
                                                 levels = c("Never", "Sometimes", "Always")))
 
 anova_result <- aov(stress_numeric ~ factor(academic_workload), data = sample_data)
 summary(anova_result)
 
-# new changes to ANOVA between stress and hours_sleep
+# ANOVA between stress and hours_sleep
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
                                                 levels = c("Never", "Sometimes", "Always")))
 
@@ -42,7 +43,7 @@ sample_data$sleep_category <- cut(sample_data$hours_sleep,
 anova_result <- aov(stress_numeric ~ sleep_category, data = sample_data)
 summary(anova_result)
 
-# new changes to ANOVA between stress and missed social events
+# ANOVA between stress and missed social events
 sample_data$study_category <- cut(sample_data$hours_study, 
                                   breaks = c(0, 10, 20, Inf),
                                   labels = c("Low", "Medium", "High"))
