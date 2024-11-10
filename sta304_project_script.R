@@ -20,12 +20,13 @@ random_indices <- sample(1:nrow(data_cleaned), n)
 sample_data <- data_cleaned[random_indices, ]
 sample_data
 
-#Conduct Barlett's test to 
+########################ANOVA Test##############################
+# ANOVA between stress and academic workload
+#Requirements: Equal variances
+#Conduct Barlett's test to check equal variances between academic workload and stress
 bartlett.test(academic_workload ~ stress, data = sample_data)
 print(barlett_result$p.value)
 
-########################ANOVA Test##############################
-# ANOVA between stress and academic workload
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
                                                 levels = c("Never", "Sometimes", "Always")))
 
