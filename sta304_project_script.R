@@ -135,6 +135,6 @@ chisq_result <- chisq.test(new_table)
 print(chisq_result)
 
 #Financials vs Concentration
-new_table <- table(sample_data$finances, sample_data$concentration_numeric_numeric)
+new_table <- table(sample_data$finances, sample_data$concentration_numeric)
 chisq_result <- chisq.test(new_table)
 print(chisq_result)
