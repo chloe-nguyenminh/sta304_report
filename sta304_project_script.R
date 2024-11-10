@@ -51,3 +51,90 @@ sample_data$study_category <- cut(sample_data$hours_study,
 
 anova_social <- aov(stress_numeric ~ factor(missed_social_events), data = sample_data)
 print(summary(anova_social))
+
+############################Chi Square Test###################################
+
+sample_data$workload <-as.numeric(factor(sample_data$academic_workload,levels =c(1,2,3,4,5)))
+                                 
+sample_data$anxiety_numeric <- as.numeric(factor(sample_data$anxiety,levels = c("Never", "Sometimes", "Always")))
+
+sample_data$concentration_numeric <- as.numeric(factor(sample_data$concentration,levels = c("Never", "Sometimes", "Always")))
+
+sample_data$living <- as.numeric(factor(sample_data$living_situation,
+                                        levels = c("Living alone", "Living with family", "Living with roommates", "Living on campus")))
+
+sample_data$time <-as.numeric(factor(sample_data$time_management,levels =c(0,1,2,3,4)))
+
+sample_data$finances <-as.numeric(factor(sample_data$financial_problems,levels =c(0,1,2,3,4)))
+
+sample_data$socials <-as.numeric(factor(sample_data$missed_social_events,levels =c(0,1,2,3,4)))
+
+#Academic Workload vs Stress
+new_table <- table(sample_data$workload, sample_data$stress_numeric)
+chisq_result <- chisq.test(new_table)
+print(chisq_result)
+
+#Academic Workload vs Anxiety
+new_table <- table(sample_data$workload, sample_data$anxiety_numeric)
+chisq_result <- chisq.test(new_table)
+print(chisq_result)
+
+#Academic Workload vs Concentration
+new_table <- table(sample_data$workload, sample_data$concentration_numeric)
+chisq_result <- chisq.test(new_table)
+print(chisq_result)
+
+#Academic Workload vs Time
+new_table <- table(sample_data$workload, sample_data$time)
+chisq_result <- chisq.test(new_table)
+print(chisq_result)
+
+#Academic Workload vs Financials
+new_table <- table(sample_data$workload, sample_data$finances)
+chisq_result <- chisq.test(new_table)
+print(chisq_result)
+
+#Living Situation vs Stress
+new_table <- table(sample_data$living, sample_data$stress_numeric)
+chisq_result <- chisq.test(new_table)
+print(chisq_result)
+
+#Living Situation vs Anxiety
+new_table <- table(sample_data$living, sample_data$anxiety_numeric)
+chisq_result <- chisq.test(new_table)
+print(chisq_result)
+
+#Living Situation vs Concentration
+new_table <- table(sample_data$living, sample_data$concentration_numeric)
+chisq_result <- chisq.test(new_table)
+print(chisq_result)
+
+#Time Management vs Stress
+new_table <- table(sample_data$time, sample_data$stress_numeric)
+chisq_result <- chisq.test(new_table)
+print(chisq_result)
+
+#Time Management vs Anxiety
+new_table <- table(sample_data$time, sample_data$anxiety_numeric)
+chisq_result <- chisq.test(new_table)
+print(chisq_result)
+
+#Time Management vs Concentration
+new_table <- table(sample_data$time, sample_data$concentration_numeric)
+chisq_result <- chisq.test(new_table)
+print(chisq_result)
+
+#Financials vs Stress
+new_table <- table(sample_data$finances, sample_data$stress_numeric)
+chisq_result <- chisq.test(new_table)
+print(chisq_result)
+
+#Financials vs Anxiety
+new_table <- table(sample_data$finances, sample_data$anxiety_numeric)
+chisq_result <- chisq.test(new_table)
+print(chisq_result)
+
+#Financials vs Concentration
+new_table <- table(sample_data$finances, sample_data$concentration_numeric_numeric)
+chisq_result <- chisq.test(new_table)
+print(chisq_result)
