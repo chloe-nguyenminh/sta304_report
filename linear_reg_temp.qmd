@@ -1,0 +1,97 @@
+
+Generate Sample
+
+```{r}
+my_data = read.csv('STA304 Group Project Dataset.csv', header = TRUE, sep=',')
+# my_data
+
+# Remove the column 'X'
+data_cleaned <- my_data[, !(names(my_data) == "X")]
+# Remove fake responses: rows 3 and 12
+data_cleaned <- data_cleaned[-c(3, 12),]
+# data_cleaned
+
+# Calculating sample size
+N = 200
+B = .25
+D = (B^2)/4
+sigma = sd(data_cleaned$academic_workload)
+n = ceiling((N*sigma^2) / ((N-1)*D + sigma^2))
+n
+
+# Select a random sample of n rows
+set.seed(1)
+random_indices <- sample(1:nrow(data_cleaned), n)
+sample_data <- data_cleaned[random_indices, ]
+sample_data
+attach(sample_data)
+```
+
+SIMPLE TEST 1: CHI-SQUARE TEST FOR INDEPENDENCE
+```{r}
+# X-squared = 4.2481, df = 1, p-value = 0.03929
+# After grouping categories
+# Group categories for anxiety and concentration
+sample_data$anxiety_grouped <- ifelse(anxiety == "Always", "Always", "Other")
+sample_data$concentration_grouped <- ifelse(concentration == "Always", "Always", "Other")
+
+# Create a contingency table
+contingency_table <- table(sample_data$anxiety_grouped, sample_data$concentration_grouped)
+
+# Print the contingency table
+cat("Contingency Table:\n")
+print(contingency_table)
+
+# Check expected Frequencies
+chi_sq_test <- chisq.test(contingency_table)
+chi_sq_test$expected
+
+# Perform the Chi-squared test
+chi_squared_test <- chisq.test(contingency_table)
+
+# Print the results
+cat("\nChi-squared Test Results:\n")
+print(chi_squared_test)
+```
+
+
+ADVANCED TEST 1: LINEAR REGRESSION / MULTIPLE
+```{r}
+
+# Recode stress as binary (0 = Not Stressed, 1 = Stressed)
+sample_data$stress_binary <- ifelse(sample_data$stress == "Never", 0, 1)
+sample_data$anxiety_binary <- ifelse(sample_data$anxiety == "Never", 0, 1)
+sample_data$concentration_binary <- ifelse(sample_data$concentration == "Never", 0, 1)
+
+sleep1_3.lm = lm(hours_sleep ~ stress_binary + missed_social_events, data = sample_data)
+summary(sleep1_3.lm) # 0.402, 0.008, F: 0.003886
+
+sleep1_1.lm = lm(hours_sleep ~ time_management + missed_social_events, data = sample_data)
+summary(sleep1_1.lm) # 0.29838, 0.00139, F: 0.003208
+
+sleep1_1.lm = lm(hours_sleep ~ time_management + stress_binary + missed_social_events, data = sample_data)
+summary(sleep1_1.lm) # 0.42770, 0.60898, 0.00703, F: 0.008939
+
+time1.lm = lm(time_management ~ stress - studentID, data = sample_data)
+summary(time1.lm) # 0.0160, 0.0616, F: 0.02051
+
+mental_health.lm <- lm(stress_binary ~ academic_workload, data = sample_data) # 0.00201, 0.00925, F: 0.009247
+summary(mental_health.lm)
+
+library(nnet)
+# Multinomial logistic regression
+stress_model_multi <- multinom(stress ~ hours_sleep + academic_workload, data = sample_data)
+summary(stress_model_multi)
+# Calculate z-scores and p-values for each coefficient
+z_scores <- summary(stress_model_multi)$coefficients / summary(stress_model_multi)$standard.errors
+p_values <- 2 * (1 - pnorm(abs(z_scores)))  # Two-tailed p-values
+z_scores
+p_values
+
+p_values <- p_values * 0.01
+```
+
+Anova:
+variation in academic workload is significantly related to variation in stress.
+variation in academic workload is significantly related to variation in stress.
+stress levels** and **missed social events** do not have a significant relationship.
