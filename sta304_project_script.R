@@ -20,8 +20,8 @@ random_indices <- sample(1:nrow(data_cleaned), n)
 sample_data <- data_cleaned[random_indices, ]
 sample_data
 
-#Conduct Barlett's test to 
-bartlett.test(academic_workload ~ stress, data = sample_data)
+#Conduct Barlett's test to fulfill assumptions before conducting ANOVA test
+barlett_result <- bartlett.test(academic_workload ~ stress, data = sample_data)
 print(barlett_result$p.value)
 
 # new changes to ANOVA between stress and academic workload
