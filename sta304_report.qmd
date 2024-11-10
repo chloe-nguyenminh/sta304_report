@@ -31,15 +31,15 @@ This study focuses on students enrolled in STA304H5 during Fall 2024, aiming to 
 
 Between October 8th, 2024, and October 20th, 2024, the questionnaire’s Google Form link was posted on the STA304H5 Piazza course discussion board. We utilized simple random sampling by using the R random generator to randomly sample n students from the received questionnaire responses. On the questionnaire, we asked participants to complete 10 short answer questions inquiring about academic workload, average hours studied weekly, amounts of experienced stress-related symptoms (stress, anxiety, concentration difficulty), hours of sleep per night, current living situation and experienced common issues caused by academic workload (time management, social life, financial).
 
-## 1) Target Population
+## 1. Target Population
 
 The target population consists of students enrolled in the STA304H5 course during the Fall 2024 semester.
 
-## 2) Sampling Method
+## 2. Sampling Method
 
 We will use **Simple Random Sampling (SRS)** by combining both sections of the STA304H5 course and selecting a random sample of students from the pool. This method assures that each student has an equal chance of being selected.
 
-## 3) Strata
+## 3. Strata
 
 The following strata were identified for the research:
 
@@ -55,7 +55,7 @@ Study hours reflect students' study habits and time management. This stratum ana
 ### Mental Health Symptoms (Stress, Anxiety, and Concentration Difficulties)
 These symptoms are key indicators of students' mental health and may be influenced by academic workload and living conditions. Understanding these relationships helps target interventions and support strategies to improve students' mental well-being.
 
-## 4) Sample Size
+## 4. Sample Size
 
 In our research, we applied Simple Random Sampling (SRS) on 200 students. Now, to find out the sample size using the bound of error as 0.25, we used the following formula for the width of confidence interval:
 
@@ -77,7 +77,7 @@ $$
 
 To randomize our sampling process, we used R's random sampling function `sample()` with a fixed seed (`set.seed(1)`) to randomly select participants from the full dataset.
 
-### 5) Summary of Questions
+### 5. Summary of Questions
 
 The survey will consist of a series of questions designed to capture key variables, including:
 

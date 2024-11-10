@@ -52,7 +52,7 @@ sample_data$study_category <- cut(sample_data$hours_study,
 anova_social <- aov(stress_numeric ~ factor(missed_social_events), data = sample_data)
 print(summary(anova_social))
 
-############################Chi Square Test###################################
+############################Chi Square Test####################
 
 sample_data$workload <-as.numeric(factor(sample_data$academic_workload,levels =c(1,2,3,4,5)))
                                  
