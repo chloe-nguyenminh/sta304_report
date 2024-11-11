@@ -35,7 +35,7 @@ Section 1. Chi-square Test for Independence
 
 Section 2. Simple and Multiple Linear Regressions
 
-This part of the analysis is concerned with the application of linear regression to answer the three research questions as outlined above in the Introduction.
+This part of the analysis is concerned with the application of linear regression to answer the three research questions as outlined above in the introduction.
 
 ## Research Question 1
 
