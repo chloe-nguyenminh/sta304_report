@@ -139,3 +139,52 @@ ANOVA test between stress and hours_sleep has the calculated  F -value of 0.163 
 ANOVA test between stress and missed social events has the calculated F-value was 1.092 and this is less than the critical value, 2.629 (df=4, df=34). Therefore, we fail to reject the null hypothesis. This means that stress levels and missed social events do not have a significant relationship.
 
 Overall, the results of the ANOVA tests show that the stress levels of the students sampled are primarily related to academic factors, with lifestyle factors such as sleep and socializing having less of an impact on their mental health than expected. In addition, this voluntary response method was likely to result in selection bias.
+
+# Limitations
+
+This study had two major limitations.
+
+First, our sample size was limited to part of the responses from STA304H5, which might be the reason for failing to reject the null hypothesis related to sleep hours and stress level.
+
+Second, our limitation in the survey was the academic workload measure which focused on time spent in such activities rather than capturing the actual complexity of assignments and different academic tasks. For future research should seek to:
+
+1. Use participation incentives to enhance sample size.
+2. More detailed measures of academic workload.
+
+These improvements would provide a more comprehensive understanding of the relationship between academic workload and student mental health
+
+## Conclusion
+
+Our analysis of STA304H5 students' academic workload and mental health provided clear answers for all three research questions of this study:
+
+First, on the relationship between academic workload and the problems with mental health:
+
+ANOVA yielded a significant relationship between academic workload and stress level: F = 4.273, p = 0.0136
+
+Chi-square tests showed that academic workload was not significantly associated with either stress or anxiety, but it showed a significant relationship to concentration difficulties:
+
+Regarding academic workload and its relationship with sleep and then finally with mental health:
+
+We did not find a significant association between hours of sleep and levels of stress (F = 2.046, p = 0.148)
+
+This might suggest that the influence of sleeping habits on mental health is not as straightforward or perhaps too subtle for our investigation to have picked up using the current sample size.
+
+On the impact of living situations and work-life balance:
+
+Chi-square tests confirm the significant relations between living situations and all three of the mental health indicators, which are stress, anxiety, and concentration. Similarly, one can establish significant relations between time management skills and financial situation with that of mental health consequences.
+
+For future research, the following points should be considered.
+
+### Methodology Improvements:
+- Use stratified sampling to ensure diverse representation across living situations and academic workloads.
+- Develop refined measures of academic workload that incorporate assignment complexity and deadlines.
+
+### Research Focus Extensions:
+- Investigate specific living situation factors that most significantly affect mental health.
+- Explore how various academic tasks uniquely contribute to stress.
+- Examine effective time management strategies for reducing academic stress.
+
+### Practical Applications:
+- Design interventions targeting links between living situations and mental health.
+- Develop standardized workload metrics that account for both time and complexity.
+- Implement support programs addressing both academic and environmental impacts on student well-being.
