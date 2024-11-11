@@ -39,7 +39,7 @@ The target population consists of students enrolled in the STA304H5 course durin
 
 We will use **Simple Random Sampling (SRS)** by combining both sections of the STA304H5 course and selecting a random sample of students from the pool. This method assures that each student has an equal chance of being selected.
 
-## 3. Strata
+## 3. Variables of interest
 
 The following strata were identified for the research:
 
@@ -63,10 +63,10 @@ $$
 D = \frac{B^2}{4}
 $$
 
-Where $B = 0.25$, giving:
+Where $B = 0.29$, giving:
 
 $$
-D = \frac{(0.25)^2}{4} = 0.015625
+D = \frac{(0.29)^2}{4} = 0.015625
 $$
 
 Using the standard deviation ($\sigma$) of the academic workload variable, we computed the required sample size using the formula:
@@ -100,27 +100,18 @@ RQ1 questions if academic workload contributes to a student’s stress levels. T
 | academic workload   | 3                       | 3.136                | 1.0455          | 4.273   | 0.0136         |
 | Residuals           | 27                      | 6.605               | 0.2446           |         |                |
 
-```{r}
-# Reorder stress factor levels for the sample data
-sample_data$stress <- factor(sample_data$stress, levels = c("Never", "Sometimes", "Always"))
 
-# Create the box plot for the sample data
-boxplot(academic_workload ~ stress, data = sample_data,
-        main = "Box Plot of Academic Workload by Stress Levels (Sample)",
-        xlab = "Stress Level",
-        ylab = "Academic Workload")
-```
 
-Since the calculated F-value of 5.121 is larger than the critical F-value of 2.874 at a 5% significance level with (3, 35) degrees of freedom, we reject the null hypothesis. Therefore, the **student academic workload** and **levels of stress** correlate at a statistically significant level. **Therefore**, variation in academic workload is significantly related to variation in stress.
+Since the calculated F-value of 4.273 is larger than the critical F-value of 2.874 at a 5% significance level with (3, 35) degrees of freedom, we reject the null hypothesis. This result indicates that differences in student academic workload are significantly associated with variations in stress levels. Therefore, academic workload appears to have a significant impact on stress levels among students.
 
-# ANOVA between stress and hours_sleep
+# ANOVA between stress and hours\_sleep
 
 | Variable            | Degrees of Freedom (DF) | Sum of Squares (SS) | Mean Square (MS) | F-value | Pr(>F)         |
 |---------------------|-------------------------|----------------------|------------------|---------|----------------|
 | sleep               | 2                       | 1.242               | 0.6210          | 2.046   | 0.148           |
 | Residuals           | 28                      | 8.500              | 0.3036          |         |                |
 
-Since the calculated F-value of 0.163 is smaller than the critical F-value of 3.259 at the 5% significance level with (2, 36) degrees of freedom, we fail to reject the null hypothesis. Therefore, there is no statistically significant correlation between **hours of sleep** and **levels of stress** among students. This suggests that variations in hours of sleep do not significantly relate to variations in stress levels.
+Since the calculated F-value of 2.046 is smaller than the critical F-value of 3.259 at the 5% significance level with (2, 36) degrees of freedom, we fail to reject the null hypothesis. Therefore, there is evidence of asscociation between **hours of sleep** and **levels of stress** among students. This suggests that variations in hours of sleep do not significantly relate to variations in stress levels.
 
 # ANOVA between stress and missed social events
 
@@ -129,15 +120,10 @@ Since the calculated F-value of 0.163 is smaller than the critical F-value of 3.
 | missed\_social\_events | 4                       | 1.220               | 0.3049           | 0.93   | 0.462          |
 | Residuals              | 26                      | 8.522              | 0.3278           |         |                |
 
-Since the calculated F-value was 1.092 and this is less than the critical value, 2.629 (df=4, df=34). Therefore, we fail to reject the null hypothesis. This means that **stress levels** and **missed social events** do not have a significant relationship.
+Since the calculated F-value was 0.093 and this is less than the critical value, 2.629 (df=4, df=34). Therefore, we fail to reject the null hypothesis. This means that **stress levels** and **missed social events** do not have a significant relationship.
 
 # Discussion and Results
 
-
-ANOVA test between stress and academic workload has the calculated F-value of 5.121 is larger than the critical F-value of 2.874 at 5% significance level with (3, 35) degrees of freedom, we reject the null hypothesis. Therefore, the student academic workload and levels of stress correlate at a statistically significant level. Therefore, variation in academic workload is significantly related to variation in stress.
-
-ANOVA test between stress and hours_sleep has the calculated  F -value of 0.163 is smaller than the critical  F -value of 3.259 at the 5% significance level with (2, 36) degrees of freedom; we fail to reject the null hypothesis. Therefore, there is no statistically significant correlation between hours of sleep and levels of stress among students. This suggests that variations in hours of sleep do not significantly relate to variations in stress levels.
-
-ANOVA test between stress and missed social events has the calculated F-value was 1.092 and this is less than the critical value, 2.629 (df=4, df=34). Therefore, we fail to reject the null hypothesis. This means that stress levels and missed social events do not have a significant relationship.
-
 Overall, the results of the ANOVA tests show that the stress levels of the students sampled are primarily related to academic factors, with lifestyle factors such as sleep and socializing having less of an impact on their mental health than expected. In addition, this voluntary response method was likely to result in selection bias.
+
+# Limitations

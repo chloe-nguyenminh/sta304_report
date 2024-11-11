@@ -193,14 +193,6 @@ n = \frac{N \times \sigma^2}{(N-1) \times D + \sigma^2}
 </tr>
 </tbody>
 </table>
-</section>
-<section id="reorder-stress-factor-levels-for-the-sample-data" class="level1">
-<h1>Reorder stress factor levels for the sample data</h1>
-<p>sample_data<span class="math inline">\(stress &lt;- factor(sample_data\)</span>stress, levels = c(“Never”, “Sometimes”, “Always”))</p>
-</section>
-<section id="create-the-box-plot-for-the-sample-data" class="level1">
-<h1>Create the box plot for the sample data</h1>
-<p>boxplot(academic_workload ~ stress, data = sample_data, main = “Box Plot of Academic Workload by Stress Levels (Sample)”, xlab = “Stress Level”, ylab = “Academic Workload”)</p>
 <p>Since the calculated F-value of 5.121 is larger than the critical F-value of 2.874 at a 5% significance level with (3, 35) degrees of freedom, we reject the null hypothesis. Therefore, the <strong>student academic workload</strong> and <strong>levels of stress</strong> correlate at a statistically significant level. <strong>Therefore</strong>, variation in academic workload is significantly related to variation in stress.</p>
 </section>
 <section id="anova-between-stress-and-hours_sleep" class="level1">
