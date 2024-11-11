@@ -65,9 +65,9 @@ print(boxplot_plot)
 # # Display the plot
 # print(boxplot_plot)
 ```
-### c. Necessary Assumptions
 
-To confirm this hypothesis, we implement a simple linear regression model, where the dependent variable is stress_numeric (the stress variable, converted to numeric values), and the independent variable is academic_workload. To implement this model, we check the following assumptions using the following plot of the residuals:
+### c. Necessary Assumptions
+To confirm this association, we implement a simple linear regression model, where the dependent variable is stress_numeric (the stress variable, converted to numeric values), and the independent variable is academic_workload. To implement this model, we check the following assumptions using the following plot of the residuals:
 
 ![Residuals Plot](residuals_rq1.png){width=80%}
 
@@ -78,7 +78,6 @@ To confirm this hypothesis, we implement a simple linear regression model, where
  Since all the assumptions are met, we run the regression and obtain the output below using the code in Appendix B:
 
 ### d. Computation and statistical test output
-
 Call:
 lm(formula = stress_numeric ~ academic_workload, data = sample_data)
 
@@ -100,7 +99,6 @@ F-statistic: 10.78 on 1 and 37 DF,  p-value: 0.002245
 The equation of the regression line is given by: $stress = 1.22389 + 0.32655*workload$
 
 ### e. Interpretation
-
 The small $p-value = 0.00224$ indicates that academic workload is a significant predictor of stress. Therefore, we can conclude that there is a significant relationship between students academic workload and their stress levels.
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
@@ -108,6 +106,9 @@ The small $p-value = 0.00224$ indicates that academic workload is a significant 
 ## Research Question 2
 
 ### a. Relevant graphs & tables
+Research Question 2 investigates whether there is a relationship between students’ academic workload, 
+the amount of sleep they get, and impact on mental health. Since the ANOVA below showed no significant relationship between stress and hours of sleep, we investigate the effect of another factor, the number of missed social events.To begin, we plot a boxplot of hours of sleep by the number of missed social events. This plot suggests students who miss more social events tend to have fewer hours of sleep on average.
+
 ```{r}
 boxplot_plot <- ggplot(sample_data, aes(x = factor(missed_social_events), y = hours_sleep)) +
   geom_boxplot(fill = "#56B4E9", color = "black") +  # Customize the colors if desired
@@ -118,25 +119,49 @@ boxplot_plot <- ggplot(sample_data, aes(x = factor(missed_social_events), y = ho
 
 # Display the plot
 print(boxplot_plot)
-
 ```
 
-### b. Sample size Computations
 ### c. Necessary Assumptions
+To assess this relationship, we use a multiple linear regression model with hours of sleep as the dependent variable, and academic workload and missed social events as the independent variables. Before interpreting this model, we check the following assumptions:
+
+![Residuals Plot](residuals_rq2.png){width=80%}
+![QQ Plot](qq_rq2.png){width=80%}
+
+1. Independence of errors: The residual plot indicates no clear patterns, suggesting that the errors are  independent.
+2. Normality of errors: Since the sample size is large, the Central Limit Theorem implies that the residuals should approximate a normal distribution. Also, a QQ-plot confirms Normality.
+3. Homogeneity of variances: The residuals plot exhibits a roughly horizontal band, indicating constant variance across predicted values.
+4. No multi-collinearity: We calculated the VIF of each independent variable, and found that $VIF(academic\_workload) = 1.076844$, and $VIF(missed\_social\_events) = 1.076844$. Since they are both less than 5,this indicates there is little correlation between them.
+
+With all assumptions adequately met, we proceed with the regression analysis. The code used to generate the model can be found in Appendix B.
 
 ### d. Computation and statistical test output
-```{r}
-rq2.lm = lm(hours_sleep ~ academic_workload + missed_social_events, data = sample_data)
-summary(rq2.lm)
-```
+Call:
+lm(formula = hours_sleep ~ academic_workload + missed_social_events, 
+    data = sample_data)
 
-### e. Extra statistical information
-```{r}
-cor(hours_sleep, academic_workload)
-```
+Residuals:
+     Min       1Q   Median       3Q      Max
+-1.37588 -0.54906 -0.09342  0.60662  2.53031 
 
+Coefficients:
+                     Estimate Std. Error t value Pr(>|t|)    
+(Intercept)            8.5521     0.6661  12.838  5.3e-15 ***
+academic_workload     -0.1412     0.1666  -0.848  0.40208
+missed_social_events  -0.3763     0.1194  -3.151  0.00327 **
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-# # # # # # # # # # # # # # # # # # # # # # 
+Residual standard error: 0.864 on 36 degrees of freedom
+Multiple R-squared:  0.2653,    Adjusted R-squared:  0.2245 
+F-statistic:   6.5 on 2 and 36 DF,  p-value: 0.003889
+
+The regression equation is given by:
+
+$hours\_of\_sleep = 8.5521 − 0.1412 * academic\_workload − 0.3763 * missed\_social\_events$
+
+### e. Interpretation
+
+The output of the regression analysis shows that the missed social events has a statistically significant negative association with hours of sleep (p = 0.00327). However, academic workload does not have a significant relationship with hours of sleep (p = 0.40208).
 
 ## Research Question 3
 
@@ -152,7 +177,6 @@ boxplot_plot <- ggplot(sample_data, aes(x = factor(stress), y = missed_social_ev
 print(boxplot_plot)
 ```
 
-### b. Sample size Computations
 ### c. Necessary Assumptions
 
 ### d. Computation and statistical test output
@@ -184,13 +208,37 @@ summary(rq1_stress.lm)
 # Assumptions for Research Question 1 - Simple Linear Regression
 png("residuals_rq1.png", width = 800, height = 600)
 # Plot code goes here, for example:
-plot(rq1_stress.lm)
+plot(residuals(rq1_stress.lm))
 dev.off()
 ```
 
+```{r}
+# Research Question 2 - Multiple Linear Regression
+rq2.lm = lm(hours_sleep ~ academic_workload + missed_social_events, data = sample_data)
+summary(rq2.lm)
+```
 
+```{r}
+# Assumptions for Research Question 2 - Multiple Linear Regression
+png("residuals_rq2.png", width = 800, height = 600)
+# Plot code goes here, for example:
+plot(residuals(rq2_stress.lm))
+dev.off()
+```
 
+```{r}
+# Assumptions for Research Question 2 - Multiple Linear Regression
+png("qq_rq2.png", width = 800, height = 600)
+# Plot code goes here, for example:
+plot(rq2.lm, which=2)
+dev.off()
+```
 
+```{r}
+# Assumptions for Research Question 2 - Multiple Linear Regression
+library(car)
+vif(rq2.lm)
+```
 
 
 
