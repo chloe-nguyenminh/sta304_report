@@ -431,10 +431,9 @@ The report was completed without the use of generative AI tools such as ChatGPT.
 
 # 9. Appendix
 
-Reference
-1. Beiter, R., Nash, R., McCrady, M., Rhoades, D., Linscomb, M., Clarahan, M., & Sammut, S. (2015). The prevalence and correlates of depression, anxiety, and stress in a sample of college students. *Journal of Affective Disorders*,   
- 173(3), 90-96.
+## References
+
+1. Beiter, R., Nash, R., McCrady, M., Rhoades, D., Linscomb, M., Clarahan, M., & Sammut, S. (2015). The prevalence and correlates of depression, anxiety, and stress in a sample of college students. *Journal of Affective Disorders*, 173(3), 90-96.
 2. Galambos, N. L., Howard, A. L., & Krahn, H. J. (2009). Work, stress, and academic performance in university students. *Journal of Youth and Adolescence*, 38(4), 490-503.
-3. Hershner, S. D., & Chervin, R. D. (2014). Causes and consequences of sleepiness among college students. *Nature and Science of Sleep*, 6,   
- 73-84.
+3. Hershner, S. D., & Chervin, R. D. (2014). Causes and consequences of sleepiness among college students. *Nature and Science of Sleep*, 6, 73-84.
 4. Kim, E., & Koh, K. (2018). Work-life balance and well-being among college students: A critical literature review. *Journal of College Counseling*, 21(3), 247-261.
