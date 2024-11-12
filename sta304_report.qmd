@@ -31,6 +31,10 @@ This study focuses on students enrolled in STA304H5 during Fall 2024, aiming to 
 
 Between October 8th, 2024, and October 20th, 2024, the questionnaire’s Google Form link was posted on the STA304H5 Piazza course discussion board. We utilized simple random sampling by using the R random generator to randomly sample n students from the received questionnaire responses. On the questionnaire, we asked participants to complete 10 short answer questions inquiring about academic workload, average hours studied weekly, amounts of experienced stress-related symptoms (stress, anxiety, concentration difficulty), hours of sleep per night, current living situation and experienced common issues caused by academic workload (time management, social life, financial).
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b26dfbe3ddb36cdb1e76ef69249d26072605cfea
 ## 1. Target Population
 
 The target population consists of students enrolled in the STA304H5 course during the Fall 2024 semester.
@@ -39,7 +43,11 @@ The target population consists of students enrolled in the STA304H5 course durin
 
 We will use **Simple Random Sampling (SRS)** by combining both sections of the STA304H5 course and selecting a random sample of students from the pool. This method assures that each student has an equal chance of being selected.
 
+<<<<<<< HEAD
 ## 3. Variables of interest
+=======
+## 3. Strata
+>>>>>>> b26dfbe3ddb36cdb1e76ef69249d26072605cfea
 
 The following strata were identified for the research:
 
@@ -55,6 +63,10 @@ Study hours reflect students' study habits and time management. This stratum ana
 ### Mental Health Symptoms (Stress, Anxiety, and Concentration Difficulties)
 These symptoms are key indicators of students' mental health and may be influenced by academic workload and living conditions. Understanding these relationships helps target interventions and support strategies to improve students' mental well-being.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b26dfbe3ddb36cdb1e76ef69249d26072605cfea
 ## 4. Sample Size
 
 In our research, we applied Simple Random Sampling (SRS) on 200 students. Now, to find out the sample size using the bound of error as 0.25, we used the following formula for the width of confidence interval:
@@ -63,10 +75,17 @@ $$
 D = \frac{B^2}{4}
 $$
 
+<<<<<<< HEAD
 Where $B = 0.29$, giving:
 
 $$
 D = \frac{(0.29)^2}{4} = 0.015625
+=======
+Where $B = 0.25$, giving:
+
+$$
+D = \frac{(0.25)^2}{4} = 0.015625
+>>>>>>> b26dfbe3ddb36cdb1e76ef69249d26072605cfea
 $$
 
 Using the standard deviation ($\sigma$) of the academic workload variable, we computed the required sample size using the formula:
@@ -77,8 +96,15 @@ $$
 
 To randomize our sampling process, we used R's random sampling function `sample()` with a fixed seed (`set.seed(1)`) to randomly select participants from the full dataset.
 
+<<<<<<< HEAD
 ### 5. Summary of Questions
 
+=======
+
+### 5. Summary of Questions
+
+
+>>>>>>> b26dfbe3ddb36cdb1e76ef69249d26072605cfea
 The survey will consist of a series of questions designed to capture key variables, including:
 
 * Academic workload (measured in hours per week)
@@ -100,9 +126,13 @@ RQ1 questions if academic workload contributes to a student’s stress levels. T
 | academic workload   | 3                       | 3.136                | 1.0455          | 4.273   | 0.0136         |
 | Residuals           | 27                      | 6.605               | 0.2446           |         |                |
 
+<<<<<<< HEAD
 
 
 Since the calculated F-value of 4.273 is larger than the critical F-value of 2.874 at a 5% significance level with (3, 35) degrees of freedom, we reject the null hypothesis. This result indicates that differences in student academic workload are significantly associated with variations in stress levels. Therefore, academic workload appears to have a significant impact on stress levels among students.
+=======
+Since the calculated F-value of 5.121 is larger than the critical F-value of 2.874 at a 5% significance level with (3, 35) degrees of freedom, we reject the null hypothesis. Therefore, the **student academic workload** and **levels of stress** correlate at a statistically significant level. **Therefore**, variation in academic workload is significantly related to variation in stress.
+>>>>>>> b26dfbe3ddb36cdb1e76ef69249d26072605cfea
 
 # ANOVA between stress and hours\_sleep
 
@@ -111,7 +141,11 @@ Since the calculated F-value of 4.273 is larger than the critical F-value of 2.8
 | sleep               | 2                       | 1.242               | 0.6210          | 2.046   | 0.148           |
 | Residuals           | 28                      | 8.500              | 0.3036          |         |                |
 
+<<<<<<< HEAD
 Since the calculated F-value of 2.046 is smaller than the critical F-value of 3.259 at the 5% significance level with (2, 36) degrees of freedom, we fail to reject the null hypothesis. Therefore, there is evidence of asscociation between **hours of sleep** and **levels of stress** among students. This suggests that variations in hours of sleep do not significantly relate to variations in stress levels.
+=======
+Since the calculated F-value of 0.163 is smaller than the critical F-value of 3.259 at the 5% significance level with (2, 36) degrees of freedom, we fail to reject the null hypothesis. Therefore, there is no statistically significant correlation between **hours of sleep** and **levels of stress** among students. This suggests that variations in hours of sleep do not significantly relate to variations in stress levels.
+>>>>>>> b26dfbe3ddb36cdb1e76ef69249d26072605cfea
 
 # ANOVA between stress and missed social events
 
@@ -120,6 +154,7 @@ Since the calculated F-value of 2.046 is smaller than the critical F-value of 3.
 | missed\_social\_events | 4                       | 1.220               | 0.3049           | 0.93   | 0.462          |
 | Residuals              | 26                      | 8.522              | 0.3278           |         |                |
 
+<<<<<<< HEAD
 Since the calculated F-value was 0.093 and this is less than the critical value, 2.629 (df=4, df=34). Therefore, we fail to reject the null hypothesis. This means that **stress levels** and **missed social events** do not have a significant relationship.
 
 # Discussion and Results
@@ -127,3 +162,98 @@ Since the calculated F-value was 0.093 and this is less than the critical value,
 Overall, the results of the ANOVA tests show that the stress levels of the students sampled are primarily related to academic factors, with lifestyle factors such as sleep and socializing having less of an impact on their mental health than expected. In addition, this voluntary response method was likely to result in selection bias.
 
 # Limitations
+=======
+Since the calculated F-value was 1.092 and this is less than the critical value, 2.629 (df=4, df=34). Therefore, we fail to reject the null hypothesis. This means that **stress levels** and **missed social events** do not have a significant relationship.
+
+
+# Chi Square Test of Independance
+Research Question 1 questions if there is a relationship between the academic workload of a student and their mental health. Research question 3 questions if there is a relationship between students' living situation or ability to maintain work-life balance. Our assumption that the data is randomly sampled holds, **need the expected value (C*R/N) to be greater than 5**. To prove there exists a relationship between these variables, we want to use the chi square test of independence. We are using a=0.05 as the significance level.
+
+# Chi Square Test between Academic Workload and Stress
+X-squared =25.936, df=6, p-value =0.0002288
+
+Since the calculated p-value was 0.0002288 and is less than a=0.05, we retain the null hypothesis. This means that the academic workload and the 
+stress levels of a student are unrelated.
+
+# Chi Square Test between Academic Workload and Anxiety
+X-squared =14.113, df=6, p-value =0.0284
+
+Since the calculated p-value was 0.0284 and is less than a=0.05, we retain the null hypothesis. This means that the academic workload and the 
+anxiety levels of a student are unrelated.
+
+# Chi Square Test between Academic Workload and Concentration
+X-squared =6.5, df=6, p-value =0.3696
+
+Since the calculated p-value was 0.3696 and is greater than a=0.05, we reject the null hypothesis. This means that the academic workload and the 
+concentration levels of a student are related.
+
+# Chi Square Test between Living Situation and Stress
+X-squared =4.9936, df=6, p-value =0.5446
+
+Since the calculated p-value was 0.5446 and is greater than a=0.05, we reject the null hypothesis. This means that the living situation and the 
+stress levels of a student are related.
+
+# Chi Square Test between Living Situation and Anxiety
+X-squared =6.6042, df=6, p-value =0.359
+
+Since the calculated p-value was 0.359 and is greater than a=0.05, we reject the null hypothesis. This means that the living situation and the 
+anxiety levels of a student are related.
+
+# Chi Square Test between Living Situation and Concentration
+X-squared =2.8773, df=6, p-value =0.8241
+
+Since the calculated p-value was 0.8241 and is greater than a=0.05, we reject the null hypothesis. This means that the living situation and the 
+concentration levels of a student are related.
+
+# Chi Square Test between Time Management and Stress
+X-squared =10.894, df=8, p-value =0.2078
+
+Since the calculated p-value was 0.2078 and is greater than a=0.05, we reject the null hypothesis. This means that the time management skills and the stress levels of a student are related.
+
+# Chi Square Test between Time Management and Anxiety
+X-squared =6.5567, df=8, p-value =0.5851
+
+Since the calculated p-value was 0.5851 and is greater than a=0.05, we reject the null hypothesis. This means that the time management skills and the anxiety levels of a student are related.
+
+# Chi Square Test between Time Management and Concentration
+X-squared =9.3321, df=8, p-value =0.3151
+
+Since the calculated p-value was 0.3151 and is greater than a=0.05, we reject the null hypothesis. This means that the time management skills and the concentration levels of a student are related.
+
+# Chi Square Test between Financials and Stress
+X-squared =9.3321, df=8, p-value =0.7223
+
+Since the calculated p-value was 0.3151 and is greater than a=0.05, we reject the null hypothesis. This means that the financial situation and the stress levels of a student are related.
+
+# Chi Square Test between Financials and Anxiety
+X-squared =5.3134, df=8, p-value =0.7236
+
+Since the calculated p-value was 0.7236 and is greater than a=0.05, we reject the null hypothesis. This means that the financial situation and the anxiety levels of a student are related.
+
+# Chi Square Test between Financials and Concentration
+X-squared =6.1471, df=8, p-value =0.6308
+
+Since the calculated p-value was 0.6308 and is greater than a=0.05, we reject the null hypothesis. This means that the financial situation and the concentration levels of a student are related.
+
+
+# Discussion and Results
+
+
+ANOVA test between stress and academic workload has the calculated F-value of 5.121 is larger than the critical F-value of 2.874 at 5% significance level with (3, 35) degrees of freedom, we reject the null hypothesis. Therefore, the student academic workload and levels of stress correlate at a statistically significant level. Therefore, variation in academic workload is significantly related to variation in stress.
+
+
+ANOVA test between stress and hours_sleep has the calculated F-value of 0.163 is smaller than the critical F-value of 3.259 at the 5% significance level with (2, 36) degrees of freedom; we fail to reject the null hypothesis. Therefore, there is no statistically significant correlation between hours of sleep and levels of stress among students. This suggests that variations in hours of sleep do not significantly relate to variations in stress levels.
+
+ANOVA test between stress and missed social events has the calculated F-value was 1.092 and this is less than the critical value, 2.629 (df=4, df=34). Therefore, we fail to reject the null hypothesis. This means that stress levels and missed social events do not have a significant relationship.
+
+For the chi square tests of independence bewteen academic workload and stress, anxiety, the respective p values are 0.0002288 and 0.0284 which are both less than the alpha a=0.05, so we retain the null hypothesis. For the chi square tests of indpendence between academic workload and concentration, the p value is 0.3696, which is greater than the alpha a=0.05, therefore we reject the null hypothesis. This suggests that a student's academic workload has an effect on their concentration but not their stress or anxiety. 
+
+Chi square tests between students' living situation and their stress, anxiety and concentration yield p values of 0.5446, 0.359, and 0.8241 respectively. All of these p values are greater than the alpha a=0.05, therefore we reject the null hypothesis for all three of these chi square tests. This means that the living situation of a student has some effect on their stress, anxiety and concentration. 
+
+Chi square tests between students' time management skills and their stress, anxiety and concentration yield p values of 0.2078, 0.5851, and 0.3151 respectively. All of these p values are greater than the alpha a=0.05, therefore we reject the null hypothesis for all three of these chi square tests. This means that a student's ability to manage their time has some effect on their stress, anxiety and concentration. 
+
+Chi square tests between students' financials and their stress, anxiety and concentration yield p values of 0.7223, 0.7236, and 0.6308 respectively. All of these p values are greater than the alpha a=0.05, therefore we reject the null hypothesis for all three of these chi square tests. This means that a student's financial situation has some effect on their stress, anxiety and concentration. 
+
+Overall, the results of this study show that stress among college students is primarily related to academic factors, with lifestyle factors such as sleep and socializing having less of an impact than expected.
+
+>>>>>>> b26dfbe3ddb36cdb1e76ef69249d26072605cfea
