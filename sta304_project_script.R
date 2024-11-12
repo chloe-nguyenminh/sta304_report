@@ -6,9 +6,8 @@ data_cleaned <- my_data[,!(names(my_data)=="X")]
 data_cleaned <- data_cleaned[-c(3, 12),]
 data_cleaned
 
-# Calculating sample size
 N = 200
-B = .25
+B = .29
 D = (B^2)/4
 sigma = sd(data_cleaned$academic_workload)
 n = ceiling((N * sigma^2) / ((N-1) * D + sigma^2))
@@ -20,6 +19,61 @@ random_indices <- sample(1:nrow(data_cleaned), n)
 sample_data <- data_cleaned[random_indices, ]
 sample_data
 
+#####Simple and Multiple Linear Regressions#####
+
+# Research Question 1 - Simple Linear Regression
+sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, levels = c("Never", "Sometimes", "Always")))
+rq1_stress.lm = lm(stress_numeric ~ academic_workload, data = sample_data)
+summary(rq1_stress.lm)
+```
+
+# Assumptions for Research Question 1 - Simple Linear Regression
+png("residuals_rq1.png", width = 800, height = 600)
+# Plot code goes here, for example:
+plot(residuals(rq1_stress.lm))
+dev.off()
+
+
+# Research Question 2 - Multiple Linear Regression
+rq2.lm = lm(hours_sleep ~ academic_workload + missed_social_events, data = sample_data)
+summary(rq2.lm)
+```
+
+```{r}
+# Assumptions for Research Question 2 - Multiple Linear Regression
+png("residuals_rq2.png", width = 800, height = 600)
+# Plot code goes here, for example:
+plot(residuals(rq2_stress.lm))
+dev.off()
+
+
+# Assumptions for Research Question 2 - Multiple Linear Regression
+png("qq_rq2.png", width = 800, height = 600)
+# Plot code goes here, for example:
+plot(rq2.lm, which=2)
+dev.off()
+
+# Assumptions for Research Question 2 - Multiple Linear Regression
+library(car)
+vif(rq2.lm)
+
+# Research Question 3 - Multiple Linear Regression
+rq3.lm <- lm(stress_numeric ~ missed_social_events + living_situation, data = sample_data)
+summary(rq3.lm)
+
+# Assumptions for Research Question 3 - Multiple Linear Regression
+png("residuals_rq3.png", width = 800, height = 600)
+# Plot code goes here, for example:
+plot(residuals(rq3.lm))
+dev.off()
+
+
+# Assumptions for Research Question 3 - Multiple Linear Regression
+library(car)
+vif(rq3.lm)
+
+
+#####ANOVA##### 
 #Conduct Barlett's test to fulfill assumptions before conducting ANOVA test
 barlett_result <- bartlett.test(academic_workload ~ stress, data = sample_data)
 print(barlett_result$p.value)
@@ -49,7 +103,7 @@ sample_data$study_category <- cut(sample_data$hours_study,
 anova_social <- aov(stress_numeric ~ factor(missed_social_events), data = sample_data)
 print(summary(anova_social))
 
-############################Chi Square Test####################
+#####Chi Square Test#####
 
 sample_data$workload <-as.numeric(factor(sample_data$academic_workload,levels =c(1,2,3,4,5)))
                                  
