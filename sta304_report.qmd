@@ -425,3 +425,15 @@ Although this study has provided several valuable insights into the relationship
 
 
 The linear regression analysis conducted for the three research questions of this study provides valuable insights into the factors affecting student stress and mental health. For Research Question 1, we found a significant positive relationship between academic workload and stress levels, suggesting that students with heavier workloads tend to experience higher levels of stress. In Research Question 2, while academic workload did not significantly impact the amount of sleep, missed social events were found to significantly reduce hours of sleep, which may contribute to poor mental health. For Research Question 3, missed social events and living situation were marginally significant predictors of stress, indicating that students who miss social events or live on campus tend to report higher stress levels. These findings highlight the importance of considering multiple factors in understanding a student's overall well-being. However, the limitations of this analysis, including potential issues with sample randomization and measurement quality, should be addressed in future research to enhance the robustness and accuracy of the results. Future studies should also explore other possible variables, such as social support and coping mechanisms, which may further explain the mental health challenges faced by students.
+
+# 8. Documentation of AI tool usage
+The report was completed without the use of generative AI tools such as ChatGPT. All content in this report, including writing, analysis, and interpretation, was created entirely by team members through a collaborative effort and peer review process. We affirm that these are our original thoughts and analyses.
+
+# 9. Appendix
+8. Appendix
+
+Reference
+Beiter, R., Nash, R., McCrady, M., Rhoades, D., Linscomb, M., Clarahan, M., & Sammut, S. (2015). The prevalence and correlates of depression, anxiety, and stress in a sample of college students. Journal of Affective Disorders, 173(3), 90-96.
+Galambos, N. L., Howard, A. L., & Krahn, H. J. (2009). Work, stress, and academic performance in university students. Journal of Youth and Adolescence, 38(4), 490-503.
+Hershner, S. D., & Chervin, R. D. (2014). Causes and consequences of sleepiness among college students. Nature and Science of Sleep, 6, 73-84.
+Kim, E., & Koh, K. (2018). Work-life balance and well-being among college students: A critical literature review. Journal of College Counseling, 21(3), 247-261.
