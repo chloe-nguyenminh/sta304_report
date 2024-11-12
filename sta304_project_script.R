@@ -6,9 +6,8 @@ data_cleaned <- my_data[,!(names(my_data)=="X")]
 data_cleaned <- data_cleaned[-c(3, 12),]
 data_cleaned
 
-# Calculating sample size
 N = 200
-B = .25
+B = .29
 D = (B^2)/4
 sigma = sd(data_cleaned$academic_workload)
 n = ceiling((N * sigma^2) / ((N-1) * D + sigma^2))
