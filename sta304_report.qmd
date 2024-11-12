@@ -69,10 +69,10 @@ $$
 D = \frac{B^2}{4}
 $$
 
-Setting $B = 0.25$, we have:
+Setting $B = 0.29$, we have:
 
 $$
-D = \frac{(0.25)^2}{4} = 0.015625
+D = \frac{(0.29)^2}{4} = 0.021025
 $$
 
 Using the standard deviation ($\sigma$) of the academic workload variable, we computed the required sample size using the formula:
@@ -105,29 +105,29 @@ RQ1 questions if academic workload contributes to a student’s stress levels. T
 
 | Variable            | Degrees of Freedom (DF) | Sum of Squares (SS) | Mean Square (MS) | F-value | Pr(>F)         |
 |---------------------|-------------------------|----------------------|------------------|---------|----------------|
-| academic workload   | 3                       | 4.145               | 1.3818           | 5.121   | 0.00483     |
-| Residuals           | 35                      | 9.444               | 0.2698           |         |                |
+| academic workload   | 3                       | 3.136                | 1.0455          | 4.273   | 0.0136         |
+| Residuals           | 27                      | 6.605               | 0.2446           |         |                |
 
-Since the calculated F-value of 5.121 is larger than the critical F-value of 2.874 at a 5% significance level with (3, 35) degrees of freedom, we reject the null hypothesis. Therefore, the **student academic workload** and **levels of stress** correlate at a statistically significant level. **Therefore**, variation in academic workload is significantly related to variation in stress.
+Since the calculated F-value of 4.273 is larger than the critical F-value of 2.960 at a 5% significance level with (3, 27) degrees of freedom, we reject the null hypothesis.
+Therefore, there is a statistically significant relationship between student academic workload and levels of stress. This conclusion is also supported by the p-value of 0.0136, which is less than the significance level of 0.05.
 
 # ANOVA between stress and hours\_sleep
 
 | Variable            | Degrees of Freedom (DF) | Sum of Squares (SS) | Mean Square (MS) | F-value | Pr(>F)         |
 |---------------------|-------------------------|----------------------|------------------|---------|----------------|
-| sleep               | 2                       | 0.103               | 0.05128          | 0.163   | 0.85           |
-| Residuals           | 36                      | 11.333              | 0.31481    
+| sleep               | 2                       | 1.242               | 0.6210          | 2.046   | 0.148           |
+| Residuals           | 28                      | 8.500              | 0.3036          |         |                |
 
-Since the calculated F-value of 0.163 is smaller than the critical F-value of 3.259 at the 5% significance level with (2, 36) degrees of freedom, we fail to reject the null hypothesis. Therefore, there is no statistically significant correlation between **hours of sleep** and **levels of stress** among students. This suggests that variations in hours of sleep do not significantly relate to variations in stress levels.
+Since the calculated F-value of 2.046 is smaller than the critical F-value of 3.340 at the 5% significance level with (2, 28) degrees of freedom, we fail to reject the null hypothesis. Therefore, there is no statistically significant correlation between hours of sleep and levels of stress among students.
 
 # ANOVA between stress and missed social events
 
 | Variable               | Degrees of Freedom (DF) | Sum of Squares (SS) | Mean Square (MS) | F-value | Pr(>F)         |
 |------------------------|-------------------------|----------------------|------------------|---------|----------------|
-| missed\_social\_events | 4                       | 1.302               | 0.3254           | 1.092   | 0.376          |
-| Residuals              | 34                      | 10.134              | 0.2981           |         |                |
+| missed\_social\_events | 4                       | 1.220               | 0.3049           | 0.93   | 0.462          |
+| Residuals              | 26                      | 8.522              | 0.3278           |         |                |
 
-Since the calculated F-value was 1.092 and this is less than the critical value, 2.629 (df=4, df=34). Therefore, we fail to reject the null hypothesis. This means that **stress levels** and **missed social events** do not have a significant relationship.
-
+Since the calculated F-value of 1.092 is smaller than the critical F-value of 2.649 at the 5% significance level with (4, 34) degrees of freedom, we fail to reject the null hypothesis. This conclusion is also supported by the p-value of 0.376, which is greater than the significance level of 0.05. Therefore, there is no statistically significant relationship between stress levels and missed social events among students.
 
 # Section 2. Chi-square Test of Independence
 Research Question 1 questions if there is a relationship between the academic workload of a student and their mental health. Research question 3 questions if there is a relationship between students' living situation or ability to maintain work-life balance. Our assumption that the data is randomly sampled holds given our method of sampling outlined above.
@@ -398,12 +398,11 @@ $stress = 1.93006 + 0.15560 * missed\_social\_events + 0.81061*living\_situation
 # Discussion and Results
 
 
-ANOVA test between stress and academic workload has the calculated F-value of 5.121 is larger than the critical F-value of 2.874 at 5% significance level with (3, 35) degrees of freedom, we reject the null hypothesis. Therefore, the student academic workload and levels of stress correlate at a statistically significant level. Therefore, variation in academic workload is significantly related to variation in stress.
+ANOVA test between stress and academic workload has the calculated F-value of 4.273, which is larger than the critical F-value of 2.960 at the 5% significance level with (3, 27) degrees of freedom. Therefore, we reject the null hypothesis. There is a statistically significant relationship between student academic workload and levels of stress. This suggests that variations in academic workload are significantly related to variations in stress.
 
+ANOVA test between stress and hours of sleep has the calculated F-value of 0.163, which is smaller than the critical F-value of 3.340 at the 5% significance level with (2, 28) degrees of freedom. Therefore, we fail to reject the null hypothesis. There is no statistically significant correlation between hours of sleep and levels of stress among students. This suggests that variations in hours of sleep do not significantly relate to variations in stress levels.
 
-ANOVA test between stress and hours_sleep has the calculated F-value of 0.163 is smaller than the critical F-value of 3.259 at the 5% significance level with (2, 36) degrees of freedom; we fail to reject the null hypothesis. Therefore, there is no statistically significant correlation between hours of sleep and levels of stress among students. This suggests that variations in hours of sleep do not significantly relate to variations in stress levels.
-
-ANOVA test between stress and missed social events has the calculated F-value was 1.092 and this is less than the critical value, 2.629 (df=4, df=34). Therefore, we fail to reject the null hypothesis. This means that stress levels and missed social events do not have a significant relationship.
+ANOVA test between stress and missed social events has the calculated F-value of 1.092, which is smaller than the critical F-value of 2.649 at the 5% significance level with (4, 34) degrees of freedom. Therefore, we fail to reject the null hypothesis. This means that stress levels and missed social events do not have a significant relationship.
 
 For the chi square tests of independence bewteen academic workload and stress, anxiety, the respective p values are 0.0002288 and 0.0284 which are both less than the alpha a=0.05, so we reject the null hypothesis. For the chi square tests of indpendence between academic workload and concentration, the p value is 0.3696, which is greater than the alpha a=0.05, therefore we fail to reject the null hypothesis. This suggests that a student's academic workload has an on their stress or anxiety but not their concentration . 
 
