@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.32">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Chau Nguyen, John Luc, Adam Tadj, Raymond Hwang, Sabrina Seiler">
+<meta name="author" content="Chau Nguyen, John Luc, Adam Tadj, Sunwoo Hwang, Sabrina Seiler">
 <meta name="dcterms.date" content="2024-11-11">
 
 <title>STA304 Report</title>
@@ -21,31 +21,7 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-  
 }
-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-            background-color: white;
-
-        }
-        th {
-            background-color: #f8f9fa;
-            font-weight: bold;
-        
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
 </style>
 
 
@@ -55,11 +31,13 @@ table {
 <script src="sta304_report_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="sta304_report_files/libs/quarto-html/anchor.min.js"></script>
 <link href="sta304_report_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="sta304_report_files/libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="sta304_report_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="sta304_report_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="sta304_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="sta304_report_files/libs/bootstrap/bootstrap-5bdc1ec511977dd36301403cf8f4f68d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="sta304_report_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -81,7 +59,7 @@ table {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Chau Nguyen, John Luc, Adam Tadj, Raymond Hwang, Sabrina Seiler </p>
+             <p>Chau Nguyen, John Luc, Adam Tadj, Sunwoo Hwang, Sabrina Seiler </p>
           </div>
   </div>
     
@@ -96,9 +74,7 @@ table {
   </div>
   
 
-
 </header>
-
 
 <section id="abstract" class="level1">
 <h1>Abstract</h1>
@@ -106,152 +82,208 @@ table {
 </section>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>The academic workload faced by university students has increasingly become one of the critical variables for university students concerning mental health. Given a broader context of increasing academic demons, many students experience heightened stress levels, which impact various aspects of their well-being, including sleep quality, work-life balance, and several mental health issues.
-
-<br><br>First, commonly reported mental health issues, including anxiety, depression and stress, have been found to correlate with academic pressures in highly competitive or rigorous programs where students may feel unable to meet academic and personal expectations (Beiter et al., 2015). Second, research indicates that students experiencing high academic workload tend to report poorer sleep quality and shorter sleep duration, which, in turn, can exacerbate mental health problems and academic performance challenges (Hershner & Chervin, 2014; Galambos et al., 2009). Third, students’ living environments and their ability to maintain a balanced lifestyle can also significantly impact mental health, since living in a more supportive and conducive environment positions students to better manage academic responsibilities and personal well-being (Kim & Koh, 2018).
-  
-<br><br>Given the above potential factors, we seek to address the following research questions in this report:
-  </p>
-<ul>
-<li>Is there a relationship between students’ academic workload and the incidence of mental health issues?</li>
-<li>How does academic workload affect the quality and length of sleep, and how does this subsequently impact students’ mental health?</li>
-<li>Is mental health affected by students’ living situations or their ability to maintain work-life balance?</li>
-</ul>
-<p>This study focuses on students enrolled in <strong>STA304H5</strong> during Fall 2024, aiming to provide valuable insights into the effects of academic workload on their overall well-being. By exploring these relationships, the findings may inform strategies to enhance student support services and improve academic experiences.</p>
-<p>TODO: - Outline of the rest of paper - Research questions</p>
+<p>The academic workload faced by university students has increasingly become one of the critical variables for university students concerning mental health. Given a broader context of increasing academic demons, many students experience heightened stress levels, which impact various aspects of their well-being, including sleep quality, work-life balance, and several mental health issues.</p>
+<p>First, commonly reported mental health issues, including anxiety, depression and stress, have been found to correlate with academic pressures in highly competitive or rigorous programs where students may feel unable to meet academic and personal expectations (Beiter et al., 2015). Second, research indicates that students experiencing high academic workload tend to report poorer sleep quality and shorter sleep duration, which, in turn, can exacerbate mental health problems and academic performance challenges (Hershner &amp; Chervin, 2014; Galambos et al., 2009). Third, students’ living environments and their ability to maintain a balanced lifestyle can also significantly impact mental health, since living in a more supportive and conducive environment positions students to better manage academic responsibilities and personal well-being (Kim &amp; Koh, 2018).</p>
+<p>Given the above potential factors, we seek to address the following research questions in this report: Is there an association between students’ academic workload and amount of mental health issues? Null Hypothesis: There is no association between academic workload and the amount of mental health issues Alternative Hypothesis: There’s a significant association between academic workload and the amount of mental health issues. How does the academic workload affect the quality/length of sleep and its subsequent impact on students’ mental health? Null Hypothesis: Academic workload does not affect the quality or length of sleep, nor does it affect students’ mental health. Alternative Hypothesis: Academic workload significantly affects the quality and/or amount of sleep students get, which affects mental health. Is mental health affected by students’ living situations or students’ ability to maintain work-life balance? Null Hypothesis: Students’ mental health is not affected by their living situation or their ability to maintain a work-life balance. Alternative Hypothesis: Students’ mental health is significantly affected by their living situation and their ability to maintain a work-life balance.</p>
+<p>This study focuses on students enrolled in STA304H5 during Fall 2024, aiming to provide valuable insights into the effects of academic workload on their overall well-being. By exploring these relationships, the findings may inform strategies to enhance student support services and improve academic experiences.</p>
 </section>
 <section id="methodology" class="level1">
-<h1>Methodology</h1>    
-    <h4> Target Population</h4>
-    <p>The target population consists of students enrolled in the STA304H5 course during the Fall 2024 semester.</p>
-
-    <h4>Sampling Method</h4>
-    <p>Between October 8th, 2024, and October 20th, 2024, the questionnaire’s Google Form link was posted on the STA304H5 Piazza course discussion board. We utilized simple random sampling by using the R random generator to randomly sample n students from the received questionnaire responses. On the questionnaire, we asked participants to complete 10 short answer questions inquiring about academic workload, average hours studied weekly, amounts of experienced stress-related symptoms (stress, anxiety, concentration difficulty), hours of sleep per night, current living situation and experienced common issues caused by academic workload (time management, social life, financial).</p>
-
-    <h4> Strata</h4>
-    <ul>
-        <li><strong>Academic workload</strong>: It can be specific to the number of assignments, projects, exams and finally the overall demands of the course. Therefore, the study based on academic workload tries to find out how different levels of workload are related to students’ mental health, including their level of stress. This will help to determine whether higher academic demands lead to increased mental health problems among students.</li>
-        <li><strong>Living Situation</strong>: This includes categories such as living alone, living with family, living with roommates or living on campus. This stratum is crucial as it can have a significant impact on students’ mental health and ability to cope with academic stress. Different living situations can influence factors such as social support, privacy and distractions. All of these can affect how students cope with academic demands and their overall well-being.</li>
-        <li><strong>Study Hours</strong>: This stratum is important to analyze because it reveals students’ study habits and effectiveness in managing their academic workload. By examining the relationship between study time and mental health symptoms, the study can show whether increased study time is related to reduced stress and anxiety, or whether it leads to exhaustion and increased mental health problems.</li>
-        <li><strong>Mental Health Symptoms (Stress, Anxiety and Concentration Difficulties)</strong>: These symptoms are important indicators of students’ mental health and can be influenced by a number of factors, including academic workload and living conditions. By assessing the occurrence and level of these symptoms, the study aims to understand how academic demands and external circumstances contribute to students’ overall mental health and well-being. This stratification helps to provide a comprehensive view of the mental health landscape among students, facilitating targeted interventions and support strategies.</li>
-    </ul>
-
-    <h4> Sample Size</h4>
-    <p>In our research, we applied Simple Random Sampling (SRS) on 200 students. Now, to find out the sample size using the bound of error as 0.25, from the formula for width of confidence interval D = B/4. Using the standard deviation of the academic workload variable, we computed the required sample size using the formula n = (N × c²) / ((N-1) × D² + c²). To randomize our sampling process, we used R’s random sampling function sample() with a fixed seed set.seed(1) to randomly select participants from the full dataset.</p>
-
-    <h4> Summary of Questions</h4>
-    <p>The survey will consist of a series of questions designed to capture key variables, including:</p>
-    <ul>
-        <li>Academic workload (measured in hours per week)</li>
-        <li>Quality and duration of sleep (self-reported)</li>
-        <li>Stress symptoms (using a standardized scale)</li>
-        <li>Living situation (on-campus, off-campus, with family, etc.)</li>
-        <li>Work-life balance (self-assessment of management skills)</li>
-    </ul>
+<h1>Methodology</h1>
+<p>Between October 8th, 2024, and October 20th, 2024, the questionnaire’s Google Form link was posted on the STA304H5 Piazza course discussion board. We utilized simple random sampling by using the R random generator to randomly sample n students from the received questionnaire responses. On the questionnaire, we asked participants to complete 10 short answer questions inquiring about academic workload, average hours studied weekly, amounts of experienced stress-related symptoms (stress, anxiety, concentration difficulty), hours of sleep per night, current living situation and experienced common issues caused by academic workload (time management, social life, financial).</p>
+<section id="target-population" class="level2">
+<h2 class="anchored" data-anchor-id="target-population">1. Target Population</h2>
+<p>The target population consists of students enrolled in the STA304H5 course during the Fall 2024 semester.</p>
+</section>
+<section id="sampling-method" class="level2">
+<h2 class="anchored" data-anchor-id="sampling-method">2. Sampling Method</h2>
+<p>We will use <strong>Simple Random Sampling (SRS)</strong> by combining both sections of the STA304H5 course and selecting a random sample of students from the pool. This method assures that each student has an equal chance of being selected.</p>
+</section>
+<section id="strata" class="level2">
+<h2 class="anchored" data-anchor-id="strata">3. Strata</h2>
+<p>The following strata were identified for the research:</p>
+<section id="academic-workload" class="level3">
+<h3 class="anchored" data-anchor-id="academic-workload">Academic Workload</h3>
+<p>Academic workload is defined by the number of assignments, projects, exams, and overall demands of the course. This study aims to determine whether higher academic demands are linked to increased mental health problems, such as stress.</p>
+</section>
+<section id="living-situation" class="level3">
+<h3 class="anchored" data-anchor-id="living-situation">Living Situation</h3>
+<p>This includes categories such as living alone, living with family, living with roommates, or living on campus. The living situation can significantly affect students’ mental health and their ability to cope with academic stress. Factors like social support, privacy, and distractions play a key role.</p>
+</section>
+<section id="study-hours" class="level3">
+<h3 class="anchored" data-anchor-id="study-hours">Study Hours</h3>
+<p>Study hours reflect students’ study habits and time management. This stratum analyzes whether more study hours correlate with reduced stress and anxiety or lead to exhaustion and increased mental health problems.</p>
+</section>
+<section id="mental-health-symptoms-stress-anxiety-and-concentration-difficulties" class="level3">
+<h3 class="anchored" data-anchor-id="mental-health-symptoms-stress-anxiety-and-concentration-difficulties">Mental Health Symptoms (Stress, Anxiety, and Concentration Difficulties)</h3>
+<p>These symptoms are key indicators of students’ mental health and may be influenced by academic workload and living conditions. Understanding these relationships helps target interventions and support strategies to improve students’ mental well-being.</p>
+</section>
+</section>
+<section id="sample-size" class="level2">
+<h2 class="anchored" data-anchor-id="sample-size">4. Sample Size</h2>
+<p>In our research, we applied Simple Random Sampling (SRS) on 200 students. Now, to find out the sample size using the bound of error as 0.25, we used the following formula for the width of confidence interval:</p>
+<p><span class="math display">\[
+D = \frac{B^2}{4}
+\]</span></p>
+<p>Where <span class="math inline">\(B = 0.25\)</span>, giving:</p>
+<p><span class="math display">\[
+D = \frac{(0.25)^2}{4} = 0.015625
+\]</span></p>
+<p>Using the standard deviation (<span class="math inline">\(\sigma\)</span>) of the academic workload variable, we computed the required sample size using the formula:</p>
+<p><span class="math display">\[
+n = \frac{N \times \sigma^2}{(N-1) \times D + \sigma^2}
+\]</span></p>
+<p>To randomize our sampling process, we used R’s random sampling function <code>sample()</code> with a fixed seed (<code>set.seed(1)</code>) to randomly select participants from the full dataset.</p>
+<section id="summary-of-questions" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-questions">5. Summary of Questions</h3>
+<p>The survey will consist of a series of questions designed to capture key variables, including:</p>
+<ul>
+<li>Academic workload (measured in hours per week)</li>
+<li>Quality and duration of sleep (self-reported)</li>
+<li>Stress symptoms (using a standardized scale)</li>
+<li>Living situation (on-campus, off-campus, with family, etc.)</li>
+<li>Work-life balance (self-assessment of management skills)</li>
+</ul>
+</section>
+</section>
 </section>
 <section id="analysis" class="level1">
 <h1>Analysis</h1>
-
-<p>
-  RQ1 questions if academic workload contributes to a student’s stress levels. To answer this question, ANOVA (analysis of variance) is used to test the difference in average stress levels  between students with different academic workloads. All our assumptions are satisfied as samples between the groups were randomly sampled and responses are independent from each other, data from each group is normally distributed (large sample size, n > 30) and variances are approximately the same (obtained p-value of  0.07758 from Barlett’s test, which is above the α = 0.05 significance level.)
-<br><br> Below, we include a table summary of the statistical test.
- <table>
-        <tr>
-            <th>Variable</th>
-            <th>Degrees of Freedom (DF)</th>
-            <th>Sum of Squares (SS)</th>
-            <th>Mean Square (MS)</th>
-            <th>F-value</th>
-            <th>Pr(&gt;F)</th>
-        </tr>
-        <tr>
-            <td>Academic Workload</td>
-            <td>3</td>
-            <td>4.145</td>
-            <td>1.3818</td>
-            <td>5.121</td>
-            <td>0.00483***</td>
-        </tr>
-        <tr>
-            <td>Residuals</td>
-            <td>35</td>
-            <td>9.444</td>
-            <td>0.2698</td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-    <br>
-    Since the calculated F-value of 5.121 is larger than the critical F-value of 2.874 at a 5% significance level with (3, 35) degrees of freedom, we reject the null hypothesis. 
-</p>
-
-<p>
-  <br>
-  RQ2 asks if academic workload affects a student’s student’s quality of sleep. To answer this question, ANOVA (analysis of variance) is used again to test the difference in average stress levels against students with different amounts of sleep. Once again all our assumptions are satisfied so we proceed with the test.
-  <table>
-    <tr>
-      <th>Variable</th>
-      <th>Degrees of Freedom (DF)</th>
-      <th>Sum of Squares (SS)</th>
-      <th>Mean Square (MS)</th>
-      <th>F-value</th>
-      <th>Pr(&gt;F)</th>
-    </tr>
-    <tr>
-      <td>sleep</td>
-      <td>2</td>
-      <td>0.103</td>
-      <td>0.05128</td>
-      <td>0.163</td>
-      <td>0.85</td>
-    </tr>
-    <tr>
-      <td>Residuals</td>
-      <td>36</td>
-      <td>11.333</td>
-      <td>0.31481</td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
-  <br>
-  Since the calculated F-value of 0.163 is smaller than the critical F-value of 3.259 at the 5% significance level with (2, 36) degrees of freedom, we fail to reject the null hypothesis. 
-</p>
-<p>
-  <br>
-  RQ3 determines if a student’s mental health is affected by their ability to keep a work-life balance. To answer this question, ANOVA (analysis of variance) is again used to test the difference in average stress levels between students who miss different amounts of social events. Again, all our assumptions are satisfied so we proceed with the test.
-  <table>
-    <tr>
-      <th>Variable</th>
-      <th>Degrees of Freedom (DF)</th>
-      <th>Sum of Squares (SS)</th>
-      <th>Mean Square (MS)</th>
-      <th>F-value</th>
-      <th>Pr(&gt;F)</th>
-    </tr>
-    <tr>
-      <td>missed_social_events</td>
-      <td><strong>4</strong></td>
-      <td><strong>1.302</strong></td>
-      <td><strong>0.3254</strong></td>
-      <td><strong>1.092</strong></td>
-      <td><strong>0.376</strong></td>
-    </tr>
-    <tr>
-      <td>Residuals</td>
-      <td><strong>34</strong></td>
-      <td><strong>10.134</strong></td>
-      <td><strong>0.2981</strong></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
-  <br>
-  Since the calculated F-value was 1.092 and this is less than the critical value, 2.629 (df=4, df=34). Therefore, we fail to reject the null hypothesis.
-</p>
+<section id="anova" class="level2">
+<h2 class="anchored" data-anchor-id="anova">ANOVA</h2>
+<p>RQ1 questions if academic workload contributes to a student’s stress levels. To answer this question, ANOVA (analysis of variance) is used to test the difference in average stress levels between students with different academic workloads. All our assumptions are satisfied as samples between the groups were randomly sampled and responses are independent from each other, data from each group is normally distributed (large sample size, n &gt; 30) and variances are approximately the same (obtained p-value of 0.07758 from Barlett’s test, which is above the α = 0.05 significance level.)</p>
+</section>
+</section>
+<section id="anova-between-stress-and-academic-workload" class="level1">
+<h1>ANOVA between stress and academic workload</h1>
+<table class="table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 22%">
+<col style="width: 19%">
+<col style="width: 16%">
+<col style="width: 8%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Degrees of Freedom (DF)</th>
+<th>Sum of Squares (SS)</th>
+<th>Mean Square (MS)</th>
+<th>F-value</th>
+<th>Pr(&gt;F)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>academic workload</td>
+<td>3</td>
+<td>3.136</td>
+<td>1.0455</td>
+<td>4.273</td>
+<td>0.0136</td>
+</tr>
+<tr class="even">
+<td>Residuals</td>
+<td>27</td>
+<td>6.605</td>
+<td>0.2446</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Since the calculated F-value of 5.121 is larger than the critical F-value of 2.874 at a 5% significance level with (3, 35) degrees of freedom, we reject the null hypothesis. Therefore, the <strong>student academic workload</strong> and <strong>levels of stress</strong> correlate at a statistically significant level. <strong>Therefore</strong>, variation in academic workload is significantly related to variation in stress.</p>
+</section>
+<section id="anova-between-stress-and-hours_sleep" class="level1">
+<h1>ANOVA between stress and hours_sleep</h1>
+<table class="table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 22%">
+<col style="width: 19%">
+<col style="width: 16%">
+<col style="width: 8%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Degrees of Freedom (DF)</th>
+<th>Sum of Squares (SS)</th>
+<th>Mean Square (MS)</th>
+<th>F-value</th>
+<th>Pr(&gt;F)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>sleep</td>
+<td>2</td>
+<td>1.242</td>
+<td>0.6210</td>
+<td>2.046</td>
+<td>0.148</td>
+</tr>
+<tr class="even">
+<td>Residuals</td>
+<td>28</td>
+<td>8.500</td>
+<td>0.3036</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Since the calculated F-value of 0.163 is smaller than the critical F-value of 3.259 at the 5% significance level with (2, 36) degrees of freedom, we fail to reject the null hypothesis. Therefore, there is no statistically significant correlation between <strong>hours of sleep</strong> and <strong>levels of stress</strong> among students. This suggests that variations in hours of sleep do not significantly relate to variations in stress levels.</p>
+</section>
+<section id="anova-between-stress-and-missed-social-events" class="level1">
+<h1>ANOVA between stress and missed social events</h1>
+<table class="table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 19%">
+<col style="width: 15%">
+<col style="width: 7%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Degrees of Freedom (DF)</th>
+<th>Sum of Squares (SS)</th>
+<th>Mean Square (MS)</th>
+<th>F-value</th>
+<th>Pr(&gt;F)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>missed_social_events</td>
+<td>4</td>
+<td>1.220</td>
+<td>0.3049</td>
+<td>0.93</td>
+<td>0.462</td>
+</tr>
+<tr class="even">
+<td>Residuals</td>
+<td>26</td>
+<td>8.522</td>
+<td>0.3278</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Since the calculated F-value was 1.092 and this is less than the critical value, 2.629 (df=4, df=34). Therefore, we fail to reject the null hypothesis. This means that <strong>stress levels</strong> and <strong>missed social events</strong> do not have a significant relationship.</p>
 </section>
 <section id="discussion-and-results" class="level1">
 <h1>Discussion and Results</h1>
+<p>ANOVA test between stress and academic workload has the calculated F-value of 5.121 is larger than the critical F-value of 2.874 at 5% significance level with (3, 35) degrees of freedom, we reject the null hypothesis. Therefore, the student academic workload and levels of stress correlate at a statistically significant level. Therefore, variation in academic workload is significantly related to variation in stress.</p>
+<p>ANOVA test between stress and hours_sleep has the calculated F -value of 0.163 is smaller than the critical F -value of 3.259 at the 5% significance level with (2, 36) degrees of freedom; we fail to reject the null hypothesis. Therefore, there is no statistically significant correlation between hours of sleep and levels of stress among students. This suggests that variations in hours of sleep do not significantly relate to variations in stress levels.</p>
+<p>ANOVA test between stress and missed social events has the calculated F-value was 1.092 and this is less than the critical value, 2.629 (df=4, df=34). Therefore, we fail to reject the null hypothesis. This means that stress levels and missed social events do not have a significant relationship.</p>
 <p>Overall, the results of the ANOVA tests show that the stress levels of the students sampled are primarily related to academic factors, with lifestyle factors such as sleep and socializing having less of an impact on their mental health than expected. In addition, this voluntary response method was likely to result in selection bias.</p>
 </section>
 
@@ -292,7 +324,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -324,50 +367,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -377,17 +381,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -399,130 +394,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -566,7 +438,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -592,32 +463,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -678,7 +523,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-
 
 
 
