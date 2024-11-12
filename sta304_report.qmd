@@ -131,68 +131,68 @@ Research Question 1 questions if there is a relationship between the academic wo
 # Chi Square Test between Academic Workload and Stress
 X-squared =25.936, df=6, p-value =0.0002288
 
-Since the calculated p-value was 0.0002288 and is less than a=0.05, we retain the null hypothesis. This means that the academic workload and the 
-stress levels of a student are unrelated.
+Since the calculated p-value was 0.0002288 and is less than a=0.05, we reject the null hypothesis. This means that the academic workload and the 
+stress levels of a student are related.
 
 # Chi Square Test between Academic Workload and Anxiety
 X-squared =14.113, df=6, p-value =0.0284
 
-Since the calculated p-value was 0.0284 and is less than a=0.05, we retain the null hypothesis. This means that the academic workload and the 
-anxiety levels of a student are unrelated.
+Since the calculated p-value was 0.0284 and is less than a=0.05, we reject the null hypothesis. This means that the academic workload and the 
+anxiety levels of a student are related.
 
 # Chi Square Test between Academic Workload and Concentration
 X-squared =6.5, df=6, p-value =0.3696
 
-Since the calculated p-value was 0.3696 and is greater than a=0.05, we reject the null hypothesis. This means that the academic workload and the 
-concentration levels of a student are related.
+Since the calculated p-value was 0.3696 and is greater than a=0.05, we retain the null hypothesis. This means that the academic workload and the 
+concentration levels of a student are not related.
 
 # Chi Square Test between Living Situation and Stress
 X-squared =4.9936, df=6, p-value =0.5446
 
-Since the calculated p-value was 0.5446 and is greater than a=0.05, we reject the null hypothesis. This means that the living situation and the 
-stress levels of a student are related.
+Since the calculated p-value was 0.5446 and is greater than a=0.05, we retain the null hypothesis. This means that the living situation and the 
+stress levels of a student are not related.
 
 # Chi Square Test between Living Situation and Anxiety
 X-squared =6.6042, df=6, p-value =0.359
 
-Since the calculated p-value was 0.359 and is greater than a=0.05, we reject the null hypothesis. This means that the living situation and the 
-anxiety levels of a student are related.
+Since the calculated p-value was 0.359 and is greater than a=0.05, we retain the null hypothesis. This means that the living situation and the 
+anxiety levels of a student are not related.
 
 # Chi Square Test between Living Situation and Concentration
 X-squared =2.8773, df=6, p-value =0.8241
 
-Since the calculated p-value was 0.8241 and is greater than a=0.05, we reject the null hypothesis. This means that the living situation and the 
-concentration levels of a student are related.
+Since the calculated p-value was 0.8241 and is greater than a=0.05, we retain the null hypothesis. This means that the living situation and the 
+concentration levels of a student are not related.
 
 # Chi Square Test between Time Management and Stress
 X-squared =10.894, df=8, p-value =0.2078
 
-Since the calculated p-value was 0.2078 and is greater than a=0.05, we reject the null hypothesis. This means that the time management skills and the stress levels of a student are related.
+Since the calculated p-value was 0.2078 and is greater than a=0.05, we retain the null hypothesis. This means that the time management skills and the stress levels of a student are not related.
 
 # Chi Square Test between Time Management and Anxiety
 X-squared =6.5567, df=8, p-value =0.5851
 
-Since the calculated p-value was 0.5851 and is greater than a=0.05, we reject the null hypothesis. This means that the time management skills and the anxiety levels of a student are related.
+Since the calculated p-value was 0.5851 and is greater than a=0.05, we retain the null hypothesis. This means that the time management skills and the anxiety levels of a student are not related.
 
 # Chi Square Test between Time Management and Concentration
 X-squared =9.3321, df=8, p-value =0.3151
 
-Since the calculated p-value was 0.3151 and is greater than a=0.05, we reject the null hypothesis. This means that the time management skills and the concentration levels of a student are related.
+Since the calculated p-value was 0.3151 and is greater than a=0.05, we retain the null hypothesis. This means that the time management skills and the concentration levels of a student are not related.
 
 # Chi Square Test between Financials and Stress
 X-squared =9.3321, df=8, p-value =0.7223
 
-Since the calculated p-value was 0.3151 and is greater than a=0.05, we reject the null hypothesis. This means that the financial situation and the stress levels of a student are related.
+Since the calculated p-value was 0.3151 and is greater than a=0.05, we retain the null hypothesis. This means that the financial situation and the stress levels of a student are not related.
 
 # Chi Square Test between Financials and Anxiety
 X-squared =5.3134, df=8, p-value =0.7236
 
-Since the calculated p-value was 0.7236 and is greater than a=0.05, we reject the null hypothesis. This means that the financial situation and the anxiety levels of a student are related.
+Since the calculated p-value was 0.7236 and is greater than a=0.05, we retain the null hypothesis. This means that the financial situation and the anxiety levels of a student are not related.
 
 # Chi Square Test between Financials and Concentration
 X-squared =6.1471, df=8, p-value =0.6308
 
-Since the calculated p-value was 0.6308 and is greater than a=0.05, we reject the null hypothesis. This means that the financial situation and the concentration levels of a student are related.
+Since the calculated p-value was 0.6308 and is greater than a=0.05, we retain the null hypothesis. This means that the financial situation and the concentration levels of a student are not related.
 
 
 # Discussion and Results
@@ -205,13 +205,13 @@ ANOVA test between stress and hours_sleep has the calculated F-value of 0.163 is
 
 ANOVA test between stress and missed social events has the calculated F-value was 1.092 and this is less than the critical value, 2.629 (df=4, df=34). Therefore, we fail to reject the null hypothesis. This means that stress levels and missed social events do not have a significant relationship.
 
-For the chi square tests of independence bewteen academic workload and stress, anxiety, the respective p values are 0.0002288 and 0.0284 which are both less than the alpha a=0.05, so we retain the null hypothesis. For the chi square tests of indpendence between academic workload and concentration, the p value is 0.3696, which is greater than the alpha a=0.05, therefore we reject the null hypothesis. This suggests that a student's academic workload has an effect on their concentration but not their stress or anxiety. 
+For the chi square tests of independence bewteen academic workload and stress, anxiety, the respective p values are 0.0002288 and 0.0284 which are both less than the alpha a=0.05, so we reject the null hypothesis. For the chi square tests of indpendence between academic workload and concentration, the p value is 0.3696, which is greater than the alpha a=0.05, therefore we retain the null hypothesis. This suggests that a student's academic workload has an effect on their stress and anxiety but not their concentration. 
 
-Chi square tests between students' living situation and their stress, anxiety and concentration yield p values of 0.5446, 0.359, and 0.8241 respectively. All of these p values are greater than the alpha a=0.05, therefore we reject the null hypothesis for all three of these chi square tests. This means that the living situation of a student has some effect on their stress, anxiety and concentration. 
+Chi square tests between students' living situation and their stress, anxiety and concentration yield p values of 0.5446, 0.359, and 0.8241 respectively. All of these p values are greater than the alpha a=0.05, therefore we retain the null hypothesis for all three of these chi square tests. This means that the living situation of a student has no relationship with their stress, anxiety and concentration levels. 
 
-Chi square tests between students' time management skills and their stress, anxiety and concentration yield p values of 0.2078, 0.5851, and 0.3151 respectively. All of these p values are greater than the alpha a=0.05, therefore we reject the null hypothesis for all three of these chi square tests. This means that a student's ability to manage their time has some effect on their stress, anxiety and concentration. 
+Chi square tests between students' time management skills and their stress, anxiety and concentration yield p values of 0.2078, 0.5851, and 0.3151 respectively. All of these p values are greater than the alpha a=0.05, therefore we retain the null hypothesis for all three of these chi square tests. This means that a student's ability to manage their time has no relationship with their stress, anxiety and concentration levels. 
 
-Chi square tests between students' financials and their stress, anxiety and concentration yield p values of 0.7223, 0.7236, and 0.6308 respectively. All of these p values are greater than the alpha a=0.05, therefore we reject the null hypothesis for all three of these chi square tests. This means that a student's financial situation has some effect on their stress, anxiety and concentration. 
+Chi square tests between students' financials and their stress, anxiety and concentration yield p values of 0.7223, 0.7236, and 0.6308 respectively. All of these p values are greater than the alpha a=0.05, therefore we retain the null hypothesis for all three of these chi square tests. This means that a student's financial situation has no relationship with their stress, anxiety and concentration levels. 
 
-Overall, the results of this study show that stress among college students is primarily related to academic factors, with lifestyle factors such as sleep and socializing having less of an impact than expected.
+Overall, the results of this study show that stress and anxiety among university students is primarily related to academic factors, with lifestyle factors such as sleep and socializing having less of an impact than expected.
 
