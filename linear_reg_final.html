@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -139,62 +105,41 @@ window.Quarto = {
 </header>
 
 
-<p>Generate Sample</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">'STA304 Group Project Dataset.csv'</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">','</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># my_data</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove the column 'X'</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>data_cleaned <span class="ot">&lt;-</span> my_data[, <span class="sc">!</span>(<span class="fu">names</span>(my_data) <span class="sc">==</span> <span class="st">"X"</span>)]</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove fake responses: rows 3 and 12</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>data_cleaned <span class="ot">&lt;-</span> data_cleaned[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">12</span>),]</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># data_cleaned</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating sample size</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> <span class="dv">200</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>B <span class="ot">=</span> .<span class="dv">29</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>D <span class="ot">=</span> (B<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span><span class="dv">4</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># sigma = sd(data_cleaned$academic_workload)</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>sigma2 <span class="ot">=</span> (<span class="fu">max</span>(data_cleaned<span class="sc">$</span>academic_workload) <span class="sc">-</span> <span class="fu">min</span>(data_cleaned<span class="sc">$</span>academic_workload))<span class="sc">/</span><span class="dv">4</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># n = ceiling((N*sigma^2) / ((N-1)*D + sigma^2))</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="fu">ceiling</span>((N<span class="sc">*</span>sigma2) <span class="sc">/</span> ((N<span class="dv">-1</span>)<span class="sc">*</span>D <span class="sc">+</span> sigma2))</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># sigma2</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 39</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select a random sample of n rows</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>random_indices <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data_cleaned), n)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>sample_data <span class="ot">&lt;-</span> data_cleaned[random_indices, ]</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># sample_data</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(sample_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <section id="analysis" class="level1">
 <h1>4. Analysis</h1>
-<p>Section 3. Simple and Multiple Linear Regressions This part of the analysis focuses on applying linear regression to address the three research questions outlined in the introduction. We will explore whether there is a relationship between students’ academic workload and the prevalence of mental health issues; between academic workload, the amount of sleep students get, and its impact on mental health; and finally, between mental health, students’ living situations, and their ability to maintain a work-life balance. All of these relationships were found to be statistically significant!</p>
-<p>In what follows, the three research questions will be investigated for any statistically significant results.</p>
+<section id="section-3.-simple-and-multiple-linear-regressions" class="level2">
+<h2 class="anchored" data-anchor-id="section-3.-simple-and-multiple-linear-regressions">Section 3. Simple and Multiple Linear Regressions</h2>
+<p>This part of the analysis focuses on applying linear regression to address the three research questions outlined in the introduction. We will explore whether there is a relationship between students’ academic workload and the prevalence of mental health issues; between academic workload, the amount of sleep students get, and its impact on mental health; and finally, between mental health, students’ living situations, and their ability to maintain a work-life balance. All of these relationships were found to be statistically significant!</p>
+</section>
 <section id="research-question-1" class="level2">
 <h2 class="anchored" data-anchor-id="research-question-1">Research Question 1</h2>
 <section id="a.-relevant-graphs-tables" class="level3">
-<h3 class="anchored" data-anchor-id="a.-relevant-graphs-tables">a. Relevant graphs &amp; tables</h3>
+<h3 class="anchored" data-anchor-id="a.-relevant-graphs-tables">a. Relevant Graphs &amp; Tables</h3>
 <p>Research Question 1 is concerned with determining whether there is a relationship between students’ academic workload and the prevalence of mental health issues in students. To answer this question, we start by plotting a boxplot of academic workload by stress level. This plot suggests that higher stress levels are associated with a higher academic workload. On average, students who “Always” or “Sometimes” feel stressed tend to have a higher workload than those who “Never” feel stressed.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="boxplot_academic_workload_by_stress.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Boxplot of Academic Workload by Stress Level</figcaption>
+<p><img src="linear_reg_final_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
+</div>
+</div>
+<!-- ![Boxplot of Academic Workload by Stress Level](boxplot_academic_workload_by_stress.png){width=80%} -->
 </section>
-<section id="c.-necessary-assumptions" class="level3">
-<h3 class="anchored" data-anchor-id="c.-necessary-assumptions">c.&nbsp;Necessary Assumptions</h3>
+<section id="b.-necessary-assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="b.-necessary-assumptions">b. Necessary Assumptions</h3>
 <p>To confirm this association, we implement a simple linear regression model, where the dependent variable is stress_numeric (the stress variable, converted to numeric values), and the independent variable is academic_workload. To implement this model, we check the following assumptions using the following plot of the residuals:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="residuals_rq1.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Residuals Plot</figcaption>
+<p><img src="linear_reg_final_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
+</div>
+</div>
+<!-- ![Residuals Plot](residuals_rq1.png){width=80%} -->
 <ol type="1">
 <li>Independence of errors: Since the plot has no noticable pattern, the independence assumption is satisfied.</li>
 <li>Normality of errors: Since our sample size is sufficiently large, by the Central Limit Theorem the sample mean (and by extension, the sampling distribution of residuals) approximately follows a Normal distribution.</li>
@@ -202,112 +147,272 @@ window.Quarto = {
 </ol>
 <p>Since all the assumptions are met, we run the regression using the code in Appendix B.</p>
 </section>
-<section id="d.-computation-and-statistical-test-output" class="level3">
-<h3 class="anchored" data-anchor-id="d.-computation-and-statistical-test-output">d.&nbsp;Computation and statistical test output</h3>
+<section id="c.-computation-and-statistical-test-output" class="level3">
+<h3 class="anchored" data-anchor-id="c.-computation-and-statistical-test-output">c.&nbsp;Computation and Statistical Test Output</h3>
 <p>The regression analysis produced the following results:</p>
-<ul>
-<li>Intercept: <span class="math inline">\(\beta_0 = 1.22389\quad (SE = 0.40942,\quad t = 2.989,\quad p = 0.00495)\)</span>.</li>
-<li>Slope: <span class="math inline">\(\beta_1 = 0.32655\quad (SE = 0.09945,\quad t = 3.284,\quad p = 0.00224)\)</span>.</li>
-</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 17%">
+<col style="width: 14%">
+<col style="width: 13%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statistic</th>
+<th>Estimate</th>
+<th>SE</th>
+<th>t-value</th>
+<th>p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intercept (<span class="math inline">\(\beta_0\)</span>)</td>
+<td>1.22389</td>
+<td>0.40942</td>
+<td>2.989</td>
+<td>0.00495</td>
+</tr>
+<tr class="even">
+<td>Slope (<span class="math inline">\(\beta_1\)</span>)</td>
+<td>0.32655</td>
+<td>0.09945</td>
+<td>3.284</td>
+<td>0.00224</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <p>The residual standard error is 0.5353 with 37 degrees of freedom. The <span class="math inline">\(R^2\)</span> value is 0.2256, and the F-statistic is <span class="math inline">\(F(1, 37) = 10.78\)</span>, with a p-value of <span class="math inline">\(0.002\)</span>.</p>
 <p>The equation of the regression line is given by: <span class="math display">\[
 \text{Stress} = 1.22389 + 0.32655 \cdot \text{Academic Workload}
 \]</span></p>
 </section>
-<section id="e.-interpretation" class="level3">
-<h3 class="anchored" data-anchor-id="e.-interpretation">e. Interpretation</h3>
+<section id="d.-interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="d.-interpretation">d.&nbsp;Interpretation</h3>
 <p>The small <span class="math inline">\(p-value = 0.00224\)</span> indicates that academic workload is a significant predictor of stress. Therefore, we can conclude that there is a significant relationship between students academic workload and their stress levels.</p>
 </section>
 </section>
-</section>
-<section id="section" class="level1">
-<h1># # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #</h1>
 <section id="research-question-2" class="level2">
 <h2 class="anchored" data-anchor-id="research-question-2">Research Question 2</h2>
 <section id="a.-relevant-graphs-tables-1" class="level3">
-<h3 class="anchored" data-anchor-id="a.-relevant-graphs-tables-1">a. Relevant graphs &amp; tables</h3>
+<h3 class="anchored" data-anchor-id="a.-relevant-graphs-tables-1">a. Relevant Graphs &amp; Tables</h3>
 <p>Research Question 2 investigates whether there is a relationship between students’ academic workload, the amount of sleep they get, and impact on mental health. Since the ANOVA above showed no significant relationship between stress and hours of sleep, we investigate the effect of another factor, the number of missed social events.To begin, we plot a boxplot of hours of sleep by the number of missed social events. This plot suggests students who miss more social events tend to have fewer hours of sleep on average.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="boxplot_hours_sleep_by_missed_social_events.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Boxplot of Hours Sleep by Missed Social Events</figcaption>
+<p><img src="linear_reg_final_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
+</div>
+</div>
+<!-- ![Boxplot of Hours Sleep by Missed Social Events](boxplot_hours_sleep_by_missed_social_events.png){width=80%} -->
 </section>
-<section id="c.-necessary-assumptions-1" class="level3">
-<h3 class="anchored" data-anchor-id="c.-necessary-assumptions-1">c.&nbsp;Necessary Assumptions</h3>
+<section id="b.-necessary-assumptions-1" class="level3">
+<h3 class="anchored" data-anchor-id="b.-necessary-assumptions-1">b. Necessary Assumptions</h3>
 <p>To assess this relationship, we use a multiple linear regression model with hours of sleep as the dependent variable, and academic workload and missed social events as the independent variables. Before interpreting this model, we check the following assumptions:</p>
-<p><img src="residuals_rq2.png" class="img-fluid" style="width:80.0%" alt="Residuals Plot"> <img src="qq_rq2.png" class="img-fluid" style="width:80.0%" alt="QQ Plot"></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="linear_reg_final_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="linear_reg_final_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<!-- ![Residuals Plot](residuals_rq2.png){width=80%}
+![QQ Plot](qq_rq2.png){width=80%} -->
 <ol type="1">
 <li>Independence of errors: The residual plot shown above indicates no clear patterns, which suggests independence.</li>
-<li>Normality of errors: Since the sample size is large, the Central Limit Theorem implies that the residuals should approximate a normal distribution. Also, a QQ-plot confirms Normality.</li>
+<li>Normality of errors: Since the sample size is large, the Central Limit Theorem implies that the residuals should approximate a normal distribution. Also, a QQ-plot confirms approximate normality.</li>
 <li>Homogeneity of variances: The residuals plot exhibits a roughly horizontal band, indicating constant variance across predicted values.</li>
-<li>No multi-collinearity: We calculated the VIF of each independent variable, and found that <span class="math inline">\(VIF(academic\_workload) = 1.076844\)</span>, and <span class="math inline">\(VIF(missed\_social\_events) = 1.076844\)</span>. Since they are both less than 5,this indicates there is little correlation between them.</li>
+<li>No multi-collinearity: We calculated the VIF of each independent variable, and found that <span class="math inline">\(VIF(\text{academic\_workload}) = 1.076844\)</span>, and <span class="math inline">\(VIF(\text{missed\_social\_events}) = 1.076844\)</span>. Since they are both less than 5,this indicates there is little correlation between them.</li>
 </ol>
 <p>With all assumptions adequately met, we proceed with the regression analysis. The code used to generate the model can be found in Appendix B.</p>
 </section>
-<section id="d.-computation-and-statistical-test-output-1" class="level3">
-<h3 class="anchored" data-anchor-id="d.-computation-and-statistical-test-output-1">d.&nbsp;Computation and statistical test output</h3>
+<section id="c.-computation-and-statistical-test-output-1" class="level3">
+<h3 class="anchored" data-anchor-id="c.-computation-and-statistical-test-output-1">c.&nbsp;Computation and Statistical Test Output</h3>
 <p>The regression analysis produced the following results:</p>
-<ul>
-<li>Intercept: <span class="math inline">\(\beta_0 =  8.5521\quad (SE = 0.6661,\quad t = 12.838,\quad p = 5.3e^{-15})\)</span>.</li>
-<li>Slope 1: <span class="math inline">\(\beta_1 = -0.1412\quad (SE = 0.1666,\quad t = -0.848,\quad p = 0.40208)\)</span>.</li>
-<li>Slope 2: <span class="math inline">\(\beta_2 = -0.3763\quad (SE = 0.1194,\quad t = -3.151,\quad p = 0.00327)\)</span>.</li>
-</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 17%">
+<col style="width: 14%">
+<col style="width: 13%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statistic</th>
+<th>Estimate</th>
+<th>SE</th>
+<th>t-value</th>
+<th>p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intercept (<span class="math inline">\(\beta_0\)</span>)</td>
+<td>8.5521</td>
+<td>0.6661</td>
+<td>12.838</td>
+<td><span class="math inline">\(5.3 \times 10^{-15}\)</span></td>
+</tr>
+<tr class="even">
+<td>Slope 1 (<span class="math inline">\(\beta_1\)</span>)</td>
+<td>-0.1412</td>
+<td>0.1666</td>
+<td>-0.848</td>
+<td>0.40208</td>
+</tr>
+<tr class="odd">
+<td>Slope 2 (<span class="math inline">\(\beta_2\)</span>)</td>
+<td>-0.3763</td>
+<td>0.1194</td>
+<td>-3.151</td>
+<td>0.00327</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <p>The residual standard error is 0.864 with 36 degrees of freedom. The <span class="math inline">\(R^2\)</span> value is 0.2653, the adjusted <span class="math inline">\(R^2\)</span> is 0.2245, and the F-statistic is <span class="math inline">\(F(2, 36) = 6.5\)</span>, with a p-value of <span class="math inline">\(0.003889\)</span>.</p>
 <p>The equation of the regression line is given by: <span class="math display">\[
 \text{Hours of Sleep} = 8.5521 − 0.1412 \cdot \text{Academic Workload} - 0.3763 \cdot \text{Missed Social Events}
 \]</span></p>
 </section>
-<section id="e.-interpretation-1" class="level3">
-<h3 class="anchored" data-anchor-id="e.-interpretation-1">e. Interpretation</h3>
+<section id="d.-interpretation-1" class="level3">
+<h3 class="anchored" data-anchor-id="d.-interpretation-1">d.&nbsp;Interpretation</h3>
 <p>The output of the regression analysis shows that the missed social events has a statistically significant negative association with hours of sleep (p = 0.00327). However, academic workload does not have a significant relationship with hours of sleep (p = 0.40208).</p>
 </section>
 </section>
-</section>
-<section id="section-1" class="level1">
-<h1># # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #</h1>
 <section id="research-question-3" class="level2">
 <h2 class="anchored" data-anchor-id="research-question-3">Research Question 3</h2>
 <section id="a.-relevant-graphs-tables-2" class="level3">
-<h3 class="anchored" data-anchor-id="a.-relevant-graphs-tables-2">a. Relevant graphs &amp; tables</h3>
+<h3 class="anchored" data-anchor-id="a.-relevant-graphs-tables-2">a. Relevant Graphs &amp; Tables</h3>
 <p>Research Question 3 examines whether mental health, represented by stress levels, is affected by students’ living situations and their ability to maintain a work-life balance. To explore this relationship, we first plot a boxplot of stress level by missed social events, with students grouped by stress categories (“Always,” “Never,” and “Sometimes”). This plot suggests that students who miss social events “Always” or “Sometimes” have higher stress levels, while those who “Never” miss social events report lower stress levels.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="boxplot_missed_social_events_by_stress.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Boxplot of Missed Social Events by Stress</figcaption>
+<p><img src="linear_reg_final_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
 </figure>
 </div>
+</div>
+</div>
+<!-- ![Boxplot of Missed Social Events by Stress](boxplot_missed_social_events_by_stress.png){width=80%} -->
 </section>
-<section id="c.-necessary-assumptions-2" class="level3">
-<h3 class="anchored" data-anchor-id="c.-necessary-assumptions-2">c.&nbsp;Necessary Assumptions</h3>
+<section id="b.-necessary-assumptions-2" class="level3">
+<h3 class="anchored" data-anchor-id="b.-necessary-assumptions-2">b. Necessary Assumptions</h3>
 <p>To investigate the impact of missed social events and living situations on stress, we use a multiple linear regression model. The response variable is stress (in numeric form), and the predictors are missed social events and living situation. We verify the following assumptions:</p>
-<p><img src="residuals_rq3.png" class="img-fluid" style="width:80.0%" alt="Residuals Plot"> <img src="qq_rq2.png" class="img-fluid" style="width:80.0%" alt="QQ Plot"></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="linear_reg_final_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="linear_reg_final_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<!-- ![Residuals Plot](residuals_rq3.png){width=80%}
+![QQ Plot](qq_rq3.png){width=80%} -->
 <ol type="1">
 <li>Independence of errors: The residual plot indicates no clear patterns, suggesting that the errors are independent.</li>
-<li>Normality of errors: Since the sample size is large, the Central Limit Theorem implies that the residuals should approximate a normal distribution. Also, a QQ-plot confirms Normality.</li>
+<li>Normality of errors: Since the sample size is large, the Central Limit Theorem implies that the residuals should approximate a normal distribution. Also, a QQ-plot confirms approximate normality.</li>
 <li>Homogeneity of variances: The residuals plot exhibits a roughly horizontal band, indicating constant variance across predicted values.</li>
-<li>No multi-collinearity: We calculated the VIF of each independent variable, and found that <span class="math inline">\(VIF(missed\_social\_events) = 1.009045\)</span>, and <span class="math inline">\(VIF(living\_situation) = 1.003006\)</span>. Since both VIF values are close to 1, there’s no indication of multicollinearity in this model.</li>
+<li>No multi-collinearity: We calculated the VIF of each independent variable, and found that <span class="math inline">\(VIF(\text{missed\_social\_events}) = 1.009045\)</span>, and <span class="math inline">\(VIF(\text{living\_situation}) = 1.003006\)</span>. Since both VIF values are close to 1, there’s no indication of multicollinearity in this model.</li>
 </ol>
 <p>With all assumptions adequately met, we proceed with the regression analysis. The code used to generate the model can be found in Appendix B.</p>
 </section>
-<section id="d.-computation-and-statistical-test-output-2" class="level3">
-<h3 class="anchored" data-anchor-id="d.-computation-and-statistical-test-output-2">d.&nbsp;Computation and statistical test output</h3>
+<section id="c.-computation-and-statistical-test-output-2" class="level3">
+<h3 class="anchored" data-anchor-id="c.-computation-and-statistical-test-output-2">c.&nbsp;Computation and Statistical Test Output</h3>
 <p>The regression analysis produced the following results:</p>
-<ul>
-<li>Intercept: <span class="math inline">\(\beta_0 = 1.93006\quad (SE = 0.27980,\quad t = 6.898,\quad p = 6.02e^{-08})\)</span>.</li>
-<li>Slope 1: <span class="math inline">\(\beta_1 = 0.15560\quad (SE = 0.07721,\quad t = 2.015,\quad p = 0.0518)\)</span>.</li>
-<li>Slope 2: <span class="math inline">\(\beta_2 = 0.81061\quad (SE = 0.39928,\quad t = 2.030,\quad p = 0.0502)\)</span>.</li>
-<li>Slope 3: <span class="math inline">\(\beta_2 = 0.21206\quad (SE = 0.28310,\quad t = 0.749,\quad p = 0.4590)\)</span>.</li>
-<li>Slope 4: <span class="math inline">\(\beta_2 = 0.30493\quad (SE = 0.25406,\quad t = 1.200,\quad p = 0.2383)\)</span>.</li>
-</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 17%">
+<col style="width: 14%">
+<col style="width: 13%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statistic</th>
+<th>Estimate</th>
+<th>SE</th>
+<th>t-value</th>
+<th>p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intercept (<span class="math inline">\(\beta_0\)</span>)</td>
+<td>1.93006</td>
+<td>0.27980</td>
+<td>6.898</td>
+<td><span class="math inline">\(6.02 \times 10^{-8}\)</span></td>
+</tr>
+<tr class="even">
+<td>Slope 1 (<span class="math inline">\(\beta_1\)</span>)</td>
+<td>0.15560</td>
+<td>0.07721</td>
+<td>2.015</td>
+<td>0.0518</td>
+</tr>
+<tr class="odd">
+<td>Slope 2 (<span class="math inline">\(\beta_2\)</span>)</td>
+<td>0.81061</td>
+<td>0.39928</td>
+<td>2.030</td>
+<td>0.0502</td>
+</tr>
+<tr class="even">
+<td>Slope 3 (<span class="math inline">\(\beta_3\)</span>)</td>
+<td>0.21206</td>
+<td>0.28310</td>
+<td>0.749</td>
+<td>0.4590</td>
+</tr>
+<tr class="odd">
+<td>Slope 4 (<span class="math inline">\(\beta_4\)</span>)</td>
+<td>0.30493</td>
+<td>0.25406</td>
+<td>1.200</td>
+<td>0.2383</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <p>The residual standard error is 0.5745 with 34 degrees of freedom. The <span class="math inline">\(R^2\)</span> value is 0.1806, the adjusted <span class="math inline">\(R^2\)</span> value is 0.08416, and the F-statistic is <span class="math inline">\(F(4, 34) = 1.873\)</span>, with a p-value of <span class="math inline">\(0.1378\)</span>.</p>
 <p>The equation of the regression line is given by: <span class="math display">\[
-\text{Stress} = 1.93006 + 0.15560 \cdot \text{Missed Social Events} + 0.81061 \cdot \text{Living On Campus} + 0.21206 \cdot \text{Living With Family} + 0.30493 \cdot \text{Living With Roomates}
+\begin{array}{lllllll}
+\text{Stress} &amp;=&amp; 1.93006 &amp;+&amp; 0.15560 \cdot \text{Missed Social Events} &amp;+&amp; 0.81061 \cdot \text{Living On Campus} \\
+              &amp; &amp;         &amp;+&amp; 0.21206 \cdot \text{Living With Family}   &amp;+&amp; 0.30493 \cdot \text{Living With Roommates}
+\end{array}
 \]</span></p>
 </section>
-<section id="e.-interpretation-2" class="level3">
-<h3 class="anchored" data-anchor-id="e.-interpretation-2">e. Interpretation</h3>
+<section id="d.-interpretation-2" class="level3">
+<h3 class="anchored" data-anchor-id="d.-interpretation-2">d.&nbsp;Interpretation</h3>
 <p>The results indicate that missed social events are a marginally significant predictor of stress levels (p = 0.0518). Living situation, specifically living on campus, is also a marginally significant predictor (p = 0.0502). However, living with family (p = 0.4590) and living with roommates (p = 0.2383) do not significantly predict stress.</p>
 </section>
 </section>
@@ -319,255 +424,8 @@ window.Quarto = {
 </section>
 <section id="conclusion" class="level1">
 <h1>7. Conclusion</h1>
-<p>LINEAR REGRESSION CONCLUSION ONLYs The linear regression analysis conducted for the three research questions of this study provides valuable insights into the factors affecting student stress and mental health. For Research Question 1, we found a significant positive relationship between academic workload and stress levels, suggesting that students with heavier workloads tend to experience higher levels of stress. In Research Question 2, while academic workload did not significantly impact the amount of sleep, missed social events were found to significantly reduce hours of sleep, which may contribute to poor mental health. For Research Question 3, missed social events and living situation were marginally significant predictors of stress, indicating that students who miss social events or live on campus tend to report higher stress levels. These findings highlight the importance of considering multiple factors in understanding a student’s overall well-being. However, the limitations of this analysis, including potential issues with sample randomization and measurement quality, should be addressed in future research to enhance the robustness and accuracy of the results. Future studies should also explore other possible variables, such as social support and coping mechanisms, which may further explain the mental health challenges faced by students.</p>
-<p>TODO - Explain how the random sample was chosen - Include explanation for removing outliers - Move R code into same file -</p>
-</section>
-<section id="appendix-b" class="level1">
-<h1>Appendix B</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Research Question 1 - Boxplot</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.4.2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sample_data$stress &lt;- factor(sample_data$stress, levels = c("Never", "Sometimes", "Always"))</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot_plot &lt;- ggplot(sample_data, aes(x = factor(stress), y = academic_workload)) +</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   geom_boxplot(fill = "#56B4E9", color = "black") +</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   labs(title = "Boxplot of Academic Workload by Stress Level",</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#        x = "Stress Level",</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#        y = "Academic Workload") +</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#   theme_minimal()</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>sample_data<span class="sc">$</span>stress <span class="ot">&lt;-</span> <span class="fu">factor</span>(sample_data<span class="sc">$</span>stress, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Never"</span>, <span class="st">"Sometimes"</span>, <span class="st">"Always"</span>))</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>boxplot_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sample_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(stress), <span class="at">y =</span> academic_workload, <span class="at">fill =</span> stress)) <span class="sc">+</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Never"</span> <span class="ot">=</span> <span class="st">"#E25C5C"</span>, <span class="st">"Sometimes"</span> <span class="ot">=</span> <span class="st">"#66B266"</span>, <span class="st">"Always"</span> <span class="ot">=</span> <span class="st">"#6C8B8B"</span>)) <span class="sc">+</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Boxplot of Academic Workload by Stress Level"</span>,</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Stress Level"</span>,</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Academic Workload"</span>) <span class="sc">+</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(boxplot_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="linear_reg_final_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the plot as a PNG file</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"boxplot_academic_workload_by_stress.png"</span>, <span class="at">plot =</span> boxplot_plot, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">6</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Research Question 1 - Simple Linear Regression</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sample_data<span class="sc">$</span>stress_numeric <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">factor</span>(sample_data<span class="sc">$</span>stress, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Never"</span>, <span class="st">"Sometimes"</span>, <span class="st">"Always"</span>)))</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>rq1_stress.lm <span class="ot">=</span> <span class="fu">lm</span>(stress_numeric <span class="sc">~</span> academic_workload, <span class="at">data =</span> sample_data)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rq1_stress.lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = stress_numeric ~ academic_workload, data = sample_data)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--1.5301 -0.3668  0.1434  0.4699  0.7965 
-
-Coefficients:
-                  Estimate Std. Error t value Pr(&gt;|t|)   
-(Intercept)        1.22389    0.40942   2.989  0.00495 **
-academic_workload  0.32655    0.09945   3.284  0.00224 **
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.5353 on 37 degrees of freedom
-Multiple R-squared:  0.2256,    Adjusted R-squared:  0.2047 
-F-statistic: 10.78 on 1 and 37 DF,  p-value: 0.002245</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assumptions for Research Question 1 - Simple Linear Regression</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="st">"residuals_rq1.png"</span>, <span class="at">width =</span> <span class="dv">800</span>, <span class="at">height =</span> <span class="dv">600</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot code goes here, for example:</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">residuals</span>(rq1_stress.lm))</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>png 
-  2 </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Research Question 2 - Boxplot</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot_plot &lt;- ggplot(sample_data, aes(x = factor(missed_social_events), y = hours_sleep)) +</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   geom_boxplot(fill = "#56B4E9", color = "black") +  # Customize the colors if desired</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   labs(title = "Boxplot of Hours of Sleep by Missed Social Events",</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#        x = "Missed Social Events",</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#        y = "Hours of Sleep") +</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#   theme_minimal()</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>boxplot_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sample_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(missed_social_events), <span class="at">y =</span> hours_sleep, <span class="at">fill =</span> <span class="fu">factor</span>(missed_social_events))) <span class="sc">+</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"0"</span> <span class="ot">=</span> <span class="st">"#E25C5C"</span>, <span class="st">"1"</span> <span class="ot">=</span> <span class="st">"#66B266"</span>, <span class="st">"2"</span> <span class="ot">=</span> <span class="st">"#6C8B8B"</span>, <span class="st">"3"</span> <span class="ot">=</span> <span class="st">"#9E9E9E"</span>, <span class="st">"4"</span> <span class="ot">=</span> <span class="st">"#D0A0A0"</span>)) <span class="sc">+</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Boxplot of Hours of Sleep by Missed Social Events"</span>,</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Missed Social Events"</span>,</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Hours of Sleep"</span>) <span class="sc">+</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(boxplot_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="linear_reg_final_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the plot as a PNG file</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ggsave("boxplot_hours_sleep_by_missed_social_events.png", plot = boxplot_plot, width = 8, height = 6, dpi = 300)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Research Question 2 - Multiple Linear Regression</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>rq2.lm <span class="ot">=</span> <span class="fu">lm</span>(hours_sleep <span class="sc">~</span> academic_workload <span class="sc">+</span> missed_social_events, <span class="at">data =</span> sample_data)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rq2.lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = hours_sleep ~ academic_workload + missed_social_events, 
-    data = sample_data)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--1.37588 -0.54906 -0.09342  0.60662  2.53031 
-
-Coefficients:
-                     Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)            8.5521     0.6661  12.838  5.3e-15 ***
-academic_workload     -0.1412     0.1666  -0.848  0.40208    
-missed_social_events  -0.3763     0.1194  -3.151  0.00327 ** 
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.864 on 36 degrees of freedom
-Multiple R-squared:  0.2653,    Adjusted R-squared:  0.2245 
-F-statistic:   6.5 on 2 and 36 DF,  p-value: 0.003889</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assumptions for Research Question 2 - Multiple Linear Regression</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="st">"residuals_rq2.png"</span>, <span class="at">width =</span> <span class="dv">800</span>, <span class="at">height =</span> <span class="dv">600</span>)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot code goes here, for example:</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">residuals</span>(rq2.lm))</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>png 
-  2 </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assumptions for Research Question 2 - Multiple Linear Regression</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="st">"qq_rq2.png"</span>, <span class="at">width =</span> <span class="dv">800</span>, <span class="at">height =</span> <span class="dv">600</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot code goes here, for example:</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(rq2.lm, <span class="at">which=</span><span class="dv">2</span>)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>png 
-  2 </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assumptions for Research Question 2 - Multiple Linear Regression</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'car' was built under R version 4.4.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: carData</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'carData' was built under R version 4.4.2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(rq2.lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   academic_workload missed_social_events 
-            1.076844             1.076844 </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Research Question 3 - Boxplot</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># boxplot_plot &lt;- ggplot(sample_data, aes(x = factor(missed_social_events), y = stress_numeric)) +</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   geom_boxplot(fill = "#56B4E9", color = "black") +</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   labs(title = "Boxplot of Missed Social Events by Stress Level",</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co">#        x = "Missed Social Events",</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co">#        y = "Stress Level") +</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co">#   theme_minimal()</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>boxplot_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(sample_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(missed_social_events), <span class="at">y =</span> stress_numeric, <span class="at">fill =</span> <span class="fu">factor</span>(missed_social_events))) <span class="sc">+</span></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"0"</span> <span class="ot">=</span> <span class="st">"#E25C5C"</span>, <span class="st">"1"</span> <span class="ot">=</span> <span class="st">"#66B266"</span>, <span class="st">"2"</span> <span class="ot">=</span> <span class="st">"#6C8B8B"</span>, <span class="st">"3"</span> <span class="ot">=</span> <span class="st">"#9E9E9E"</span>, <span class="st">"4"</span> <span class="ot">=</span> <span class="st">"#D0A0A0"</span>)) <span class="sc">+</span></span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Boxplot of Stress Level by Missed Social Events"</span>,</span>
-<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Missed Social Events"</span>,</span>
-<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Stress Level"</span>) <span class="sc">+</span></span>
-<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(boxplot_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="linear_reg_final_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the plot as a PNG file</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"boxplot_missed_social_events_by_stress.png"</span>, <span class="at">plot =</span> boxplot_plot, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">6</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Research Question 3 - Multiple Linear Regression</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>rq3.lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(stress_numeric <span class="sc">~</span> missed_social_events <span class="sc">+</span> living_situation, <span class="at">data =</span> sample_data)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rq3.lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = stress_numeric ~ missed_social_events + living_situation, 
-    data = sample_data)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--1.2350 -0.4251  0.1426  0.4538  0.9143 
-
-Coefficients:
-                                      Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)                            1.93006    0.27980   6.898 6.02e-08 ***
-missed_social_events                   0.15560    0.07721   2.015   0.0518 .  
-living_situationLiving on campus       0.81061    0.39928   2.030   0.0502 .  
-living_situationLiving with family     0.21206    0.28310   0.749   0.4590    
-living_situationLiving with roommates  0.30493    0.25406   1.200   0.2383    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.5745 on 34 degrees of freedom
-Multiple R-squared:  0.1806,    Adjusted R-squared:  0.08416 
-F-statistic: 1.873 on 4 and 34 DF,  p-value: 0.1378</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assumptions for Research Question 3 - Multiple Linear Regression</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="st">"residuals_rq3.png"</span>, <span class="at">width =</span> <span class="dv">800</span>, <span class="at">height =</span> <span class="dv">600</span>)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot code goes here, for example:</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">residuals</span>(rq3.lm))</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>png 
-  2 </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assumptions for Research Question 3 - Multiple Linear Regression</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(rq3.lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                         GVIF Df GVIF^(1/(2*Df))
-missed_social_events 1.018171  1        1.009045
-living_situation     1.018171  3        1.003006</code></pre>
-</div>
-</div>
+<p>LINEAR REGRESSION CONCLUSION ONLY The linear regression analysis conducted for the three research questions of this study provides valuable insights into the factors affecting student stress and mental health. For Research Question 1, we found a significant positive relationship between academic workload and stress levels, suggesting that students with heavier workloads tend to experience higher levels of stress. In Research Question 2, while academic workload did not significantly impact the amount of sleep, missed social events were found to significantly reduce hours of sleep, which may contribute to poor mental health. For Research Question 3, missed social events and living situation were marginally significant predictors of stress, indicating that students who miss social events or live on campus tend to report higher stress levels. These findings highlight the importance of considering multiple factors in understanding a student’s overall well-being. However, the limitations of this analysis, including potential issues with sample randomization and measurement quality, should be addressed in future research to enhance the robustness and accuracy of the results. Future studies should also explore other possible variables, such as social support and coping mechanisms, which may further explain the mental health challenges faced by students.</p>
+<p>TODO - Explain how the random sample was chosen - Include explanation for removing outliers - Move R code into same file - Remove ‘in the appendix’ wording - Fix limitations section - Border for residuals maybe - any missing places - fix spacing between graphs and text</p>
 </section>
 
 </main>
