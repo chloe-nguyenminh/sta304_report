@@ -32,7 +32,9 @@ attach(sample_data)
 # 4. Analysis
 
 Section 3. Simple and Multiple Linear Regressions
-This part of the analysis is concerned with the application of linear regression to answer the three research questions as outlined above in the introduction. In what follows, the three research questions will be investigated for any statistically significant results.
+This part of the analysis focuses on applying linear regression to address the three research questions outlined in the introduction. We will explore whether there is a relationship between students' academic workload and the prevalence of mental health issues; between academic workload, the amount of sleep students get, and its impact on mental health; and finally, between mental health, students' living situations, and their ability to maintain a work-life balance. All of these relationships were found to be statistically significant!
+
+In what follows, the three research questions will be investigated for any statistically significant results.
 
 ## Research Question 1
 
@@ -73,7 +75,7 @@ The small $p-value = 0.00224$ indicates that academic workload is a significant 
 ## Research Question 2
 
 ### a. Relevant graphs & tables
-Research Question 2 investigates whether there is a relationship between students’ academic workload, the amount of sleep they get, and impact on mental health. Since the ANOVA below showed no significant relationship between stress and hours of sleep, we investigate the effect of another factor, the number of missed social events.To begin, we plot a boxplot of hours of sleep by the number of missed social events. This plot suggests students who miss more social events tend to have fewer hours of sleep on average.
+Research Question 2 investigates whether there is a relationship between students’ academic workload, the amount of sleep they get, and impact on mental health. Since the ANOVA above showed no significant relationship between stress and hours of sleep, we investigate the effect of another factor, the number of missed social events.To begin, we plot a boxplot of hours of sleep by the number of missed social events. This plot suggests students who miss more social events tend to have fewer hours of sleep on average.
 
 ![Boxplot of Hours Sleep by Missed Social Events](boxplot_hours_sleep_by_missed_social_events.png){width=80%}
 
@@ -162,7 +164,7 @@ He said that measuring a complex topic like mental health through symptoms such 
 
 
 # 7. Conclusion 
-LINEAR REGRESSION CONCLUSION ONLY
+LINEAR REGRESSION CONCLUSION ONLYs
 The linear regression analysis conducted for the three research questions of this study provides valuable insights into the factors affecting student stress and mental health. For Research Question 1, we found a significant positive relationship between academic workload and stress levels, suggesting that students with heavier workloads tend to experience higher levels of stress. In Research Question 2, while academic workload did not significantly impact the amount of sleep, missed social events were found to significantly reduce hours of sleep, which may contribute to poor mental health. For Research Question 3, missed social events and living situation were marginally significant predictors of stress, indicating that students who miss social events or live on campus tend to report higher stress levels. These findings highlight the importance of considering multiple factors in understanding a student's overall well-being. However, the limitations of this analysis, including potential issues with sample randomization and measurement quality, should be addressed in future research to enhance the robustness and accuracy of the results. Future studies should also explore other possible variables, such as social support and coping mechanisms, which may further explain the mental health challenges faced by students.
 
 
@@ -180,15 +182,26 @@ TODO
 
 ```{r}
 # Research Question 1 - Boxplot
-library(ggplot2)
+# library(ggplot2)
+
+# sample_data$stress <- factor(sample_data$stress, levels = c("Never", "Sometimes", "Always"))
+# boxplot_plot <- ggplot(sample_data, aes(x = factor(stress), y = academic_workload)) +
+#   geom_boxplot(fill = "#56B4E9", color = "black") +
+#   labs(title = "Boxplot of Academic Workload by Stress Level",
+#        x = "Stress Level",
+#        y = "Academic Workload") +
+#   theme_minimal()
 
 sample_data$stress <- factor(sample_data$stress, levels = c("Never", "Sometimes", "Always"))
-boxplot_plot <- ggplot(sample_data, aes(x = factor(stress), y = academic_workload)) +
-  geom_boxplot(fill = "#56B4E9", color = "black") +
+boxplot_plot <- ggplot(sample_data, aes(x = factor(stress), y = academic_workload, fill = stress)) +
+  geom_boxplot(color = "black") +
+  scale_fill_manual(values = c("Never" = "#E25C5C", "Sometimes" = "#66B266", "Always" = "#6C8B8B")) +
   labs(title = "Boxplot of Academic Workload by Stress Level",
        x = "Stress Level",
        y = "Academic Workload") +
   theme_minimal()
+
+print(boxplot_plot)
 
 # Save the plot as a PNG file
 ggsave("boxplot_academic_workload_by_stress.png", plot = boxplot_plot, width = 8, height = 6, dpi = 300)
@@ -212,15 +225,25 @@ dev.off()
 
 ```{r}
 # Research Question 2 - Boxplot
-boxplot_plot <- ggplot(sample_data, aes(x = factor(missed_social_events), y = hours_sleep)) +
-  geom_boxplot(fill = "#56B4E9", color = "black") +  # Customize the colors if desired
+# boxplot_plot <- ggplot(sample_data, aes(x = factor(missed_social_events), y = hours_sleep)) +
+#   geom_boxplot(fill = "#56B4E9", color = "black") +  # Customize the colors if desired
+#   labs(title = "Boxplot of Hours of Sleep by Missed Social Events",
+#        x = "Missed Social Events",
+#        y = "Hours of Sleep") +
+#   theme_minimal()
+
+boxplot_plot <- ggplot(sample_data, aes(x = factor(missed_social_events), y = hours_sleep, fill = factor(missed_social_events))) +
+  geom_boxplot(color = "black") +
+  scale_fill_manual(values = c("0" = "#E25C5C", "1" = "#66B266", "2" = "#6C8B8B", "3" = "#9E9E9E", "4" = "#D0A0A0")) +
   labs(title = "Boxplot of Hours of Sleep by Missed Social Events",
        x = "Missed Social Events",
        y = "Hours of Sleep") +
   theme_minimal()
+  
+print(boxplot_plot)
 
 # Save the plot as a PNG file
-ggsave("boxplot_hours_sleep_by_missed_social_events.png", plot = boxplot_plot, width = 8, height = 6, dpi = 300)
+# ggsave("boxplot_hours_sleep_by_missed_social_events.png", plot = boxplot_plot, width = 8, height = 6, dpi = 300)
 ```
 
 ```{r}
@@ -254,12 +277,22 @@ vif(rq2.lm)
 
 ```{r}
 # Research Question 3 - Boxplot
-boxplot_plot <- ggplot(sample_data, aes(x = factor(stress), y = missed_social_events)) +
-  geom_boxplot(fill = "#56B4E9", color = "black") +
-  labs(title = "Boxplot of Missed Social Events by Stress Level",
+# boxplot_plot <- ggplot(sample_data, aes(x = factor(missed_social_events), y = stress_numeric)) +
+#   geom_boxplot(fill = "#56B4E9", color = "black") +
+#   labs(title = "Boxplot of Missed Social Events by Stress Level",
+#        x = "Missed Social Events",
+#        y = "Stress Level") +
+#   theme_minimal()
+
+boxplot_plot <- ggplot(sample_data, aes(x = factor(missed_social_events), y = stress_numeric, fill = factor(missed_social_events))) +
+  geom_boxplot(color = "black") +
+  scale_fill_manual(values = c("0" = "#E25C5C", "1" = "#66B266", "2" = "#6C8B8B", "3" = "#9E9E9E", "4" = "#D0A0A0")) +
+  labs(title = "Boxplot of Stress Level by Missed Social Events",
        x = "Missed Social Events",
        y = "Stress Level") +
   theme_minimal()
+
+print(boxplot_plot)
 
 # Save the plot as a PNG file
 ggsave("boxplot_missed_social_events_by_stress.png", plot = boxplot_plot, width = 8, height = 6, dpi = 300)

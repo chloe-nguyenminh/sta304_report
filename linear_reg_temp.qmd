@@ -15,9 +15,9 @@ N = 200
 B = .29
 D = (B^2)/4
 # sigma = sd(data_cleaned$academic_workload)
-sigma2 = (max(data_cleaned$academic_workload) - min(data_cleaned$academic_workload))/4
+sigma = (max(data_cleaned$academic_workload) - min(data_cleaned$academic_workload))/4
 # n = ceiling((N*sigma^2) / ((N-1)*D + sigma^2))
-n = ceiling((N*sigma2) / ((N-1)*D + sigma2))
+n = ceiling((N*sigma**2) / ((N-1)*D + sigma**2))
 # sigma2
 n
 
@@ -53,18 +53,8 @@ boxplot_plot <- ggplot(sample_data, aes(x = factor(stress), y = academic_workloa
        y = "Academic Workload") +
   theme_minimal()
 print(boxplot_plot)
-
-# # Create a boxplot of hours_sleep by stress_binary
-# boxplot_plot <- ggplot(sample_data, aes(x = factor(stress_binary), y = hours_sleep)) +
-#   geom_boxplot(fill = "#56B4E9", color = "black") +  # Customize the colors if desired
-#   labs(title = "Boxplot of Hours of Sleep by Stress Level",
-#        x = "Stress (0 = No Stress, 1 = Stress)",
-#        y = "Hours of Sleep") +
-#   theme_minimal()
-
-# # Display the plot
-# print(boxplot_plot)
 ```
+
 
 ### c. Necessary Assumptions
 To confirm this association, we implement a simple linear regression model, where the dependent variable is stress_numeric (the stress variable, converted to numeric values), and the independent variable is academic_workload. To implement this model, we check the following assumptions using the following plot of the residuals:
@@ -182,7 +172,7 @@ print(boxplot_plot)
 To investigate the impact of missed social events and living situations on stress, we use a multiple linear regression model. The response variable is stress (in numeric form), and the predictors are missed social events and living situation. We verify the following assumptions:
 
 ![Residuals Plot](residuals_rq3.png){width=80%}
-![QQ Plot](qq_rq2.png){width=80%}
+![QQ Plot](qq_rq3.png){width=80%}
 
 1. Independence of errors: The residual plot indicates no clear patterns, suggesting that the errors are  independent.
 2. Normality of errors: Since the sample size is large, the Central Limit Theorem implies that the residuals should approximate a normal distribution. Also, a QQ-plot confirms Normality.
@@ -257,7 +247,7 @@ summary(rq2.lm)
 # Assumptions for Research Question 2 - Multiple Linear Regression
 png("residuals_rq2.png", width = 800, height = 600)
 # Plot code goes here, for example:
-plot(residuals(rq2_stress.lm))
+plot(residuals(rq2.lm))
 dev.off()
 ```
 
@@ -287,6 +277,14 @@ summary(rq3.lm)
 png("residuals_rq3.png", width = 800, height = 600)
 # Plot code goes here, for example:
 plot(residuals(rq3.lm))
+dev.off()
+```
+
+```{r}
+# Assumptions for Research Question 2 - Multiple Linear Regression
+png("qq_rq3.png", width = 800, height = 600)
+# Plot code goes here, for example:
+plot(rq3.lm, which=2)
 dev.off()
 ```
 
@@ -373,4 +371,15 @@ Old stuff
 # p_values
 
 # p_values <- p_values * 0.01
+
+# # Create a boxplot of hours_sleep by stress_binary
+# boxplot_plot <- ggplot(sample_data, aes(x = factor(stress_binary), y = hours_sleep)) +
+#   geom_boxplot(fill = "#56B4E9", color = "black") +  # Customize the colors if desired
+#   labs(title = "Boxplot of Hours of Sleep by Stress Level",
+#        x = "Stress (0 = No Stress, 1 = Stress)",
+#        y = "Hours of Sleep") +
+#   theme_minimal()
+
+# # Display the plot
+# print(boxplot_plot)
 ```
