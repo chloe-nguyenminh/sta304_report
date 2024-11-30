@@ -1,3 +1,11 @@
+---
+title: "Linear Regression"
+author: "Adam"
+date: "2024-11-30"
+output: html_document
+---
+
+
 
 Generate Sample
 ```{r}
@@ -182,7 +190,7 @@ TODO
 
 ```{r}
 # Research Question 1 - Boxplot
-# library(ggplot2)
+library(ggplot2)
 
 # sample_data$stress <- factor(sample_data$stress, levels = c("Never", "Sometimes", "Always"))
 # boxplot_plot <- ggplot(sample_data, aes(x = factor(stress), y = academic_workload)) +
@@ -256,7 +264,7 @@ summary(rq2.lm)
 # Assumptions for Research Question 2 - Multiple Linear Regression
 png("residuals_rq2.png", width = 800, height = 600)
 # Plot code goes here, for example:
-plot(residuals(rq2_stress.lm))
+plot(residuals(rq2.lm))
 dev.off()
 ```
 
@@ -316,160 +324,4 @@ dev.off()
 # Assumptions for Research Question 3 - Multiple Linear Regression
 library(car)
 vif(rq3.lm)
-```
-
-
-
-# # # # # # # # # # # # #
-
-
-SIMPLE TEST 1: CHI-SQUARE TEST FOR INDEPENDENCE
-```{r}
-# X-squared = 4.2481, df = 1, p-value = 0.03929
-# After grouping categories
-# Group categories for anxiety and concentration
-sample_data$anxiety_grouped <- ifelse(anxiety == "Always", "Always", "Other")
-sample_data$concentration_grouped <- ifelse(concentration == "Always", "Always", "Other")
-
-# Create a contingency table
-contingency_table <- table(sample_data$anxiety_grouped, sample_data$concentration_grouped)
-
-# Print the contingency table
-cat("Contingency Table:\n")
-print(contingency_table)
-
-# Check expected Frequencies
-chi_sq_test <- chisq.test(contingency_table)
-chi_sq_test$expected
-
-# Perform the Chi-squared test
-chi_squared_test <- chisq.test(contingency_table)
-
-# Print the results
-cat("\nChi-squared Test Results:\n")
-print(chi_squared_test)
-```
-
-
-
-
-
-<!-- 
-Old stuff
-```{r}
- -->
-
-# Recode stress as binary (0 = Not Stressed, 1 = Stressed)
-# sample_data$stress_binary <- ifelse(sample_data$stress == "Never", 0, 1)
-# sample_data$anxiety_binary <- ifelse(sample_data$anxiety == "Never", 0, 1)
-# sample_data$concentration_binary <- ifelse(sample_data$concentration == "Never", 0, 1)
-
-# sleep1_3.lm = lm(hours_sleep ~ stress_binary + missed_social_events, data = sample_data)
-# summary(sleep1_3.lm) # 0.402, 0.008, F: 0.003886
-
-# sleep1_1.lm = lm(hours_sleep ~ time_management + stress_binary + missed_social_events, data = sample_data)
-# summary(sleep1_1.lm) # 0.42770, 0.60898, 0.00703, F: 0.008939
-
-# time1.lm = lm(time_management ~ stress - studentID, data = sample_data)
-# summary(time1.lm) # 0.0160, 0.0616, F: 0.02051
-
-# mental_health.lm <- lm(stress_binary ~ academic_workload, data = sample_data) # 0.00201, 0.00925, F: 0.009247
-# summary(mental_health.lm)
-
-# library(nnet)
-# # Multinomial logistic regression (Classification)
-# stress_model_multi <- multinom(stress ~ hours_sleep + academic_workload, data = sample_data)
-# summary(stress_model_multi)
-# # Calculate z-scores and p-values for each coefficient
-# z_scores <- summary(stress_model_multi)$coefficients / summary(stress_model_multi)$standard.errors
-# p_values <- 2 * (1 - pnorm(abs(z_scores)))  # Two-tailed p-values
-# z_scores
-# p_values
-
-# p_values <- p_values * 0.01
-
-
-
-# # Create a boxplot of hours_sleep by stress_binary
-# boxplot_plot <- ggplot(sample_data, aes(x = factor(stress_binary), y = hours_sleep)) +
-#   geom_boxplot(fill = "#56B4E9", color = "black") +  # Customize the colors if desired
-#   labs(title = "Boxplot of Hours of Sleep by Stress Level",
-#        x = "Stress (0 = No Stress, 1 = Stress)",
-#        y = "Hours of Sleep") +
-#   theme_minimal()
-
-# # Display the plot
-# print(boxplot_plot)
-
-Call:
-lm(formula = stress_numeric ~ academic_workload, data = sample_data)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--1.5301 -0.3668  0.1434  0.4699  0.7965
-
-Coefficients:
-                  Estimate Std. Error t value Pr(>|t|)   
-(Intercept)        1.22389    0.40942   2.989  0.00495 **
-academic_workload  0.32655    0.09945   3.284  0.00224 **
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.5353 on 37 degrees of freedom
-Multiple R-squared:  0.2256,    Adjusted R-squared:  0.2047
-F-statistic: 10.78 on 1 and 37 DF,  p-value: 0.002245
-
-The equation of the regression line is given by: $stress = 1.22389 + 0.32655*workload$
-
-
-
-Call:
-lm(formula = hours_sleep ~ academic_workload + missed_social_events, 
-    data = sample_data)
-
-Residuals:
-     Min       1Q   Median       3Q      Max
--1.37588 -0.54906 -0.09342  0.60662  2.53031 
-
-Coefficients:
-                     Estimate Std. Error t value Pr(>|t|)    
-(Intercept)            8.5521     0.6661  12.838  5.3e-15 ***
-academic_workload     -0.1412     0.1666  -0.848  0.40208
-missed_social_events  -0.3763     0.1194  -3.151  0.00327 **
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.864 on 36 degrees of freedom
-Multiple R-squared:  0.2653,    Adjusted R-squared:  0.2245 
-F-statistic:   6.5 on 2 and 36 DF,  p-value: 0.003889
-
-The regression equation is given by:
-
-$hours\_of\_sleep = 8.5521 − 0.1412 * academic\_workload − 0.3763 * missed\_social\_events$
-
-
-
-
-
-Call:
-lm(formula = stress_numeric ~ missed_social_events + living_situation, 
-    data = sample_data)
-
-Residuals:
-    Min      1Q  Median      3Q     Max
--1.2350 -0.4251  0.1426  0.4538  0.9143
-
-Coefficients:
-                                      Estimate Std. Error t value Pr(>|t|)    
-(Intercept)                            1.93006    0.27980   6.898 6.02e-08 ***
-missed_social_events                   0.15560    0.07721   2.015   0.0518 .  
-living_situationLiving on campus       0.81061    0.39928   2.030   0.0502 .
-living_situationLiving with family     0.21206    0.28310   0.749   0.4590    
-living_situationLiving with roommates  0.30493    0.25406   1.200   0.2383
----
-Residual standard error: 0.5745 on 34 degrees of freedom
-Multiple R-squared:  0.1806,    Adjusted R-squared:  0.08416
-F-statistic: 1.873 on 4 and 34 DF,  p-value: 0.1378
-
-$stress = 1.93006 + 0.15560 * missed\_social\_events + 0.81061*living\_situation\_living\_on\_campus + 0.21206*living\_with\_family + 0.30493*living\_with\_roommates$
 ```
