@@ -136,16 +136,6 @@ new_table <- table(sample_data$workload, sample_data$concentration_numeric)
 chisq_result <- chisq.test(new_table)
 print(chisq_result)
 
-#Academic Workload vs Time
-new_table <- table(sample_data$workload, sample_data$time)
-chisq_result <- chisq.test(new_table)
-print(chisq_result)
-
-#Academic Workload vs Financials
-new_table <- table(sample_data$workload, sample_data$finances)
-chisq_result <- chisq.test(new_table)
-print(chisq_result)
-
 #Living Situation vs Stress
 new_table <- table(sample_data$living, sample_data$stress_numeric)
 chisq_result <- chisq.test(new_table)
