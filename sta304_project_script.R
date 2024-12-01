@@ -25,7 +25,6 @@ sample_data
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, levels = c("Never", "Sometimes", "Always")))
 rq1_stress.lm = lm(stress_numeric ~ academic_workload, data = sample_data)
 summary(rq1_stress.lm)
-```
 
 # Assumptions for Research Question 1 - Simple Linear Regression
 png("residuals_rq1.png", width = 800, height = 600)
@@ -37,9 +36,7 @@ dev.off()
 # Research Question 2 - Multiple Linear Regression
 rq2.lm = lm(hours_sleep ~ academic_workload + missed_social_events, data = sample_data)
 summary(rq2.lm)
-```
 
-```{r}
 # Assumptions for Research Question 2 - Multiple Linear Regression
 png("residuals_rq2.png", width = 800, height = 600)
 # Plot code goes here, for example:
@@ -75,8 +72,6 @@ vif(rq3.lm)
 
 #####ANOVA##### 
 #Conduct Barlett's test to fulfill assumptions before conducting ANOVA test
-barlett_result <- bartlett.test(academic_workload ~ stress, data = sample_data)
-print(barlett_result$p.value)
 
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
                                                 levels = c("Never", "Sometimes", "Always")))
@@ -85,6 +80,8 @@ anova_result <- aov(stress_numeric ~ factor(academic_workload), data = sample_da
 summary(anova_result)
 
 # ANOVA between stress and hours_sleep
+
+
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
                                                 levels = c("Never", "Sometimes", "Always")))
 
