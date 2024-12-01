@@ -321,8 +321,9 @@ TODO
 - Explain how the random sample was chosen
 - Include explanation for removing outliers
 - Move R code into same file
+
 - Remove 'in the appendix' wording (DONE)
 - Fix limitations section (DONE)
 - Border for residuals maybe (DONE, LOOKS BAD)
-- \text{} any missing places
+- \text{} any missing places (DONE)
 - fix spacing between graphs and text (DONE)
