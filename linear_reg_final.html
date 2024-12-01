@@ -145,7 +145,7 @@ window.Quarto = {
 <li>Normality of errors: Since our sample size is sufficiently large, by the Central Limit Theorem the sample mean (and by extension, the sampling distribution of residuals) approximately follows a Normal distribution.</li>
 <li>Homogeneity of variances amongst errors: Since the residuals plot has a “horizontal band appearance”, this suggests that variance of the residuals are the same for all values of the independent variable academic_workload.</li>
 </ol>
-<p>Since all the assumptions are met, we run the regression using the code in Appendix B.</p>
+<p>Since all the assumptions are met, we may preform the regression analysis.</p>
 </section>
 <section id="c.-computation-and-statistical-test-output" class="level3">
 <h3 class="anchored" data-anchor-id="c.-computation-and-statistical-test-output">c.&nbsp;Computation and Statistical Test Output</h3>
@@ -185,7 +185,7 @@ window.Quarto = {
 </tbody>
 </table>
 <hr>
-<p>The residual standard error is 0.5353 with 37 degrees of freedom. The <span class="math inline">\(R^2\)</span> value is 0.2256, and the F-statistic is <span class="math inline">\(F(1, 37) = 10.78\)</span>, with a p-value of <span class="math inline">\(0.002\)</span>.</p>
+<p>The residual standard error is <span class="math inline">\(0.5353\)</span> with <span class="math inline">\(37\)</span> degrees of freedom. The <span class="math inline">\(R^2\)</span> value is <span class="math inline">\(0.2256\)</span>, and the F-statistic is <span class="math inline">\(F(1, 37) = 10.78\)</span>, with a p-value of <span class="math inline">\(0.002\)</span>.</p>
 <p>The equation of the regression line is given by: <span class="math display">\[
 \text{Stress} = 1.22389 + 0.32655 \cdot \text{Academic Workload}
 \]</span></p>
@@ -199,7 +199,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="research-question-2">Research Question 2</h2>
 <section id="a.-relevant-graphs-tables-1" class="level3">
 <h3 class="anchored" data-anchor-id="a.-relevant-graphs-tables-1">a. Relevant Graphs &amp; Tables</h3>
-<p>Research Question 2 investigates whether there is a relationship between students’ academic workload, the amount of sleep they get, and impact on mental health. Since the ANOVA above showed no significant relationship between stress and hours of sleep, we investigate the effect of another factor, the number of missed social events.To begin, we plot a boxplot of hours of sleep by the number of missed social events. This plot suggests students who miss more social events tend to have fewer hours of sleep on average.</p>
+<p>Research Question 2 investigates whether there is a relationship between students’ academic workload, the amount of sleep they get, and impact on mental health. Since the ANOVA above showed no significant relationship between stress and hours of sleep, we investigate the effect of another factor, the number of missed social events. To begin, we plot a boxplot of hours of sleep by the number of missed social events. This plot suggests students who miss more social events tend to have fewer hours of sleep on average.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -238,9 +238,9 @@ window.Quarto = {
 <li>Independence of errors: The residual plot shown above indicates no clear patterns, which suggests independence.</li>
 <li>Normality of errors: Since the sample size is large, the Central Limit Theorem implies that the residuals should approximate a normal distribution. Also, a QQ-plot confirms approximate normality.</li>
 <li>Homogeneity of variances: The residuals plot exhibits a roughly horizontal band, indicating constant variance across predicted values.</li>
-<li>No multi-collinearity: We calculated the VIF of each independent variable, and found that <span class="math inline">\(VIF(\text{academic\_workload}) = 1.076844\)</span>, and <span class="math inline">\(VIF(\text{missed\_social\_events}) = 1.076844\)</span>. Since they are both less than 5,this indicates there is little correlation between them.</li>
+<li>No multi-collinearity: We calculated the VIF of each independent variable, and found that <span class="math inline">\(VIF(\text{academic\_workload}) = 1.076844\)</span>, and <span class="math inline">\(VIF(\text{missed\_social\_events}) = 1.076844\)</span>. Since they are both less than <span class="math inline">\(5\)</span>, this indicates there is little correlation between them.</li>
 </ol>
-<p>With all assumptions adequately met, we proceed with the regression analysis. The code used to generate the model can be found in Appendix B.</p>
+<p>With all assumptions adequately met, we proceed with the regression analysis.</p>
 </section>
 <section id="c.-computation-and-statistical-test-output-1" class="level3">
 <h3 class="anchored" data-anchor-id="c.-computation-and-statistical-test-output-1">c.&nbsp;Computation and Statistical Test Output</h3>
@@ -287,14 +287,14 @@ window.Quarto = {
 </tbody>
 </table>
 <hr>
-<p>The residual standard error is 0.864 with 36 degrees of freedom. The <span class="math inline">\(R^2\)</span> value is 0.2653, the adjusted <span class="math inline">\(R^2\)</span> is 0.2245, and the F-statistic is <span class="math inline">\(F(2, 36) = 6.5\)</span>, with a p-value of <span class="math inline">\(0.003889\)</span>.</p>
+<p>The residual standard error is <span class="math inline">\(0.864\)</span> with <span class="math inline">\(36\)</span> degrees of freedom. The <span class="math inline">\(R^2\)</span> value is <span class="math inline">\(0.2653\)</span>, the adjusted <span class="math inline">\(R^2\)</span> is <span class="math inline">\(0.2245\)</span>, and the F-statistic is <span class="math inline">\(F(2, 36) = 6.5\)</span>, with a p-value of <span class="math inline">\(0.003889\)</span>.</p>
 <p>The equation of the regression line is given by: <span class="math display">\[
 \text{Hours of Sleep} = 8.5521 − 0.1412 \cdot \text{Academic Workload} - 0.3763 \cdot \text{Missed Social Events}
 \]</span></p>
 </section>
 <section id="d.-interpretation-1" class="level3">
 <h3 class="anchored" data-anchor-id="d.-interpretation-1">d.&nbsp;Interpretation</h3>
-<p>The output of the regression analysis shows that the missed social events has a statistically significant negative association with hours of sleep (p = 0.00327). However, academic workload does not have a significant relationship with hours of sleep (p = 0.40208).</p>
+<p>The output of the regression analysis shows that the missed social events has a statistically significant negative association with hours of sleep (<span class="math inline">\(p = 0.00327\)</span>). However, academic workload does not have a significant relationship with hours of sleep (<span class="math inline">\(p = 0.40208\)</span>).</p>
 </section>
 </section>
 <section id="research-question-3" class="level2">
@@ -340,9 +340,9 @@ window.Quarto = {
 <li>Independence of errors: The residual plot indicates no clear patterns, suggesting that the errors are independent.</li>
 <li>Normality of errors: Since the sample size is large, the Central Limit Theorem implies that the residuals should approximate a normal distribution. Also, a QQ-plot confirms approximate normality.</li>
 <li>Homogeneity of variances: The residuals plot exhibits a roughly horizontal band, indicating constant variance across predicted values.</li>
-<li>No multi-collinearity: We calculated the VIF of each independent variable, and found that <span class="math inline">\(VIF(\text{missed\_social\_events}) = 1.009045\)</span>, and <span class="math inline">\(VIF(\text{living\_situation}) = 1.003006\)</span>. Since both VIF values are close to 1, there’s no indication of multicollinearity in this model.</li>
+<li>No multi-collinearity: We calculated the VIF of each independent variable, and found that <span class="math inline">\(VIF(\text{missed\_social\_events}) = 1.009045\)</span>, and <span class="math inline">\(VIF(\text{living\_situation}) = 1.003006\)</span>. Since both VIF values are close to <span class="math inline">\(1\)</span>, there’s no indication of multicollinearity in this model.</li>
 </ol>
-<p>With all assumptions adequately met, we proceed with the regression analysis. The code used to generate the model can be found in Appendix B.</p>
+<p>With all assumptions adequately met, we proceed with the regression analysis.</p>
 </section>
 <section id="c.-computation-and-statistical-test-output-2" class="level3">
 <h3 class="anchored" data-anchor-id="c.-computation-and-statistical-test-output-2">c.&nbsp;Computation and Statistical Test Output</h3>
@@ -403,7 +403,7 @@ window.Quarto = {
 </tbody>
 </table>
 <hr>
-<p>The residual standard error is 0.5745 with 34 degrees of freedom. The <span class="math inline">\(R^2\)</span> value is 0.1806, the adjusted <span class="math inline">\(R^2\)</span> value is 0.08416, and the F-statistic is <span class="math inline">\(F(4, 34) = 1.873\)</span>, with a p-value of <span class="math inline">\(0.1378\)</span>.</p>
+<p>The residual standard error is <span class="math inline">\(0.5745\)</span> with <span class="math inline">\(34\)</span> degrees of freedom. The <span class="math inline">\(R^2\)</span> value is <span class="math inline">\(0.1806\)</span>, the adjusted <span class="math inline">\(R^2\)</span> value is <span class="math inline">\(0.08416\)</span>, and the F-statistic is <span class="math inline">\(F(4, 34) = 1.873\)</span>, with a p-value of <span class="math inline">\(0.1378\)</span>.</p>
 <p>The equation of the regression line is given by: <span class="math display">\[
 \begin{array}{lllllll}
 \text{Stress} &amp;=&amp; 1.93006 &amp;+&amp; 0.15560 \cdot \text{Missed Social Events} &amp;+&amp; 0.81061 \cdot \text{Living On Campus} \\
@@ -413,9 +413,15 @@ window.Quarto = {
 </section>
 <section id="d.-interpretation-2" class="level3">
 <h3 class="anchored" data-anchor-id="d.-interpretation-2">d.&nbsp;Interpretation</h3>
-<p>The results indicate that missed social events are a marginally significant predictor of stress levels (p = 0.0518). Living situation, specifically living on campus, is also a marginally significant predictor (p = 0.0502). However, living with family (p = 0.4590) and living with roommates (p = 0.2383) do not significantly predict stress.</p>
+<p>The results indicate that missed social events are a marginally significant predictor of stress levels (<span class="math inline">\(p = 0.0518\)</span>). Living situation, specifically living on campus, is also a marginally significant predictor (<span class="math inline">\(p = 0.0502\)</span>). However, living with family (<span class="math inline">\(p = 0.4590\)</span>) and living with roommates (<span class="math inline">\(p = 0.2383\)</span>) do not significantly predict stress.</p>
 </section>
 </section>
+</section>
+<section id="discussionresults" class="level1">
+<h1>5. Discussion/Results</h1>
+<p>For Research Question 1, we wished to investigate whether there is a relationship between student’s academic workload and the prevalence of mental health issues in students. Preliminarily, we plotted a boxplot to look for any potential relationship between the two variables, and we found that on average, students with higher stress levels tend to have a higher academic workload. We later confirmed this with the simple linear regression test and found that academic workload is a significant predictor of stress.</p>
+<p>For Research Question 2, we aimed to investigate whether there is a relationship between students’ academic workload and the amount of sleep they get each night. An earlier test indicated no significant relationship between hours of sleep and academic workload. Therefore, we decided to examine the effect of another factor: the number of social events a student misses on their hours of sleep. Initially, we plotted a boxplot of hours of sleep against the number of missed social events. The graph suggested that, on average, the more social events a student misses, the fewer hours of sleep they tend to get. Our analysis confirmed the earlier finding that academic workload does not have a significant relationship with hours of sleep but also revealed a strong relationship between the number of missed social events and students’ daily hours of sleep.</p>
+<p>For Research Question 3, we studied whether mental health is affected by students’ living situations and their ability to maintain a work-life balance. To explore this relationship, we first plotted a boxplot of stress against the number of missed social events. The plot suggested that students who sometimes or always miss social events tend to experience more stress, while those who never miss social events experience less stress. Then, we ran a test that concluded missing social events and living on campus may slightly affect stress levels, although the evidence is not very strong. In contrast, living with family or roommates does not appear to have a significant impact on stress.</p>
 </section>
 <section id="limitations" class="level1">
 <h1>6. Limitations</h1>
@@ -429,16 +435,11 @@ Students may have rushed through the survey in order to recieve course credit, w
 Mental health is a complex topic, and it is difficult to be certain about the reliability and validity of our results when our study relied on indirect measures such as stress and anxiety to represent the broad spectrum of mental health.</p></li>
 </ol>
 <p>In the future, to address these limitations, we plan to incorporate attention-check questions to identify rushed or careless responses. We will also explore additional variables that may influence mental health to ensure a comprehensive understanding of the complexities of mental health. Finally, some open-ended questions could help students elaborate on their responses.</p>
-<ol type="1">
-<li><p>Many additional tests not included in this report failed to produce statistically significant results. For example, one linear regression test concluded that there is no relationship between academic workload and some mental health issues. This sort of result seemed counterintuitive and difficult to accept, which suggested there might be other factors that influence mental health that we did not consider.</p></li>
-<li><p>Failing to Reject Null Hypotheses &nbsp;&nbsp;Many additional tests not included in this report failed to produce statistically significant results. For example, one linear regression test concluded that there is no relationship between academic workload and some mental health issues. This sort of result seemed counterintuitive and difficult to accept, which suggested there might be other factors that influence mental health that we did not consider.</p></li>
-<li><p>Failing to Reject Null Hypotheses <br> Many additional tests not included in this report failed to produce statistically significant results. For example, one linear regression test concluded that there is no relationship between academic workload and some mental health issues. This sort of result seemed counterintuitive and difficult to accept, which suggested there might be other factors that influence mental health that we did not consider.</p></li>
-</ol>
 </section>
 <section id="conclusion" class="level1">
 <h1>7. Conclusion</h1>
 <p>LINEAR REGRESSION CONCLUSION ONLY The linear regression analysis conducted for the three research questions of this study provides valuable insights into the factors affecting student stress and mental health. For Research Question 1, we found a significant positive relationship between academic workload and stress levels, suggesting that students with heavier workloads tend to experience higher levels of stress. In Research Question 2, while academic workload did not significantly impact the amount of sleep, missed social events were found to significantly reduce hours of sleep, which may contribute to poor mental health. For Research Question 3, missed social events and living situation were marginally significant predictors of stress, indicating that students who miss social events or live on campus tend to report higher stress levels. These findings highlight the importance of considering multiple factors in understanding a student’s overall well-being. However, the limitations of this analysis, including potential issues with sample randomization and measurement quality, should be addressed in future research to enhance the robustness and accuracy of the results. Future studies should also explore other possible variables, such as social support and coping mechanisms, which may further explain the mental health challenges faced by students.</p>
-<p>TODO - Explain how the random sample was chosen - Include explanation for removing outliers - Move R code into same file - Remove ‘in the appendix’ wording - Fix limitations section - Border for residuals maybe - any missing places - fix spacing between graphs and text</p>
+<p>TODO - Explain how the random sample was chosen - Include explanation for removing outliers - Move R code into same file - Remove ‘in the appendix’ wording (DONE) - Fix limitations section (DONE) - Border for residuals maybe (DONE, LOOKS BAD) - any missing places - fix spacing between graphs and text (DONE)</p>
 </section>
 
 </main>

@@ -84,6 +84,7 @@ summary(rq1_stress.lm)
 ```
 ```{r, echo = FALSE, fig.align = "center"}
 # Assumptions for Research Question 1 - Simple Linear Regression
+par(mar = c(3, 3, 2, 2))
 plot(residuals(rq1_stress.lm))
 ```
 
@@ -93,7 +94,7 @@ plot(residuals(rq1_stress.lm))
  2. Normality of errors: Since our sample size is sufficiently large, by the Central Limit Theorem the sample mean (and by extension, the sampling distribution of residuals) approximately follows a Normal distribution. 
  3. Homogeneity of variances amongst errors: Since the residuals plot has a "horizontal band appearance", this suggests that variance of the residuals are the same for all values of the independent variable academic_workload.
 
- Since all the assumptions are met, we run the regression using the code in Appendix B.
+ Since all the assumptions are met, we may preform the regression analysis.
 
 ### c. Computation and Statistical Test Output
 The regression analysis produced the following results:
@@ -105,7 +106,7 @@ The regression analysis produced the following results:
 
 ---
 
-The residual standard error is 0.5353 with 37 degrees of freedom. The $R^2$ value is 0.2256, and the F-statistic is $F(1, 37) = 10.78$, with a p-value of $0.002$.
+The residual standard error is $0.5353$ with $37$ degrees of freedom. The $R^2$ value is $0.2256$, and the F-statistic is $F(1, 37) = 10.78$, with a p-value of $0.002$.
 
 The equation of the regression line is given by:
 $$
@@ -118,7 +119,7 @@ The small $p-value = 0.00224$ indicates that academic workload is a significant 
 ## Research Question 2
 
 ### a. Relevant Graphs & Tables
-Research Question 2 investigates whether there is a relationship between students’ academic workload, the amount of sleep they get, and impact on mental health. Since the ANOVA above showed no significant relationship between stress and hours of sleep, we investigate the effect of another factor, the number of missed social events.To begin, we plot a boxplot of hours of sleep by the number of missed social events. This plot suggests students who miss more social events tend to have fewer hours of sleep on average.
+Research Question 2 investigates whether there is a relationship between students’ academic workload, the amount of sleep they get, and impact on mental health. Since the ANOVA above showed no significant relationship between stress and hours of sleep, we investigate the effect of another factor, the number of missed social events. To begin, we plot a boxplot of hours of sleep by the number of missed social events. This plot suggests students who miss more social events tend to have fewer hours of sleep on average.
 
 ```{r, echo = FALSE, fig.align = "center"}
 
@@ -151,10 +152,12 @@ summary(rq2.lm)
 ```
 ```{r, echo = FALSE, fig.align = "center"}
 # Assumptions for Research Question 2 - Multiple Linear Regression
+par(mar = c(3, 3, 2, 2))
 plot(residuals(rq2.lm))
 ```
 ```{r, echo = FALSE, fig.align = "center"}
 # Assumptions for Research Question 2 - Multiple Linear Regression
+par(mar = c(3, 3, 2, 2))
 plot(rq2.lm, which=2)
 ```
 
@@ -164,7 +167,7 @@ plot(rq2.lm, which=2)
 1. Independence of errors: The residual plot shown above indicates no clear patterns, which suggests independence.
 2. Normality of errors: Since the sample size is large, the Central Limit Theorem implies that the residuals should approximate a normal distribution. Also, a QQ-plot confirms approximate normality.
 3. Homogeneity of variances: The residuals plot exhibits a roughly horizontal band, indicating constant variance across predicted values.
-4. No multi-collinearity: We calculated the VIF of each independent variable, and found that $VIF(\text{academic\_workload}) = 1.076844$, and $VIF(\text{missed\_social\_events}) = 1.076844$. Since they are both less than 5,this indicates there is little correlation between them.
+4. No multi-collinearity: We calculated the VIF of each independent variable, and found that $VIF(\text{academic\_workload}) = 1.076844$, and $VIF(\text{missed\_social\_events}) = 1.076844$. Since they are both less than $5$, this indicates there is little correlation between them.
 
 ```{r, include = FALSE}
 # Assumptions for Research Question 2 - Multiple Linear Regression
@@ -172,7 +175,7 @@ library(car)
 vif(rq2.lm)
 ```
 
-With all assumptions adequately met, we proceed with the regression analysis. The code used to generate the model can be found in Appendix B.
+With all assumptions adequately met, we proceed with the regression analysis.
 
 ### c. Computation and Statistical Test Output
 The regression analysis produced the following results:
@@ -185,7 +188,7 @@ The regression analysis produced the following results:
 
 ---
 
-The residual standard error is 0.864 with 36 degrees of freedom. The $R^2$ value is 0.2653, the adjusted $R^2$ is 0.2245, and the F-statistic is $F(2, 36) = 6.5$, with a p-value of $0.003889$.
+The residual standard error is $0.864$ with $36$ degrees of freedom. The $R^2$ value is $0.2653$, the adjusted $R^2$ is $0.2245$, and the F-statistic is $F(2, 36) = 6.5$, with a p-value of $0.003889$.
 
 The equation of the regression line is given by:
 $$
@@ -231,10 +234,12 @@ summary(rq3.lm)
 ```
 ```{r, echo = FALSE, fig.align = "center"}
 # Assumptions for Research Question 3 - Multiple Linear Regression
+par(mar = c(3, 3, 2, 2))
 plot(residuals(rq3.lm))
 ```
 ```{r, echo = FALSE, fig.align = "center"}
 # Assumptions for Research Question 3 - Multiple Linear Regression
+par(mar = c(3, 3, 2, 2))
 plot(rq3.lm, which=2)
 ```
 
@@ -244,7 +249,7 @@ plot(rq3.lm, which=2)
 1. Independence of errors: The residual plot indicates no clear patterns, suggesting that the errors are  independent.
 2. Normality of errors: Since the sample size is large, the Central Limit Theorem implies that the residuals should approximate a normal distribution. Also, a QQ-plot confirms approximate normality.
 3. Homogeneity of variances: The residuals plot exhibits a roughly horizontal band, indicating constant variance across predicted values.
-4. No multi-collinearity: We calculated the VIF of each independent variable, and found that $VIF(\text{missed\_social\_events}) = 1.009045$, and $VIF(\text{living\_situation}) = 1.003006$. Since both VIF values are close to 1, there’s no indication of multicollinearity in this model.
+4. No multi-collinearity: We calculated the VIF of each independent variable, and found that $VIF(\text{missed\_social\_events}) = 1.009045$, and $VIF(\text{living\_situation}) = 1.003006$. Since both VIF values are close to $1$, there’s no indication of multicollinearity in this model.
 
 ```{r, include = FALSE}
 # Assumptions for Research Question 3 - Multiple Linear Regression
@@ -252,7 +257,7 @@ library(car)
 vif(rq3.lm)
 ```
 
-With all assumptions adequately met, we proceed with the regression analysis. The code used to generate the model can be found in Appendix B.
+With all assumptions adequately met, we proceed with the regression analysis.
 
 ### c. Computation and Statistical Test Output
 The regression analysis produced the following results:
@@ -267,7 +272,7 @@ The regression analysis produced the following results:
 
 ---
 
-The residual standard error is 0.5745 with 34 degrees of freedom. The $R^2$ value is 0.1806, the adjusted $R^2$ value is 0.08416, and the F-statistic is $F(4, 34) = 1.873$, with a p-value of $0.1378$.
+The residual standard error is $0.5745$ with $34$ degrees of freedom. The $R^2$ value is $0.1806$, the adjusted $R^2$ value is $0.08416$, and the F-statistic is $F(4, 34) = 1.873$, with a p-value of $0.1378$.
 
 The equation of the regression line is given by:
 $$
@@ -282,21 +287,11 @@ The results indicate that missed social events are a marginally significant pred
 
 # 5. Discussion/Results
 
-Research Question 1:
-Research Question 1 is concerned with determining whether there is a relationship between students’ academic workload and the prevalence of mental health issues in students. To answer this question, we start by plotting a boxplot of academic workload by stress level. This plot suggests that higher stress levels are associated with a higher academic workload. On average, students who "Always" or "Sometimes" feel stressed tend to have a higher workload than those who "Never" feel stressed. 
+For Research Question 1, we wished to investigate whether there is a relationship between student's academic workload and the prevalence of mental health issues in students. Preliminarily, we plotted a boxplot to look for any potential relationship between the two variables, and we found that on average, students with higher stress levels tend to have a higher academic workload. We later confirmed this with the simple linear regression test and found that academic workload is a significant predictor of stress.
 
-The small $p-value = 0.00224$ indicates that academic workload is a significant predictor of stress. Therefore, we can conclude that there is a significant relationship between students academic workload and their stress levels.
+For Research Question 2, we aimed to investigate whether there is a relationship between students' academic workload and the amount of sleep they get each night. An earlier test indicated no significant relationship between hours of sleep and academic workload. Therefore, we decided to examine the effect of another factor: the number of social events a student misses on their hours of sleep. Initially, we plotted a boxplot of hours of sleep against the number of missed social events. The graph suggested that, on average, the more social events a student misses, the fewer hours of sleep they tend to get. Our analysis confirmed the earlier finding that academic workload does not have a significant relationship with hours of sleep but also revealed a strong relationship between the number of missed social events and students' daily hours of sleep.
 
-Research Question 2
-Research Question 2 investigates whether there is a relationship between students’ academic workload, the amount of sleep they get, and impact on mental health. Since the ANOVA above showed no significant relationship between stress and hours of sleep, we investigate the effect of another factor, the number of missed social events.To begin, we plot a boxplot of hours of sleep by the number of missed social events. This plot suggests students who miss more social events tend to have fewer hours of sleep on average.
-
-The output of the regression analysis shows that the missed social events has a statistically significant negative association with hours of sleep ($p = 0.00327$). However, academic workload does not have a significant relationship with hours of sleep (p = 0.40208).
-
-
-Research Question 3 examines whether mental health, represented by stress levels, is affected by students’ living situations and their ability to maintain a work-life balance. To explore this relationship, we first plot a boxplot of stress level by missed social events, with students grouped by stress categories ("Always," "Never," and "Sometimes"). This plot suggests that students who miss social events "Always" or "Sometimes" have higher stress levels, while those who "Never" miss social events report lower stress levels.
-
-The results indicate that missed social events are a marginally significant predictor of stress levels ($p = 0.0518$). Living situation, specifically living on campus, is also a marginally significant predictor ($p = 0.0502$). However, living with family ($p = 0.4590$) and living with roommates ($p = 0.2383$) do not significantly predict stress. 
-
+For Research Question 3, we studied whether mental health is affected by students' living situations and their ability to maintain a work-life balance. To explore this relationship, we first plotted a boxplot of stress against the number of missed social events. The plot suggested that students who sometimes or always miss social events tend to experience more stress, while those who never miss social events experience less stress. Then, we ran a test that concluded missing social events and living on campus may slightly affect stress levels, although the evidence is not very strong. In contrast, living with family or roommates does not appear to have a significant impact on stress.
 
 # 6. Limitations
 
@@ -326,8 +321,8 @@ TODO
 - Explain how the random sample was chosen
 - Include explanation for removing outliers
 - Move R code into same file
-- Remove 'in the appendix' wording
-- Fix limitations section
-- Border for residuals maybe
+- Remove 'in the appendix' wording (DONE)
+- Fix limitations section (DONE)
+- Border for residuals maybe (DONE, LOOKS BAD)
 - \text{} any missing places
-- fix spacing between graphs and text
+- fix spacing between graphs and text (DONE)
