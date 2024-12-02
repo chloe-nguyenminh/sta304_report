@@ -485,7 +485,7 @@ The results of the multiple and linear regression tests indicate that missed soc
 
 Overall, the results of this study show that stress and anxiety among university students is primarily related to academic factors, with lifestyle factors such as sleep and socializing having less of an impact than expected.
 
-# 6. Limitations
+# Limitations
 
 Three major limitations that our study faced were failing to reject the null hypotheses, survey limitations, and the indirect nature of our research.
 
@@ -501,7 +501,7 @@ Mental health is a complex topic, and it is difficult to be certain about the re
   
 In the future, to address these limitations, we plan to incorporate attention-check questions to identify rushed or careless responses. We will also explore additional variables that may influence mental health to ensure a comprehensive understanding of the complexities of mental health. Finally, some open-ended questions could help students elaborate on their responses.
 
-# 7. Conclusion 
+# Conclusion 
 
 The linear regression analysis conducted for the three research questions of this study provides valuable insights into the factors affecting student stress and mental health. For Research Question 1, we found a significant positive relationship between academic workload and stress levels, suggesting that students with heavier workloads tend to experience higher levels of stress. In Research Question 2, while academic workload did not significantly impact the amount of sleep, missed social events were found to significantly reduce hours of sleep, which may contribute to poor mental health. For Research Question 3, missed social events and living situations were marginally significant predictors of stress, indicating that students who miss social events or live on campus tend to report higher stress levels. These findings highlight the importance of considering multiple factors in understanding a student's overall well-being. However, the limitations of this analysis, including potential issues with sample randomization and measurement quality, should be addressed in future research to enhance the robustness and accuracy of the results. Future studies should also explore other possible variables, such as social support and coping mechanisms, which may further explain the mental health challenges faced by students.
 
@@ -518,7 +518,6 @@ Overall, the results of the chi square tests of independence indicate that the m
 
 # Limitations
 
-## Limitations
 This experiment investigated the relationship between academic workload, stress, sleep, and work life-balance among STA304 students. There were many difficulties and limitations in conducting this experiment.
 
 ### Sampling
