@@ -50,7 +50,7 @@ This part of the analysis focuses on applying linear regression to address the t
 ## Research Question 1
 
 ### a. Relevant Graphs & Tables
-Research Question 1 is concerned with determining whether there is a relationship between students’ academic workload and the prevalence of mental health issues in students. To answer this question, we start by plotting a boxplot of academic workload by stress level. This plot suggests that higher stress levels are associated with a higher academic workload. On average, students who "Always" or "Sometimes" feel stressed tend to have a higher workload than those who "Never" feel stressed. 
+Research Question 1 is concerned with determining whether there is a relationship between students’ academic workload and the prevalence of mental health issues in students. To answer this question, we start by plotting a boxplot of academic workload by stress level. Usually, we would plot a scatterplot before running the regression analysis. However, since stress is a qualitative variable, we draw a boxplot for each category of stress instead. This plot suggests that higher stress levels are associated with a higher academic workload. On average, students who "Always" or "Sometimes" feel stressed tend to have a higher workload than those who "Never" feel stressed. 
 
 ```{r, echo = FALSE, fig.align = "center"}
 # Research Question 1 - Boxplot
@@ -124,7 +124,7 @@ The small $p-value = 0.00224$ indicates that academic workload is a significant 
 ## Research Question 2
 
 ### a. Relevant Graphs & Tables
-Research Question 2 investigates whether there is a relationship between students’ academic workload, the amount of sleep they get, and impact on mental health. Since the ANOVA above showed no significant relationship between stress and hours of sleep, we investigate the effect of another factor, the number of missed social events. To begin, we plot a boxplot of hours of sleep by the number of missed social events. This plot suggests students who miss more social events tend to have fewer hours of sleep on average.
+Research Question 2 investigates whether there is a relationship between students’ academic workload, the amount of sleep they get, and impact on mental health. Since the ANOVA above showed no significant relationship between stress and hours of sleep, we investigate the effect of another factor, the number of missed social events. To begin, we plot a boxplot of hours of sleep by the number of missed social events. Usually, we would plot a scatterplot before running the regression analysis. However, since the number of missed social events is a qualitative variable, we draw a boxplot for each category of the variable instead. This plot suggests students who miss more social events tend to have fewer hours of sleep on average.
 
 ```{r, echo = FALSE, fig.align = "center"}
 
@@ -206,7 +206,7 @@ The output of the regression analysis shows that the missed social events has a 
 ## Research Question 3
 
 ### a. Relevant Graphs & Tables
-Research Question 3 examines whether mental health, represented by stress levels, is affected by students’ living situations and their ability to maintain a work-life balance. To explore this relationship, we first plot a boxplot of stress level by missed social events, with students grouped by stress categories ("Always," "Never," and "Sometimes"). This plot suggests that students who miss social events "Always" or "Sometimes" have higher stress levels, while those who "Never" miss social events report lower stress levels.
+Research Question 3 examines whether mental health, represented by stress levels, is affected by students’ living situations and their ability to maintain a work-life balance. To explore this relationship, we first plot a boxplot of stress level by missed social events, with students grouped by stress categories ("Always," "Never," and "Sometimes"). Usually, we would plot a scatterplot before running the regression analysis. However, since the number of missed social events is a qualitative variable, we draw a boxplot for each category of the variable instead. This plot suggests that students who miss social events "Always" or "Sometimes" have higher stress levels, while those who "Never" miss social events report lower stress levels.
 
 ```{r, echo = FALSE, fig.align = "center"}
 
