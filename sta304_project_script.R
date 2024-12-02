@@ -97,6 +97,7 @@ print(shapiro_result_workload)
 
 kruskal_result_workload <- kruskal.test(stress_numeric ~ academic_workload, data = sample_data)
 print(kruskal_result_workload)
+tapply(sample_data$stress_numeric, sample_data$academic_workload, mean) #mean stress levels across different academic workload ratings
 
 # Kruskal-Wallis Test between stress and hours_sleep
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
@@ -107,6 +108,7 @@ print(shapiro_result_hours_sleep)
 
 kruskal_result_sleep <- kruskal.test(stress_numeric ~ sleep_category, data = sample_data)
 print(kruskal_result_sleep)
+tapply(sample_data$stress_numeric, sample_data$sleep_category, mean) #mean stress levels across different sleep catagories
 
 # Kruskal-Wallis Test between stress and missed social events
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
@@ -117,6 +119,9 @@ print(shapiro_result_workload)
 
 kruskal_result_social <- kruskal.test(stress_numeric ~ missed_social_events, data = sample_data)
 print(kruskal_result_social)
+
+tapply(sample_data$stress_numeric, sample_data$missed_social_events, mean) #mean stress levels across different missed social events ratings
+
 #####Chi Square Test#####
 
 sample_data$workload <-as.numeric(factor(sample_data$academic_workload,levels =c(1,2,3,4,5)))
