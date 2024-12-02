@@ -2,7 +2,7 @@
 title: "Linear Regression"
 author: "Adam"
 date: "2024-11-30"
-output: html_document
+output: pdf
 ---
 
 # 1. Abstract
@@ -320,7 +320,9 @@ The linear regression analysis conducted for the three research questions of thi
 
 
 TODO
+- Main file
 - Explain how the random sample was chosen
+- Fix how the sample is calculated, with range/4 
 - Include explanation for removing outliers
 - Move R code into same file
 - Go over the rubric
