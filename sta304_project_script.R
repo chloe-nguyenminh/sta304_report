@@ -70,9 +70,9 @@ library(car)
 vif(rq3.lm)
 
 
-#####Kruskal-Wallis test##### 
+#####Kruskal-Wallis Test#####
 
-# Kruskal-Wallis test between stress and academic_workload
+# Kruskal-Wallis Test between stress and academic_workload
 
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
                                                 levels = c("Never", "Sometimes", "Always")))
@@ -81,21 +81,22 @@ print(shapiro_result_workload)
 
 kruskal_result_workload <- kruskal.test(stress_numeric ~ academic_workload, data = sample_data)
 print(kruskal_result_workload)
-# Kruskal-Wallis test between stress and hours_sleep
+
+# Kruskal-Wallis Test between stress and hours_sleep
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
                                                 levels = c("Never", "Sometimes", "Always")))
-shapiro_result_workload <- shapiro.test(sample_data$academic_workload)
-print(shapiro_result_workload)
+
+shapiro_result_hours_sleep <- shapiro.test(sample_data$hours_sleep)
+print(shapiro_result_hours_sleep)
 
 kruskal_result_sleep <- kruskal.test(stress_numeric ~ sleep_category, data = sample_data)
 print(kruskal_result_sleep)
 
+# Kruskal-Wallis Test between stress and missed social events
+sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
+                                                levels = c("Never", "Sometimes", "Always")))
 
-# Kruskal-Wallis test between stress and missed social events
-sample_data$study_category <- cut(sample_data$hours_study, 
-                                  breaks = c(0, 10, 20, Inf),
-                                  labels = c("Low", "Medium", "High"))
-shapiro_result_workload <- shapiro.test(sample_data$academic_workload)
+shapiro_result_workload <- shapiro.test(sample_data$missed_social_events)
 print(shapiro_result_workload)
 
 kruskal_result_social <- kruskal.test(stress_numeric ~ missed_social_events, data = sample_data)
