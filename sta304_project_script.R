@@ -103,6 +103,11 @@ tapply(sample_data$stress_numeric, sample_data$academic_workload, mean) #mean st
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
                                                 levels = c("Never", "Sometimes", "Always")))
 
+sample_data$sleep_category <- cut(sample_data$hours_sleep, 
+                                  breaks = c(0, 6, 8, Inf),
+                                  labels = c("less than 6 hours", "6-8 hours", "over 8 hours"),
+                                  include.lowest = TRUE, right = FALSE)
+
 shapiro_result_hours_sleep <- shapiro.test(sample_data$hours_sleep)
 print(shapiro_result_hours_sleep)
 
