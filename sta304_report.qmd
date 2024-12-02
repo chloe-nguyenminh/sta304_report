@@ -36,12 +36,11 @@ This study focuses on students enrolled in STA304H5 during Fall 2024, aiming to 
 
 # Data Collection
 
-Between October 8th, 2024, and October 20th, 2024, the questionnaire's Google Form link was posted on the STA304H5 Piazza course discussion board. We utilized Simple Random Sampling (SRS) by using the R random generator to randomly sample 38 students from the received questionnaire responses. This method was chosen because it gives all respondents an equal chance of being included in the sample, making the sample representative.
+Between October 8th, 2024, and October 20th, 2024, the questionnaire's Google Form link was posted on the STA304H5 Piazza course discussion board. We utilized Simple Random Sampling (SRS) by using the R random generator to randomly sample 45 students from the received questionnaire responses. This method was chosen because it gives all respondents an equal chance of being included in the sample, making the sample representative. This experiment does not require methods like stratified or cluster sampling because the population in this experiment is relatively uniform and doesn’t need to be divided into strata or clusters.
 
-We considered alternative methods, such as stratified sampling or cluster sampling. However, these methods are more suitable when the characteristics of specific subpopulations need to be accounted for. Since our goal was to capture the characteristics of all students, we determined that SRS was the most appropriate method for this experiment.
+We considered alternative methods, such as stratified sampling or cluster sampling. However, these methods are more suitable when the characteristics of specific subpopulations need to be accounted for. Since the characteristics of students taking STA304 were expected to be similar, we decided that it would not be meaningful to distinguish between the subpopulations. Since our goal was to capture the characteristics of all students, we determined that SRS was the most appropriate method for this experiment.
 
 On the questionnaire, we asked participants to complete 10 short-answer questions inquiring about academic workload, average hours studied weekly, amounts of experienced stress-related symptoms (stress, anxiety, concentration difficulty), hours of sleep per night, current living situation, and experienced common issues caused by academic workload (time management, social life, financial).
-
 
 ## 1. Target Population
 
@@ -55,18 +54,17 @@ We will use **Simple Random Sampling (SRS)** by combining both sections of the S
 
 The following variables were identified for the research:
 
-
 ### Academic Workload
-Academic workload is defined as the number of assignments, projects, and exams and the overall demands of a course. The purpose of this study is to see if a high academic workload is associated with increased mental health problems, such as stress.
+Academic workload is defined as the number of assignments, projects, and exams and the overall demands of a course. The purpose of this study is to see if a high academic workload is associated with increased mental health problems, such as stress. Academic workload was measured through a questionnaire on a scale of 1 (very light), 2 (light), 3 (moderate), 4 (heavy) and 5 (very heavy).
 
 ### Living Situation
 We divided students' living arrangements into four categories: Living alone, living with family, living with roommates, and living in on-campus housing. These living arrangements are important variables that have a significant impact on students' mental health and academic stress.
 
 ### Study Hours
-Study time is an important indicator of students' time management and academic performance. This study analyzes the relationship between study time and mental health , exploring whether over studying leads to stress reduction or instead causes mental stress and anxiety.
+Study time is an important indicator of students' time management and academic performance. This study analyzes the relationship between study time and mental health , exploring whether over studying leads to stress reduction or instead causes mental stress and anxiety. Study hours were measured by entering the number of hours of study per week.
 
 ### Mental Health Symptoms (Stress, Anxiety, and Concentration Difficulties)
-These symptoms are key indicators of students' mental health and may be influenced by academic workload and living conditions. Understanding these relationships helps target interventions and support strategies to improve students' mental well-being.
+These symptoms are key indicators of students' mental health and may be influenced by academic workload and living conditions. Understanding these relationships helps target interventions and support strategies to improve students' mental well-being. These symptoms were measured through a questionnaire on a scale of 1 (never) 2 (sometimes) and 3 (always).
 
 
 ## 4. Sample Size
@@ -162,8 +160,8 @@ Since the calculated *p-value* was 0.0284 and is less than $\alpha = 0.05$, we r
 $X^2 =6.5$, *df*=6, *p-value* =0.3696
 
 
-Since the calculated p-value was 0.3696 and is greater than $\alpha = 0.05$, we fail to reject the null hypothesis. There isnn't enough statistical evidence to indicate that the academic workload and the 
-concentration levels of a student are related.
+Since the calculated p-value was 0.3696 and is greater than $\alpha = 0.05$, we fail to reject the null hypothesis. There isn't enough statistical evidence to indicate that the academic workload and the 
+The concentration levels of a student are related.
 
 # Chi Square Test between Living Situation and Stress
 $X^2 =4.9936$, *df*=6, *p-value* =0.5446
@@ -281,20 +279,23 @@ The regression analysis produced the following results:
 
 The residual standard error is $0.5353$ with $37$ degrees of freedom. The $R^2$ value is $0.2256$, and the F-statistic is $F(1, 37) = 10.78$, with a p-value of $0.002$.
 
+
 The equation of the regression line is given by:
 $$
 \text{Stress} = 1.22389 + 0.32655 \cdot \text{Academic Workload}
 $$
 
 ### d. Interpretation
-The small $p-value = 0.00224$ indicates that academic workload is a significant predictor of stress. Therefore, we can conclude that there is a significant relationship between students academic workload and their stress levels.
+The small $p-value = 0.00224$ indicates that academic workload is a significant predictor of stress. Therefore, we can conclude that there is a significant relationship between students' academic workload and their stress levels.
 
 ## Research Question 2
 
 ### a. Relevant Graphs & Tables
 Research Question 2 investigates whether there is a relationship between students’ academic workload, the amount of sleep they get, and impact on mental health. Since the ANOVA above showed no significant relationship between stress and hours of sleep, we investigate the effect of another factor, the number of missed social events. To begin, we plot a boxplot of hours of sleep by the number of missed social events. This plot suggests students who miss more social events tend to have fewer hours of sleep on average.
 
+
 ```{r, echo = FALSE, fig.align = "center"}
+
 
 # Research Question 2 - Boxplot
 boxplot_plot <- ggplot(sample_data, aes(x = factor(missed_social_events), y = hours_sleep, fill = factor(missed_social_events))) +
@@ -460,7 +461,7 @@ The results indicate that missed social events are a marginally significant pred
 
 # Discussion and Results
 
-For Research Question 1, we wished to investigate whether there is a relationship between student's academic workload and the prevalence of mental health issues in students. Preliminarily, we plotted a boxplot to look for any potential relationship between the two variables, and we found that on average, students with higher stress levels tend to have a higher academic workload. We later confirmed this with the simple linear regression test and found that academic workload is a significant predictor of stress.
+For Research Question 1, we wished to investigate whether there is a relationship between a student's academic workload and the prevalence of mental health issues in students. Preliminarily, we plotted a boxplot to look for any potential relationship between the two variables, and we found that on average, students with higher stress levels tend to have a higher academic workload. We later confirmed this with the simple linear regression test and found that academic workload is a significant predictor of stress.
 
 For Research Question 2, we aimed to investigate whether there is a relationship between students' academic workload and the amount of sleep they get each night. An earlier test indicated no significant relationship between hours of sleep and academic workload. Therefore, we decided to examine the effect of another factor: the number of social events a student misses on their hours of sleep. Initially, we plotted a boxplot of hours of sleep against the number of missed social events. The graph suggested that, on average, the more social events a student misses, the fewer hours of sleep they tend to get. Our analysis confirmed the earlier finding that academic workload does not have a significant relationship with hours of sleep but also revealed a strong relationship between the number of missed social events and students' daily hours of sleep.
 
@@ -472,15 +473,13 @@ ANOVA test between stress and hours of sleep has the calculated F-value of 0.163
 
 ANOVA test between stress and missed social events has the calculated F-value of 1.092, which is smaller than the critical F-value of 2.649 at the 5% significance level with (4, 34) degrees of freedom. Therefore, we fail to reject the null hypothesis. This means that stress levels and missed social events do not have a significant relationship.
 
-
-For the chi square tests of independence bewteen academic workload and stress, anxiety, the respective p values are 0.0002288 and 0.0284 which are both less than the alpha a=0.05, so we reject the null hypothesis. For the chi square tests of indpendence between academic workload and concentration, the p value is 0.3696, which is greater than the alpha a=0.05, therefore we fail to reject the null hypothesis. This suggests that a student's academic workload has an on their stress or anxiety but not their concentration . 
+For the chi square tests of independence between academic workload and stress, anxiety, the respective p values are 0.0002288 and 0.0284 which are both less than the alpha a=0.05, so we reject the null hypothesis. For the chi square tests of independence between academic workload and concentration, the p value is 0.3696, which is greater than the alpha a=0.05, therefore we fail to reject the null hypothesis. This suggests that a student's academic workload has and on their stress or anxiety but not their concentration . 
 
 Chi square tests between students' living situation and their stress, anxiety and concentration yield p values of 0.5446, 0.359, and 0.8241 respectively. All of these p values are greater than the alpha a=0.05, therefore we fail to reject the null hypothesis for all three of these chi square tests. This suggests that the living situation of a student doesn't have an association with their stress, anxiety and concentration. 
 
 Chi square tests between students' time management skills and their stress, anxiety and concentration yield p values of 0.2078, 0.5851, and 0.3151 respectively. All of these p values are greater than the alpha a=0.05, therefore we fail to reject the null hypothesis for all three of these chi square tests. This suggests that a student's ability to manage their time doesn't have an association with their stress, anxiety and concentration. 
 
-Chi square tests between students' financials and their stress, anxiety and concentration yield p values of 0.7223, 0.7236, and 0.6308 respectively. All of these p values are greater than the alpha a=0.05, therefore we fai to reject the null hypothesis for all three of these chi square tests. This suggests that a student's financial situation doesn't have an association with their stress, anxiety and concentration. 
-
+Chi square tests between students' financials and their stress, anxiety and concentration yield p values of 0.7223, 0.7236, and 0.6308 respectively. All of these p values are greater than the alpha a=0.05, therefore we fail to reject the null hypothesis for all three of these chi square tests. This suggests that a student's financial situation doesn't have an association with their stress, anxiety and concentration. 
 
 The results of the multiple and linear regression tests indicate that missed social events are a marginally significant predictor of stress levels (p = 0.0518). Living situation, specifically living on campus, is also a marginally significant predictor (p = 0.0502). However, living with family (p = 0.4590) and living with roommates (p = 0.2383) do not significantly predict stress. 
 
@@ -494,7 +493,8 @@ Three major limitations that our study faced were failing to reject the null hyp
 Many additional tests not included in this report failed to produce statistically significant results. For example, one linear regression test concluded that there is no relationship between academic workload and some mental health issues. This sort of result seemed counterintuitive and difficult to accept, which suggested there might be other factors that influence mental health that we did not consider.
 
 2. Survey Limitations \
-Students may have rushed through the survey in order to recieve course credit, without taking the time to reflect on their responses. Also, students may have not felt comfortable answering questions about their mental health truthfully, which could have led to response bias. 
+Students may have rushed through the survey in order to receive course credit, without taking the time to reflect on their responses. Also, students may have not felt comfortable answering questions about their mental health truthfully, which could have led to response bias. 
+
 
 3. Indirect Nature of Research \
 Mental health is a complex topic, and it is difficult to be certain about the reliability and validity of our results when our study relied on indirect measures such as stress and anxiety to represent the broad spectrum of mental health.
@@ -503,14 +503,14 @@ In the future, to address these limitations, we plan to incorporate attention-ch
 
 # 7. Conclusion 
 
-The linear regression analysis conducted for the three research questions of this study provides valuable insights into the factors affecting student stress and mental health. For Research Question 1, we found a significant positive relationship between academic workload and stress levels, suggesting that students with heavier workloads tend to experience higher levels of stress. In Research Question 2, while academic workload did not significantly impact the amount of sleep, missed social events were found to significantly reduce hours of sleep, which may contribute to poor mental health. For Research Question 3, missed social events and living situation were marginally significant predictors of stress, indicating that students who miss social events or live on campus tend to report higher stress levels. These findings highlight the importance of considering multiple factors in understanding a student's overall well-being. However, the limitations of this analysis, including potential issues with sample randomization and measurement quality, should be addressed in future research to enhance the robustness and accuracy of the results. Future studies should also explore other possible variables, such as social support and coping mechanisms, which may further explain the mental health challenges faced by students.
+The linear regression analysis conducted for the three research questions of this study provides valuable insights into the factors affecting student stress and mental health. For Research Question 1, we found a significant positive relationship between academic workload and stress levels, suggesting that students with heavier workloads tend to experience higher levels of stress. In Research Question 2, while academic workload did not significantly impact the amount of sleep, missed social events were found to significantly reduce hours of sleep, which may contribute to poor mental health. For Research Question 3, missed social events and living situations were marginally significant predictors of stress, indicating that students who miss social events or live on campus tend to report higher stress levels. These findings highlight the importance of considering multiple factors in understanding a student's overall well-being. However, the limitations of this analysis, including potential issues with sample randomization and measurement quality, should be addressed in future research to enhance the robustness and accuracy of the results. Future studies should also explore other possible variables, such as social support and coping mechanisms, which may further explain the mental health challenges faced by students.
+
 
 Overall, the results of the ANOVA tests show that the stress levels of the students sampled are primarily related to academic factors, with lifestyle factors such as sleep and socializing having less of an impact on their mental health than expected. In addition, this voluntary response method was likely to result in selection bias.
 
-For the chi square tests of independence bewteen academic workload and stress, anxiety, the respective p values are 0.0002288 and 0.0284 which are both less than the alpha a=0.05, so we retain the null hypothesis. For the chi square tests of indpendence between academic workload and concentration, the p value is 0.3696, which is greater than the alpha a=0.05, therefore we reject the null hypothesis. This suggests that a student's academic workload has an effect on their concentration but not their stress or anxiety. 
+For the chi square tests of independence between academic workload and stress, anxiety, the respective p values are 0.0002288 and 0.0284 which are both less than the alpha a=0.05, so we retain the null hypothesis. For the chi square tests of independence between academic workload and concentration, the p value is 0.3696, which is greater than the alpha a=0.05, therefore we reject the null hypothesis. This suggests that a student's academic workload has an effect on their concentration but not their stress or anxiety. 
 
-
-The linear regression analysis conducted for the three research questions of this study provides valuable insights into the factors affecting student stress and mental health. For Research Question 1, we found a significant positive relationship between academic workload and stress levels, suggesting that students with heavier workloads tend to experience higher levels of stress. In Research Question 2, while academic workload did not significantly impact the amount of sleep, missed social events were found to significantly reduce hours of sleep, which may contribute to poor mental health. For Research Question 3, missed social events and living situation were marginally significant predictors of stress, indicating that students who miss social events or live on campus tend to report higher stress levels. These findings highlight the importance of considering multiple factors in understanding a student's overall well-being. However, the limitations of this analysis, including potential issues with sample randomization and measurement quality, should be addressed in future research to enhance the robustness and accuracy of the results. Future studies should also explore other possible variables, such as social support and coping mechanisms, which may further explain the mental health challenges faced by students.
+The linear regression analysis conducted for the three research questions of this study provides valuable insights into the factors affecting student stress and mental health. For Research Question 1, we found a significant positive relationship between academic workload and stress levels, suggesting that students with heavier workloads tend to experience higher levels of stress. In Research Question 2, while academic workload did not significantly impact the amount of sleep, missed social events were found to significantly reduce hours of sleep, which may contribute to poor mental health. For Research Question 3, missed social events and living situations were marginally significant predictors of stress, indicating that students who miss social events or live on campus tend to report higher stress levels. These findings highlight the importance of considering multiple factors in understanding a student's overall well-being. However, the limitations of this analysis, including potential issues with sample randomization and measurement quality, should be addressed in future research to enhance the robustness and accuracy of the results. Future studies should also explore other possible variables, such as social support and coping mechanisms, which may further explain the mental health challenges faced by students.
 
 # 8. Documentation of AI tool usage
 The report was completed without the use of generative AI tools such as ChatGPT. All content in this report, including writing, analysis, and interpretation, was created entirely by team members through a collaborative effort and peer review process. We affirm that these are our original thoughts and analyses.
@@ -560,8 +560,6 @@ Future and further research would greatly benefit from having a larger populatio
 We utilized generative AI tools, namely ChatGPT, to help refine our ideas and improve readability. These tools were used primarily for brainstorming, grammar corrections, and the explanations of certain sections. However, all the analytical work, including statistical methods and interpretation of results, was done by the authors.
 
 https://chatgpt.com/share/674a3a7d-83e4-8013-a381-4192bb2028da
-
-
 
 
 1. Beiter, R., Nash, R., McCrady, M., Rhoades, D., Linscomb, M., Clarahan, M., & Sammut, S. (2015). The prevalence and correlates of depression, anxiety, and stress in a sample of college students. *Journal of Affective Disorders*, 173(3), 90-96.
