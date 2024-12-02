@@ -104,10 +104,10 @@ plot(residuals(rq1_stress.lm))
 ### c. Computation and Statistical Test Output
 The regression analysis produced the following results:
 
-| Statistic                  | Estimate   | SE       | t-value | p-value |
-|----------------------------|------------|----------|---------|---------|
-| Intercept ($\beta_0$)      | 1.22389    | 0.40942  | 2.989   | 0.00495 |
-| Slope ($\beta_1$)          | 0.32655    | 0.09945  | 3.284   | 0.00224 |
+| Statistic                 | Estimate   | SE       | t-value | p-value |
+|---------------------------|------------|----------|---------|---------|
+| Intercept ($b_0$)         | 1.22389    | 0.40942  | 2.989   | 0.00495 |
+| academic_workload ($b_1$) | 0.32655    | 0.09945  | 3.284   | 0.00224 |
 
 ---
 
@@ -185,11 +185,11 @@ With all assumptions adequately met, we proceed with the regression analysis.
 ### c. Computation and Statistical Test Output
 The regression analysis produced the following results:
 
-| Statistic                  | Estimate   | SE       | t-value | p-value |
-|----------------------------|------------|----------|---------|---------|
-| Intercept ($\beta_0$)       | 8.5521     | 0.6661   | 12.838  | $5.3 \times 10^{-15}$ |
-| Slope 1 ($\beta_1$)         | -0.1412    | 0.1666   | -0.848  | 0.40208 |
-| Slope 2 ($\beta_2$)         | -0.3763    | 0.1194   | -3.151  | 0.00327 |
+| Statistic                    | Estimate   | SE       | t-value | p-value |
+|------------------------------|------------|----------|---------|---------|
+| Intercept ($b_0$)            | 8.5521     | 0.6661   | 12.838  | $5.3 \times 10^{-15}$ |
+| academic_workload ($b_1$)    | -0.1412    | 0.1666   | -0.848  | 0.40208 |
+| missed_social_events ($b_2$) | -0.3763    | 0.1194   | -3.151  | 0.00327 |
 
 ---
 
@@ -267,13 +267,13 @@ With all assumptions adequately met, we proceed with the regression analysis.
 ### c. Computation and Statistical Test Output
 The regression analysis produced the following results:
 
-| Statistic                  | Estimate   | SE       | t-value | p-value |
-|----------------------------|------------|----------|---------|---------|
-| Intercept ($\beta_0$)       | 1.93006    | 0.27980  | 6.898   | $6.02 \times 10^{-8}$ |
-| Slope 1 ($\beta_1$)         | 0.15560    | 0.07721  | 2.015   | 0.0518 |
-| Slope 2 ($\beta_2$)         | 0.81061    | 0.39928  | 2.030   | 0.0502 |
-| Slope 3 ($\beta_3$)         | 0.21206    | 0.28310  | 0.749   | 0.4590 |
-| Slope 4 ($\beta_4$)         | 0.30493    | 0.25406  | 1.200   | 0.2383 |
+| Statistic                    | Estimate   | SE       | t-value | p-value |
+|------------------------------|------------|----------|---------|---------|
+| Intercept ($b_0$)            | 1.93006    | 0.27980  | 6.898   | $6.02 \times 10^{-8}$ |
+| missed_social_events ($b_1$) | 0.15560    | 0.07721  | 2.015   | 0.0518 |
+| living_on_campus ($b_2$)     | 0.81061    | 0.39928  | 2.030   | 0.0502 |
+| living_with_family ($b_3$)   | 0.21206    | 0.28310  | 0.749   | 0.4590 |
+| living_with_roomates ($b_4$) | 0.30493    | 0.25406  | 1.200   | 0.2383 |
 
 ---
 
