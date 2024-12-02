@@ -154,7 +154,7 @@ RQ1 questions if academic workload contributes to a student’s stress levels. T
 All our assumptions are satisfied, as (1) samples between the groups were randomly sampled and responses are independent from each other, (2) data from each group is normally distributed (large sample size, $n$ > 30), and (3) variances are approximately equal (obtained *p-value* of 0.07758 from Barlett’s test, which is above the significance level $\alpha = 0.05$.) 
 All categories were converted to categorical data to make them suitable for ANOVA testing.
 
-### 4.1.1. ANOVA between stress and academic workload
+### ANOVA between stress and academic workload
 
 | Variable            | Degrees of Freedom (DF) | Sum of Squares (SS) | Mean Square (MS) | F-value | Pr(>F)         |
 |---------------------|-------------------------|----------------------|------------------|---------|----------------|
@@ -165,7 +165,7 @@ For the relationship between stress and academic workload, we divided the criter
 Since the calculated $F-value$ of 5.121 is larger than the critical $F-value$ of 2.874 at a 5% significance level for (3, 35) degrees of freedom, we reject the null hypothesis. Therefore, there is a statistically significant relationship between student academic workload and levels of stress.
 
 
-### 4.1.2. ANOVA between stress and hours of sleep
+### ANOVA between stress and hours of sleep
 
 | Variable            | Degrees of Freedom (DF) | Sum of Squares (SS) | Mean Square (MS) | F-value | Pr(>F)         |
 |---------------------|-------------------------|----------------------|------------------|---------|----------------|
@@ -570,15 +570,15 @@ For the Chi-squared tests of independence between academic workload and stress, 
 
 The linear regression analysis conducted for the three research questions of this study provides valuable insights into the factors affecting student stress and mental health. For Research Question 1, we found a significant positive relationship between academic workload and stress levels, suggesting that students with heavier workloads tend to experience higher levels of stress. In Research Question 2, while academic workload did not significantly impact the amount of sleep, missed social events were found to significantly reduce hours of sleep, which may contribute to poor mental health. For Research Question 3, missed social events and living situations were marginally significant predictors of stress, indicating that students who miss social events or live on campus tend to report higher stress levels. These findings highlight the importance of considering multiple factors in understanding a student's overall well-being. However, the limitations of this analysis, including potential issues with sample randomization and measurement quality, should be addressed in future research to enhance the robustness and accuracy of the results. Future studies should also explore other possible variables, such as social support and coping mechanisms, which may further explain the mental health challenges faced by students.
 
-## Documentation of AI Tool Usage
+## 8. Documentation of AI Tool Usage
 
 We utilized generative AI tools, namely ChatGPT, to help refine our ideas and improve readability. These tools were used primarily for brainstorming, grammar corrections, and the explanations of certain sections. However, all the analytical work, including statistical methods and interpretation of results, was done by the authors.
 
-https://chatgpt.com/share/674a3a7d-83e4-8013-a381-4192bb2028da
+## 9. Citations: 
+1. https://chatgpt.com/share/674a3a7d-83e4-8013-a381-4192bb2028da
 
+2. Beiter R, Nash R, McCrady M, Rhoades D, Linscomb M, Clarahan M, Sammut S. The prevalence and correlates of depression, anxiety, and stress in a sample of college students. J Affect Disord. 2015 Mar 1;173:90-6. doi: 10.1016/j.jad.2014.10.054.(https://www.sciencedirect.com/science/article/abs/pii/S0165032714006867?via%3Dihub). Epub 2014 Nov 8. PMID: 25462401.
 
-1. Beiter R, Nash R, McCrady M, Rhoades D, Linscomb M, Clarahan M, Sammut S. The prevalence and correlates of depression, anxiety, and stress in a sample of college students. J Affect Disord. 2015 Mar 1;173:90-6. doi: 10.1016/j.jad.2014.10.054.(https://www.sciencedirect.com/science/article/abs/pii/S0165032714006867?via%3Dihub). Epub 2014 Nov 8. PMID: 25462401.
+3. Hysing M, Harvey AG, Linton SJ, Askeland KG, Sivertsen B. Sleep and academic performance in later adolescence: results from a large population-based study. J Sleep Res. 2016 Jun;25(3):318-24. [doi:10.1111/jsr.12373](https://pubmed.ncbi.nlm.nih.gov/26825591/). Epub 2016 Jan 30. PMID: 26825591.
 
-2. Hysing M, Harvey AG, Linton SJ, Askeland KG, Sivertsen B. Sleep and academic performance in later adolescence: results from a large population-based study. J Sleep Res. 2016 Jun;25(3):318-24. [doi:10.1111/jsr.12373](https://pubmed.ncbi.nlm.nih.gov/26825591/). Epub 2016 Jan 30. PMID: 26825591.
-
-3. Hershner SD, Chervin RD. Causes and consequences of sleepiness among college students. Nat Sci Sleep. 2014 Jun 23;6:73-84. [doi:10.2147/NSS.S62907](https://pmc.ncbi.nlm.nih.gov/articles/PMC4075951/). PMID: 25018659; PMCID: PMC4075951.
+4. Hershner SD, Chervin RD. Causes and consequences of sleepiness among college students. Nat Sci Sleep. 2014 Jun 23;6:73-84. [doi:10.2147/NSS.S62907](https://pmc.ncbi.nlm.nih.gov/articles/PMC4075951/). PMID: 25018659; PMCID: PMC4075951.
