@@ -70,40 +70,40 @@ library(car)
 vif(rq3.lm)
 
 
-#####ANOVA##### 
-#Conduct Barlett's test to fulfill assumptions before conducting ANOVA test
+#####Kruskal-Wallis test##### 
+
+# Kruskal-Wallis test between stress and academic_workload
 
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
                                                 levels = c("Never", "Sometimes", "Always")))
+shapiro_result_workload <- shapiro.test(sample_data$academic_workload)
+print(shapiro_result_workload)
 
-anova_result <- aov(stress_numeric ~ factor(academic_workload), data = sample_data)
-summary(anova_result)
-
-# ANOVA between stress and hours_sleep
-
-
+kruskal_result_workload <- kruskal.test(stress_numeric ~ academic_workload, data = sample_data)
+print(kruskal_result_workload)
+# Kruskal-Wallis test between stress and hours_sleep
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
                                                 levels = c("Never", "Sometimes", "Always")))
+shapiro_result_workload <- shapiro.test(sample_data$academic_workload)
+print(shapiro_result_workload)
 
-sample_data$sleep_category <- cut(sample_data$hours_sleep, 
-                                  breaks = c(0, 6, 8, Inf),
-                                  labels = c("Less than 6", "6-8", "More than 8"))
+kruskal_result_sleep <- kruskal.test(stress_numeric ~ sleep_category, data = sample_data)
+print(kruskal_result_sleep)
 
-anova_result <- aov(stress_numeric ~ sleep_category, data = sample_data)
-summary(anova_result)
 
-# ANOVA between stress and missed social events
+# Kruskal-Wallis test between stress and missed social events
 sample_data$study_category <- cut(sample_data$hours_study, 
                                   breaks = c(0, 10, 20, Inf),
                                   labels = c("Low", "Medium", "High"))
+shapiro_result_workload <- shapiro.test(sample_data$academic_workload)
+print(shapiro_result_workload)
 
-anova_social <- aov(stress_numeric ~ factor(missed_social_events), data = sample_data)
-print(summary(anova_social))
-
+kruskal_result_social <- kruskal.test(stress_numeric ~ missed_social_events, data = sample_data)
+print(kruskal_result_social)
 #####Chi Square Test#####
 
 sample_data$workload <-as.numeric(factor(sample_data$academic_workload,levels =c(1,2,3,4,5)))
-                                 
+
 sample_data$anxiety_numeric <- as.numeric(factor(sample_data$anxiety,levels = c("Never", "Sometimes", "Always")))
 
 sample_data$concentration_numeric <- as.numeric(factor(sample_data$concentration,levels = c("Never", "Sometimes", "Always")))
