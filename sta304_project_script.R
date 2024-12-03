@@ -6,9 +6,8 @@ data_cleaned <- my_data[,!(names(my_data)=="X")]
 data_cleaned <- data_cleaned[-c(3, 12),]
 data_cleaned
 
-# Calculating sample size
 N = 200
-B = .25
+B = .29
 D = (B^2)/4
 sigma = sd(data_cleaned$academic_workload)
 n = ceiling((N * sigma^2) / ((N-1) * D + sigma^2))
@@ -76,8 +75,6 @@ vif(rq3.lm)
 
 #####ANOVA##### 
 #Conduct Barlett's test to fulfill assumptions before conducting ANOVA test
-barlett_result <- bartlett.test(academic_workload ~ stress, data = sample_data)
-print(barlett_result$p.value)
 
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
                                                 levels = c("Never", "Sometimes", "Always")))
@@ -86,6 +83,8 @@ anova_result <- aov(stress_numeric ~ factor(academic_workload), data = sample_da
 summary(anova_result)
 
 # ANOVA between stress and hours_sleep
+
+
 sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, 
                                                 levels = c("Never", "Sometimes", "Always")))
 
