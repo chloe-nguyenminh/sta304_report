@@ -552,6 +552,12 @@ We also performed the  Chi-Squared Test of Independence for the first and third 
 
 Future and further research would greatly benefit from having a larger population size, since we could not go with the assumption that each group has a normal population distribution in each categorical group, since the CLT could not be satisfied due to the fact that each group did not have more than 30 observations.
 
+## Documentation of AI Tool Usage
+
+We utilized generative AI tools, namely ChatGPT, to help refine our ideas and improve readability. These
+tools were used primarily for brainstorming, grammar corrections, and the explanations of certain sections.
+However, all the analytical work, including statistical methods and interpretation of results, was done by the
+authors.
 
 ## Citations:
 
