@@ -160,9 +160,9 @@ We obtained:
 - *df* = 3,  
 - *p-value* = 0.0932.
 
-Since the calculated *p-value* of 0.0932 is larger than the 0.05 significance level, we fail to reject the null hypothesis. This shows that the difference between the average stress levels across different academic workloads is not significant enough to suggest that different academic workloads have a meaningful impact on student mental health.
+Since the calculated *p-value* of 0.0932 is larger than the 0.05 significance level, we fail to reject the null hypothesis. This indicates that the difference between the average stress levels across different academic workloads is not statistically significant enough to suggest that different academic workloads have a meaningful impact on student mental health.
 
-However, if we look at the mean stress levels for each rating of academic workloads:
+Note that if we look at the mean stress levels for each rating of academic workloads:
 
 | Workload Rating | Mean Stress Level |
 |------------------|-------------------|
@@ -170,10 +170,11 @@ However, if we look at the mean stress levels for each rating of academic worklo
 | 2                | 2.2857            |
 | 3                | 2.6154            |
 | 4                | 2.7000            |
-
-Students who report heavier academic workloads have higher stress levels.
-
 ---
+
+While the mean stress level appears to be higher for students who report heavier academic workloads, the mean difference are not signficant enough to suggest that higher workload indicates higher stress levels. 
+
+
 
 ### Research Question 2: Sleep Quality and Stress Levels
 
@@ -191,10 +192,9 @@ We also examined the mean stress level across different sleep categories:
 | Less than 6 hours      | 2.00              |
 | 6-8 hours              | 2.67              |
 | More than 8 hours      | 2.22              |
-
+---
 While the Kruskal-Wallis test shows no significant difference between stress and sleep duration, averaging the stress levels across hours of sleep shows that the group with 6-8 hours of sleep has a higher stress level than the other two groups. However, the differences are not dramatically different, so we can't draw conclusions based on simple averages. It's possible that we didn't find statistical significance because of the small sample size.
 
----
 
 ### Research Question 3: Social Events and Stress Levels
 
@@ -209,7 +209,7 @@ We obtained:
 
 Since the calculated *p-value* of 0.0932 is larger than the 0.05 significance level, we fail to reject the null hypothesis. This shows that the difference between the average stress levels across different frequencies of missing social events is not significant enough to suggest that work-life balance has a meaningful impact on student mental health.
 
-However, if we look at the mean stress levels for each rating of work-life balance:
+Note that if we look at the mean stress levels for each rating of work-life balance:
 
 | Social Events Missed | Mean Stress Level |
 |-----------------------|-------------------|
@@ -219,7 +219,7 @@ However, if we look at the mean stress levels for each rating of work-life balan
 | 4                     | 2.44              |
 | 5                     | 2.50              |
 
-Students who miss social events more frequently tend to report higher stress levels.
+While the mean stress level appears to be higher for some categories of students who report missing social events, the mean difference are not signficant enough to suggest that missing social events indicates higher stress levels. 
 
 ## 4.2. Chi-square Test of Independence
 Research Question 1 questions if there is a relationship between the academic workload of a student and their mental health. Research question 3 questions if there is a relationship between students' living situation or ability to maintain work-life balance. Our assumption that the data is randomly sampled holds given our method of sampling outlined above.

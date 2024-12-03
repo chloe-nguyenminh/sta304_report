@@ -204,8 +204,8 @@ Initial setup
 - Kruskal-Wallis Chi-squared = 6.4099,<br>
 - <em>df</em> = 3,<br>
 - <em>p-value</em> = 0.0932.</p>
-<p>Since the calculated <em>p-value</em> of 0.0932 is larger than the 0.05 significance level, we fail to reject the null hypothesis. This shows that the difference between the average stress levels across different academic workloads is not significant enough to suggest that different academic workloads have a meaningful impact on student mental health.</p>
-<p>However, if we look at the mean stress levels for each rating of academic workloads:</p>
+<p>Since the calculated <em>p-value</em> of 0.0932 is larger than the 0.05 significance level, we fail to reject the null hypothesis. This indicates that the difference between the average stress levels across different academic workloads is not statistically significant enough to suggest that different academic workloads have a meaningful impact on student mental health.</p>
+<p>Note that if we look at the mean stress levels for each rating of academic workloads:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -232,8 +232,8 @@ Initial setup
 </tr>
 </tbody>
 </table>
-<p>Students who report heavier academic workloads have higher stress levels.</p>
 <hr>
+<p>While the mean stress level appears to be higher for students who report heavier academic workloads, the mean difference are not signficant enough to suggest that higher workload indicates higher stress levels.</p>
 </section>
 <section id="research-question-2-sleep-quality-and-stress-levels" class="level3">
 <h3 class="anchored" data-anchor-id="research-question-2-sleep-quality-and-stress-levels">Research Question 2: Sleep Quality and Stress Levels</h3>
@@ -264,8 +264,8 @@ Initial setup
 </tr>
 </tbody>
 </table>
-<p>While the Kruskal-Wallis test shows no significant difference between stress and sleep duration, averaging the stress levels across hours of sleep shows that the group with 6-8 hours of sleep has a higher stress level than the other two groups. However, the differences are not dramatically different, so we can’t draw conclusions based on simple averages. It’s possible that we didn’t find statistical significance because of the small sample size.</p>
 <hr>
+<p>While the Kruskal-Wallis test shows no significant difference between stress and sleep duration, averaging the stress levels across hours of sleep shows that the group with 6-8 hours of sleep has a higher stress level than the other two groups. However, the differences are not dramatically different, so we can’t draw conclusions based on simple averages. It’s possible that we didn’t find statistical significance because of the small sample size.</p>
 </section>
 <section id="research-question-3-social-events-and-stress-levels" class="level3">
 <h3 class="anchored" data-anchor-id="research-question-3-social-events-and-stress-levels">Research Question 3: Social Events and Stress Levels</h3>
@@ -276,7 +276,7 @@ Initial setup
 - <em>df</em> = 4,<br>
 - <em>p-value</em> = 0.0932.</p>
 <p>Since the calculated <em>p-value</em> of 0.0932 is larger than the 0.05 significance level, we fail to reject the null hypothesis. This shows that the difference between the average stress levels across different frequencies of missing social events is not significant enough to suggest that work-life balance has a meaningful impact on student mental health.</p>
-<p>However, if we look at the mean stress levels for each rating of work-life balance:</p>
+<p>Note that if we look at the mean stress levels for each rating of work-life balance:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -307,7 +307,7 @@ Initial setup
 </tr>
 </tbody>
 </table>
-<p>Students who miss social events more frequently tend to report higher stress levels.</p>
+<p>While the mean stress level appears to be higher for some categories of students who report missing social events, the mean difference are not signficant enough to suggest that missing social events indicates higher stress levels.</p>
 </section>
 </section>
 <section id="chi-square-test-of-independence" class="level2">
@@ -319,7 +319,7 @@ Initial setup
 <p>Since the calculated <em>p-value</em> was 0.0002288 and is less than <span class="math inline">\(\alpha = 0.05\)</span>, we reject the null hypothesis. There is enough statistical eviende that there is a significant association between academic workload and the stress levels of a student.</p>
 <p><strong>Chi-squared Test between Academic Workload and Anxiety</strong></p>
 <p><span class="math inline">\(\chi^2 =14.113\)</span>,<em>df</em>=6, <em>p-value</em> =0.0284</p>
-<p>Since the calculated <em>p-value</em> was 0.0284 and is less than <span class="math inline">\(\alpha = 0.05\)</span>, we reject the null hypothesis. There is enough statistical evidence that there is a significant association between the academic workload and the anxiety levels of a student.</p>
+<p>Since the calculated <em>p-value</em> was 0.0284 and is less than <span class="math inline">\(\alpha = 0.05\)</span>, we reject the null hypothesis. There is enough statistical evidence to indicate that a significant association between the academic workload and the anxiety levels of a student exists.</p>
 <p><strong>Chi-squared Test between Academic Workload and Concentration</strong></p>
 <p><span class="math inline">\(\chi^2 =6.5\)</span>, <em>df</em>=6, <em>p-value</em> =0.3696</p>
 <p>Since the calculated <em>p-value</em> was 0.3696 and is greater than <span class="math inline">\(\alpha = 0.05\)</span>, we fail to reject the null hypothesis. There isn’t enough statistical evidence to indicate that the academic workload and the concentration levels of a student are related.</p>
@@ -384,11 +384,11 @@ Initial setup
 </div>
 </div>
 <!-- ![Residuals Plot](residuals_rq1.png){width=80%} -->
-<ul>
-<li><p>Independence of errors: Since the plot has no noticable pattern, the independence assumption is satisfied.</p></li>
-<li><p>Normality of errors: Since our sample size is sufficiently large, by the Central Limit Theorem the sample mean (and by extension, the sampling distribution of residuals) approximately follows a Normal distribution.</p></li>
-<li><p>Homogeneity of variances amongst errors: Since the residuals plot has a “horizontal band appearance”, this suggests that variance of the residuals are the same for all values of the independent variable academic_workload.</p></li>
-</ul>
+<ol type="1">
+<li>Independence of errors: Since the plot has no noticeable pattern, the independence assumption is satisfied.</li>
+<li>Normality of errors: Since our sample size is sufficiently large, by the Central Limit Theorem the sample mean (and by extension, the sampling distribution of residuals) approximately follows a Normal distribution.</li>
+<li>Homogeneity of variances amongst errors: Since the residuals plot has a “horizontal band appearance”, this suggests that variance of the residuals are the same for all values of the independent variable academic_workload.</li>
+</ol>
 <p>Since all the assumptions are met, we proceed with the regression analysis.</p>
 </section>
 <section id="computation-and-statistical-test-output" class="level3">
@@ -536,9 +536,9 @@ Initial setup
 \text{Hours of Sleep} = 8.5521 − 0.1412 \cdot \text{Academic Workload} - 0.3763 \cdot \text{Missed Social Events}
 \]</span></p>
 </section>
-<section id="interpretation-1" class="level3">
-<h3 class="anchored" data-anchor-id="interpretation-1">Interpretation</h3>
-<p>The output of the regression analysis shows that the missed social events has a statistically significant negative association with hours of sleep (<span class="math inline">\(p = 0.00327\)</span>). However, academic workload does not have a significant relationship with hours of sleep (<span class="math inline">\(p = 0.40208\)</span>).</p>
+<section id="d.-interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="d.-interpretation">d.&nbsp;Interpretation</h3>
+<p>The output of the regression analysis shows that the missed social events have a statistically significant negative association with hours of sleep (<span class="math inline">\(p = 0.00327\)</span>). However, academic workload does not have a significant relationship with hours of sleep (<span class="math inline">\(p = 0.40208\)</span>).</p>
 </section>
 </section>
 <section id="research-question-3" class="level2">
@@ -655,8 +655,8 @@ Initial setup
 \end{array}
 \]</span></p>
 </section>
-<section id="interpretation-2" class="level3">
-<h3 class="anchored" data-anchor-id="interpretation-2">Interpretation</h3>
+<section id="interpretation-1" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-1">Interpretation</h3>
 <p>The results indicate that missed social events are a marginally significant predictor of stress levels (<span class="math inline">\(p = 0.0518\)</span>). Living situation, specifically living on campus, is also a marginally significant predictor (<span class="math inline">\(p = 0.0502\)</span>). However, living with family (<span class="math inline">\(p = 0.4590\)</span>) and living with roommates (<span class="math inline">\(p = 0.2383\)</span>) do not significantly predict stress.</p>
 </section>
 </section>
@@ -698,15 +698,18 @@ In regards to the chi square test, we were not able to satisfy the assumption th
 <p>For Research Question 3, missed social events and living situations were marginally significant predictors of stress, indicating that students who miss social events or live on campus tend to report higher stress levels. These findings highlight the importance of considering multiple factors in understanding a student’s overall well-being.</p>
 <p>However, the limitations of this analysis, including potential issues with sample randomization and measurement quality, should be addressed in future research to enhance the robustness and accuracy of the results. Future studies should also explore other possible variables, such as social support and coping mechanisms, which may further explain the mental health challenges faced by students.</p>
 <p>We also conducted Kruskal-Wallis testing for the three research questions for this study.</p>
-<p>Research question 1 (RQ1), questions if academic workload contributes to a student’s stress levels. The results of the Kruskal-Wallis test between the variables, stress and academic_workload also suggested that there is a not a significant relationship between a student’s academic workload and levels and stress.</p>
+<p>Research question 1 (RQ1), questions if academic workload contributes to a student’s stress levels. The results of the Kruskal-Wallis test between the variables, stress and academic_workload also suggested that there is not a significant relationship between a student’s academic workload and levels and stress.</p>
+<p>Next, the ANOVA test for the second research question, if a student’s mental health is affected by their quality of sleep, suggested that there is not enough evidence to imply that there is a relationship between the variables hours_sleep and stress.</p>
+<p>Finally, the ANOVA test for RQ3 gave us insight on whether a student’s mental health is affected by their ability to keep a work-life balance. The results of this analysis did not show evidence pointing towards a significant relationship between the variables, missed_social_events and stress.</p>
 <p>We also performed the Chi-Squared Test of Independence for the first and third research questions. For research question 1, the results of the chi square test suggest there is a relationship between academic_workload and the variables stress and anxiety. For research question 3, the chi square test did not indicate a significant relationship between the variables living_situation, time_management, financial_problems and the stress, anxiety or concentration levels of a student.</p>
 <p>Future and further research would greatly benefit from having a larger population size, since we could not go with the assumption that each group has a normal population distribution in each categorical group, since the CLT could not be satisfied due to the fact that each group did not have more than 30 observations.</p>
 <section id="documentation-of-ai-tool-usage" class="level2">
-<h2 class="anchored" data-anchor-id="documentation-of-ai-tool-usage">8. Documentation of AI Tool Usage</h2>
+<h2 class="anchored" data-anchor-id="documentation-of-ai-tool-usage">Documentation of AI Tool Usage</h2>
+<p>We utilized generative AI tools, namely ChatGPT, to help refine our ideas and improve readability. These tools were used primarily for brainstorming, grammar corrections, and the explanations of certain sections. However, all the analytical work, including statistical methods and interpretation of results, was done by the authors.</p>
 <p>We utilized generative AI tools, namely ChatGPT, to help refine our ideas and improve readability. These tools were used primarily for brainstorming, grammar corrections, and the explanations of certain sections. However, all the analytical work, including statistical methods and interpretation of results, was done by the authors.</p>
 </section>
 <section id="citations" class="level2">
-<h2 class="anchored" data-anchor-id="citations">9. Citations:</h2>
+<h2 class="anchored" data-anchor-id="citations">8. Citations:</h2>
 <ol type="1">
 <li><p>https://chatgpt.com/share/674a3a7d-83e4-8013-a381-4192bb2028da</p></li>
 <li><p>Beiter R, Nash R, McCrady M, Rhoades D, Linscomb M, Clarahan M, Sammut S. The prevalence and correlates of depression, anxiety, and stress in a sample of college students. J Affect Disord. 2015 Mar 1;173:90-6. doi: 10.1016/j.jad.2014.10.054.(https://www.sciencedirect.com/science/article/abs/pii/S0165032714006867?via%3Dihub). Epub 2014 Nov 8. PMID: 25462401.</p></li>
