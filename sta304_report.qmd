@@ -96,47 +96,79 @@ To randomize our sampling process, we used R's random sampling function sample()
 
 # Analysis
 
-## Section 1. ANOVA
+## Section 1. Kruskal-Wallis Testing
 
-RQ1 questions if academic workload contributes to a student’s stress levels. To answer this question, ANOVA (analysis of variance) is used to test the difference in average stress levels between students with different academic workloads. 
-All our assumptions are satisfied as samples between the groups were randomly sampled and responses are independent from each other, data from each group is normally distributed (large sample size, n > 30) and variances are approximately the same (obtained p-value of 0.07758 from Barlett’s test, which is above the α = 0.05 significance level.) 
-All categories were converted to categorical data to make them suitable for ANOVA testing.
+# Research Question 1: Academic Workload and Stress Levels
 
-# ANOVA between stress and academic workload
+RQ1 questions whether academic workload contributes to a student's stress levels. To answer this question, we attempted using ANOVA (Analysis of Variance) to test the difference in average stress levels between students with different academic workloads. However, not all our assumptions were satisfied. 
 
-| Variable            | Degrees of Freedom (DF) | Sum of Squares (SS) | Mean Square (MS) | F-value | Pr(>F)         |
-|---------------------|-------------------------|----------------------|------------------|---------|----------------|
-| academic workload   | 3                       | 3.136                | 1.0455          | 4.273   | 0.0136         |
-| Residuals           | 27                      | 6.605               | 0.2446           |         |                |
+Shapiro-Wilk Test for Normality was used to test normality for all our groups; however, for all groups, we received a p-value below 0.05. It is also impossible for our groups to have >30 observations, and thus we failed the normality assumption for ANOVA. The only assumption we could meet was that the samples between the groups were randomly sampled, and responses were independent from each other. This allowed us to test using the non-parametric version of ANOVA, called the Kruskal-Wallis test, where normality and equal variances aren't assumed.
 
-For the relationship between stress and academic workload, we divided the criteria of stress into categories of Never, Sometimes, and Always, and compared each group with an ANOVA test.
-Since the calculated F-value of 5.121 is larger than the critical F-value of 2.874 at a 5% significance level with (3, 35) degrees of freedom, we reject the null hypothesis.
-Therefore, there is a statistically significant relationship between student academic workload and levels of stress.
+We obtained:  
+- Kruskal-Wallis chi-squared = 6.4099,  
+- df = 3,  
+- p-value = 0.0932.
 
+Since the calculated p-value of 0.0932 is larger than the 0.05 significance level, we fail to reject the null hypothesis. This shows that the difference between the average stress levels across different academic workloads is not significant enough to suggest that different academic workloads have a meaningful impact on student mental health.
 
-# ANOVA between stress and hours\_sleep
+However, if we look at the mean stress levels for each rating of academic workloads:
 
-| Variable            | Degrees of Freedom (DF) | Sum of Squares (SS) | Mean Square (MS) | F-value | Pr(>F)         |
-|---------------------|-------------------------|----------------------|------------------|---------|----------------|
-| sleep               | 2                       | 1.242               | 0.6210          | 2.046   | 0.148           |
-| Residuals           | 28                      | 8.500              | 0.3036          |         |                |
+| Workload Rating | Mean Stress Level |
+|------------------|-------------------|
+| 1                | 1.0000            |
+| 2                | 2.2857            |
+| 3                | 2.6154            |
+| 4                | 2.7000            |
 
-In the case of the relationship between Stress and Sleep, we ran an ANOVA test to convert sleep into categorical data, dividing it into 6 hours or less, between 6 and 8 hours, and more than 8 hours.
-Since the calculated F-value of 0.163 is smaller than the critical F-value of 3.259 at the 5% significance level with (2, 36) degrees of freedom, we fail to reject the null hypothesis. 
-Therefore, there is no statistically significant relationship between hours of sleep and levels of stress among students. This suggests that variations in hours of sleep do not significantly affect variations in stress levels.
+Students who report heavier academic workloads have higher stress levels.
 
-# ANOVA between stress and missed social events
+---
 
-| Variable               | Degrees of Freedom (DF) | Sum of Squares (SS) | Mean Square (MS) | F-value | Pr(>F)         |
-|------------------------|-------------------------|----------------------|------------------|---------|----------------|
-| missed\_social\_events | 4                       | 1.220               | 0.3049           | 0.93   | 0.462          |
-| Residuals              | 26                      | 8.522              | 0.3278           |         |                |
-This relationship between stress and missed social events, we ran an ANOVA test to convert hours of study into categorical data, dividing into 0-10 hours as “Low”, 10-20 hours as “Medium” and 20 or more as “High”.
-Since the calculated F-value was 1.092 and this is less than the critical value, 2.629 (df=4, df=34). 
-Therefore, we fail to reject the null hypothesis. This means that **stress levels** and **missed social events** do not have a significant relationship.
+# Research Question 2: Sleep Quality and Stress Levels
 
-Since the calculated F-value of 1.092 is smaller than the critical F-value of 2.649 at the 5% significance level with (4, 34) degrees of freedom, we fail to reject the null hypothesis. This conclusion is also supported by the p-value of 0.376, which is greater than the significance level of 0.05. Therefore, there is no statistically significant relationship between stress levels and missed social events among students.
+Regarding sleep quality against average stress levels, we first ran a Shapiro-Wilk test to see if the data followed a normal distribution. When we ran the Shapiro-Wilk test, we got a p-value of 0.02971, which is less than 0.05, showing that hours of sleep don't follow a normal distribution. This violates the assumptions of ANOVA analysis of hours of sleep, so we decided to use the Kruskal-Wallis test. 
 
+We obtained:  
+- p-value = 0.1115,  
+
+Since the p-value is greater than 0.05, we can't conclude that there is a significant difference between hours of sleep and stress levels. Therefore, we can't reject the null hypothesis that sleep duration doesn't affect stress levels.
+
+We also examined the mean stress level across different sleep categories:
+
+| Sleep Category        | Mean Stress Level |
+|------------------------|-------------------|
+| Less than 6 hours      | 2.00              |
+| 6-8 hours              | 2.67              |
+| More than 8 hours      | 2.22              |
+
+While the Kruskal-Wallis test shows no significant difference between stress and sleep duration, averaging the stress levels across hours of sleep shows that the group with 6-8 hours of sleep has a higher stress level than the other two groups. However, the differences are not dramatically different, so we can't draw conclusions based on simple averages. It's possible that we didn't find statistical significance because of the small sample size.
+
+---
+
+# Research Question 3: Social Events and Stress Levels
+
+For RQ3, we examined the relationship between average stress levels and the frequency of missed social events of the sampled students. This relationship would imply a possible effect on students' mental health due to varying work-life balances. 
+
+Similar to the other two tests, we ran the Shapiro-Wilk test of normality, obtaining a p-value of 0.01873, again failing the normality assumption for ANOVA testing. Therefore, we proceeded with the Kruskal-Wallis test.
+
+We obtained:  
+- Kruskal-Wallis chi-squared = 2.6958,  
+- df = 4,  
+- p-value = 0.0932.
+
+Since the calculated p-value of 0.0932 is larger than the 0.05 significance level, we fail to reject the null hypothesis. This shows that the difference between the average stress levels across different frequencies of missing social events is not significant enough to suggest that work-life balance has a meaningful impact on student mental health.
+
+However, if we look at the mean stress levels for each rating of work-life balance:
+
+| Social Events Missed | Mean Stress Level |
+|-----------------------|-------------------|
+| 1                     | 2.00              |
+| 2                     | 2.60              |
+| 3                     | 2.70              |
+| 4                     | 2.44              |
+| 5                     | 2.50              |
+
+Students who miss social events more frequently tend to report higher stress levels.
 # Section 2. Chi-square Test of Independence
 Research Question 1 questions if there is a relationship between the academic workload of a student and their mental health. Research question 3 questions if there is a relationship between students' living situation or ability to maintain work-life balance. Our assumption that the data is randomly sampled holds given our method of sampling outlined above.
 To prove that there exists a relationship between these variables, we want to use the chi square test of independence. We use $\alpha = 0.05$ as the significance level.
@@ -467,11 +499,11 @@ For Research Question 2, we aimed to investigate whether there is a relationship
 
 For Research Question 3, we studied whether mental health is affected by students' living situations and their ability to maintain a work-life balance. To explore this relationship, we first plotted a boxplot of stress against the number of missed social events. The plot suggested that students who sometimes or always miss social events tend to experience more stress, while those who never miss social events experience less stress. Then, we ran a test that concluded missing social events and living on campus may slightly affect stress levels, although the evidence is not very strong. In contrast, living with family or roommates does not appear to have a significant impact on stress.
 
-ANOVA test between stress and academic workload has the calculated F-value of 4.273, which is larger than the critical F-value of 2.960 at the 5% significance level with (3, 27) degrees of freedom. Therefore, we reject the null hypothesis. There is a statistically significant relationship between student academic workload and levels of stress. This suggests that variations in academic workload are significantly related to variations in stress.
+Kruskal-Wallis test between stress and academic workload has the calculated P-value of 0.09332, which is greater than 0.05. Therefore, we fail to reject the null hypothesis. This means that stress levels and academic workload do not have a significant relationship.
 
-ANOVA test between stress and hours of sleep has the calculated F-value of 0.163, which is smaller than the critical F-value of 3.340 at the 5% significance level with (2, 28) degrees of freedom. Therefore, we fail to reject the null hypothesis. There is no statistically significant correlation between hours of sleep and levels of stress among students. This suggests that variations in hours of sleep do not significantly relate to variations in stress levels.
+Kruskal-Wallis test between stress and hours of sleep has the calculated P-value of 0.02971, which is larger than 0.05. Therefore, we fail to reject the null hypothesis. There is not enough evidence to determine a connection between hours of sleep and levels of stress among students. This suggests that variations in hours of sleep do not significantly relate to variations in stress levels.
 
-ANOVA test between stress and missed social events has the calculated F-value of 1.092, which is smaller than the critical F-value of 2.649 at the 5% significance level with (4, 34) degrees of freedom. Therefore, we fail to reject the null hypothesis. This means that stress levels and missed social events do not have a significant relationship.
+Kruskal-Wallis test between stress and missed social events has the calculated P-value of 0.61, which is greater than 0.05. Therefore, we fail to reject the null hypothesis. This means that stress levels and missed social events do not have a significant relationship.
 
 For the chi square tests of independence between academic workload and stress, anxiety, the respective p values are 0.0002288 and 0.0284 which are both less than the alpha a=0.05, so we reject the null hypothesis. For the chi square tests of independence between academic workload and concentration, the p value is 0.3696, which is greater than the alpha a=0.05, therefore we fail to reject the null hypothesis. This suggests that a student's academic workload has and on their stress or anxiety but not their concentration . 
 
@@ -506,7 +538,7 @@ In the future, to address these limitations, we plan to incorporate attention-ch
 The linear regression analysis conducted for the three research questions of this study provides valuable insights into the factors affecting student stress and mental health. For Research Question 1, we found a significant positive relationship between academic workload and stress levels, suggesting that students with heavier workloads tend to experience higher levels of stress. In Research Question 2, while academic workload did not significantly impact the amount of sleep, missed social events were found to significantly reduce hours of sleep, which may contribute to poor mental health. For Research Question 3, missed social events and living situations were marginally significant predictors of stress, indicating that students who miss social events or live on campus tend to report higher stress levels. These findings highlight the importance of considering multiple factors in understanding a student's overall well-being. However, the limitations of this analysis, including potential issues with sample randomization and measurement quality, should be addressed in future research to enhance the robustness and accuracy of the results. Future studies should also explore other possible variables, such as social support and coping mechanisms, which may further explain the mental health challenges faced by students.
 
 
-Overall, the results of the ANOVA tests show that the stress levels of the students sampled are primarily related to academic factors, with lifestyle factors such as sleep and socializing having less of an impact on their mental health than expected. In addition, this voluntary response method was likely to result in selection bias.
+Overall, the results of the Kruskal-Wallis tests show that the stress levels of the students sampled are primarily related to none of the anticipated factors, with  academic workload, lifestyle factors such as sleep and socializing having less of an impact on their mental health than expected. In addition, this voluntary response method was likely to result in selection bias.
 
 For the chi square tests of independence between academic workload and stress, anxiety, the respective p values are 0.0002288 and 0.0284 which are both less than the alpha a=0.05, so we retain the null hypothesis. For the chi square tests of independence between academic workload and concentration, the p value is 0.3696, which is greater than the alpha a=0.05, therefore we reject the null hypothesis. This suggests that a student's academic workload has an effect on their concentration but not their stress or anxiety. 
 
@@ -541,9 +573,9 @@ For Research Question 3, missed social events and living situations were margina
 
 However, the limitations of this analysis, including potential issues with sample randomization and measurement quality, should be addressed in future research to enhance the robustness and accuracy of the results. Future studies should also explore other possible variables, such as social support and coping mechanisms, which may further explain the mental health challenges faced by students.
 
-We also conducted ANOVA testing for the three research questions for this study. 
+We also conducted Kruskal-Wallis testing for the three research questions for this study. 
 
-Research question 1 (RQ1), questions if academic workload contributes to a student’s stress levels. The results of the ANOVA test between the variables, stress and academic_workload also suggested that there is a significant relationship between a student's academic workload and levels and stress. 
+Research question 1 (RQ1), questions if academic workload contributes to a student’s stress levels. The results of the Kruskal-Wallis test between the variables, stress and academic_workload also suggested that there is a not a significant relationship between a student's academic workload and levels and stress. 
 
 Next, the ANOVA test for the second research question, if a student’s mental health is affected by their quality of sleep, suggested that there is not enough evidence to imply that there is a relationship between the variables hours_sleep and stress.
 
