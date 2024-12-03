@@ -6,7 +6,7 @@ date: "Dec 2, 2024"
 
 # Abstract
 
-University students frequently face challenges that contribute to mental health issues such as stress and anxiety. This study examines the relationship between mental health and factors such as academic workload, hours of sleep, living situation, and work-life balance. Data were collected through a Google Form survey administered to students in a third-year statistics survey & sampling course, where participants rated their agreement with statements related to various mental health indicators. The results showed a significant relationship between academic workload and stress levels. While no significant relationship was found between stress levels and hours of sleep, we observed a significant association between hours of sleep and missed social events. Additionally, no statistically significant relationship was identified between stress levels and living situation, though a marginally significant relationship was found between living situation and missed social events. Since we were not able to reach most of the conclusions that we expected, we plan to consider other factors that might influence mental health, and also incorporate attention-check questions to identify rushed responses.
+University students frequently face challenges that contribute to mental health issues such as stress and anxiety. This study examines the relationship between mental health and factors such as academic workload, hours of sleep, living situation, and work-life balance. Data was collected through a Google Form survey administered to students in a third-year statistics survey & sampling course, where participants rated their agreement with statements related to various mental health indicators. The results showed a significant relationship between academic workload and stress levels. While no significant relationship was found between stress levels and hours of sleep, we observed a significant association between hours of sleep and missed social events. Additionally, no statistically significant relationship was identified between stress levels and living situation, though a marginally significant relationship was found between living situation and missed social events. Since we were not able to reach most of the conclusions that we expected, we plan to consider other factors that might influence mental health, and also incorporate attention-check questions to identify rushed responses.
 
 # Introduction
 
@@ -183,7 +183,7 @@ Since the calculated *p-value* was 0.0002288 and is less than $\alpha = 0.05$, w
 # Chi Square Test between Academic Workload and Anxiety
 $X^2 =14.113$,*df*=6, *p-value* =0.0284
 
-Since the calculated *p-value* was 0.0284 and is less than $\alpha = 0.05$, we reject the null hypothesis. There is enough statistical evidence that there is a significant association between the academic workload and the anxiety levels of a student.
+Since the calculated *p-value* was 0.0284 and is less than $\alpha = 0.05$, we reject the null hypothesis. There is enough statistical evidence tho indicate that a significant association between the academic workload and the anxiety levels of a student exists.
 
 # Chi Square Test between Academic Workload and Concentration
 $X^2 =6.5$, *df*=6, *p-value* =0.3696
