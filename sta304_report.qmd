@@ -183,7 +183,7 @@ Since the calculated *p-value* was 0.0002288 and is less than $\alpha = 0.05$, w
 # Chi Square Test between Academic Workload and Anxiety
 $X^2 =14.113$,*df*=6, *p-value* =0.0284
 
-Since the calculated *p-value* was 0.0284 and is less than $\alpha = 0.05$, we reject the null hypothesis. There is enough statistical evidence tho indicate that a significant association between the academic workload and the anxiety levels of a student exists.
+Since the calculated *p-value* was 0.0284 and is less than $\alpha = 0.05$, we reject the null hypothesis. There is enough statistical evidence to indicate that a significant association between the academic workload and the anxiety levels of a student exists.
 
 # Chi Square Test between Academic Workload and Concentration
 $X^2 =6.5$, *df*=6, *p-value* =0.3696
@@ -291,7 +291,7 @@ plot(residuals(rq1_stress.lm))
  2. Normality of errors: Since our sample size is sufficiently large, by the Central Limit Theorem the sample mean (and by extension, the sampling distribution of residuals) approximately follows a Normal distribution. 
  3. Homogeneity of variances amongst errors: Since the residuals plot has a "horizontal band appearance", this suggests that variance of the residuals are the same for all values of the independent variable academic_workload.
 
- Since all the assumptions are met, we may preform the regression analysis.
+ Since all the assumptions are met, we may prefoprerm the regression analysis.
 
 ### c. Computation and Statistical Test Output
 The regression analysis produced the following results:
@@ -396,7 +396,7 @@ $$
 $$
 
 ### d. Interpretation
-The output of the regression analysis shows that the missed social events has a statistically significant negative association with hours of sleep ($p = 0.00327$). However, academic workload does not have a significant relationship with hours of sleep ($p = 0.40208$).
+The output of the regression analysis shows that the missed social events have a statistically significant negative association with hours of sleep ($p = 0.00327$). However, academic workload does not have a significant relationship with hours of sleep ($p = 0.40208$).
 
 ## Research Question 3
 
@@ -542,7 +542,7 @@ However, the limitations of this analysis, including potential issues with sampl
 
 We also conducted Kruskal-Wallis testing for the three research questions for this study. 
 
-Research question 1 (RQ1), questions if academic workload contributes to a student’s stress levels. The results of the Kruskal-Wallis test between the variables, stress and academic_workload also suggested that there is a not a significant relationship between a student's academic workload and levels and stress. 
+Research question 1 (RQ1), questions if academic workload contributes to a student’s stress levels. The results of the Kruskal-Wallis test between the variables, stress and academic_workload also suggested that there is not a significant relationship between a student's academic workload and levels and stress. 
 
 Next, the ANOVA test for the second research question, if a student’s mental health is affected by their quality of sleep, suggested that there is not enough evidence to imply that there is a relationship between the variables hours_sleep and stress.
 
