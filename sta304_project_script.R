@@ -48,11 +48,49 @@ png("residuals_rq1.png", width = 800, height = 600)
 # Plot code goes here, for example:
 plot(residuals(rq1_stress.lm))
 dev.off()
+# Research Question 1 - Boxplot
+options(warn = -1)
+library(ggplot2)
+library(grid)
+
+sample_data$stress <- factor(sample_data$stress, levels = c("Never", "Sometimes", "Always"))
+sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, levels = c("Never", "Sometimes", "Always")))
+
+boxplot_plot <- ggplot(sample_data, aes(x = factor(stress), y = academic_workload, fill = stress)) +
+  geom_boxplot(color = "black") +
+  scale_fill_manual(values = c("Never" = "#E25C5C", "Sometimes" = "#66B266", "Always" = "#6C8B8B")) +
+  labs(title = "Boxplot of Academic Workload by Stress Level",
+       x = "Stress Level",
+       y = "Academic Workload") +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+print(boxplot_plot)
+grid.rect(gp = gpar(fill = NA, col = "black", lwd = 4)) # lwd = thickness of border
+
+# Save the plot as a PNG file
+# ggsave("boxplot_academic_workload_by_stress.png", plot = boxplot_plot, width = 8, height = 6, dpi = 300)
+
 
 
 # Research Question 2 - Multiple Linear Regression
 rq2.lm = lm(hours_sleep ~ academic_workload + missed_social_events, data = sample_data)
 summary(rq2.lm)
+# Research Question 2 - Boxplot
+boxplot_plot <- ggplot(sample_data, aes(x = factor(missed_social_events), y = hours_sleep, fill = factor(missed_social_events))) +
+  geom_boxplot(color = "black") +
+  scale_fill_manual(values = c("0" = "#E25C5C", "1" = "#66B266", "2" = "#6C8B8B", "3" = "#9E9E9E", "4" = "#D0A0A0")) +
+  labs(title = "Boxplot of Hours of Sleep by Missed Social Events",
+       x = "Missed Social Events",
+       y = "Hours of Sleep") +
+  theme_minimal() +
+  theme(legend.position = "none")
+  
+print(boxplot_plot)
+grid.rect(gp = gpar(fill = NA, col = "black", lwd = 4))
+
+# Save the plot as a PNG file
+# ggsave("boxplot_hours_sleep_by_missed_social_events.png", plot = boxplot_plot, width = 8, height = 6, dpi = 300)
 
 
 {r}
@@ -82,6 +120,21 @@ png("residuals_rq3.png", width = 800, height = 600)
 # Plot code goes here, for example:
 plot(residuals(rq3.lm))
 dev.off()
+# Research Question 3 - Boxplot
+boxplot_plot <- ggplot(sample_data, aes(x = factor(missed_social_events), y = stress_numeric, fill = factor(missed_social_events))) +
+  geom_boxplot(color = "black") +
+  scale_fill_manual(values = c("0" = "#E25C5C", "1" = "#66B266", "2" = "#6C8B8B", "3" = "#9E9E9E", "4" = "#D0A0A0")) +
+  labs(title = "Boxplot of Stress Level by Missed Social Events",
+       x = "Missed Social Events",
+       y = "Stress Level") +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+print(boxplot_plot)
+grid.rect(gp = gpar(fill = NA, col = "black", lwd = 4))
+
+# Save the plot as a PNG file
+# ggsave("boxplot_missed_social_events_by_stress.png", plot = boxplot_plot, width = 8, height = 6, dpi = 300)
 
 
 # Assumptions for Research Question 3 - Multiple Linear Regression
