@@ -169,6 +169,8 @@ However, if we look at the mean stress levels for each rating of work-life balan
 | 5                     | 2.50              |
 
 Students who miss social events more frequently tend to report higher stress levels.
+
+
 # Section 2. Chi-square Test of Independence
 Research Question 1 questions if there is a relationship between the academic workload of a student and their mental health. Research question 3 questions if there is a relationship between students' living situation or ability to maintain work-life balance. Our assumption that the data is randomly sampled holds given our method of sampling outlined above.
 To prove that there exists a relationship between these variables, we want to use the chi square test of independence. We use $\alpha = 0.05$ as the significance level.
@@ -178,33 +180,23 @@ $X^2 = 25.936$, *df* = 6, *p-value* = 0.0002288
 
 Since the calculated *p-value* was 0.0002288 and is less than $\alpha = 0.05$, we reject the null hypothesis. This indicates that there is a significant association between academic workload and the stress levels of a student.
 
-
-Since the calculated p-value was 0.0002288 and is less than a=0.05, we reject the null hypothesis. This means that the academic workload and the 
-stress levels of a student are related.
-
 # Chi Square Test between Academic Workload and Anxiety
 $X^2 =14.113$,*df*=6, *p-value* =0.0284
-
 
 Since the calculated *p-value* was 0.0284 and is less than $\alpha = 0.05$, we reject the null hypothesis. There is enough statistical evidence that there is a significant association between the academic workload and the anxiety levels of a student.
 
 # Chi Square Test between Academic Workload and Concentration
 $X^2 =6.5$, *df*=6, *p-value* =0.3696
 
-
-Since the calculated p-value was 0.3696 and is greater than $\alpha = 0.05$, we fail to reject the null hypothesis. There isn't enough statistical evidence to indicate that the academic workload and the 
-The concentration levels of a student are related.
+Since the calculated p-value was 0.3696 and is greater than $\alpha = 0.05$, we fail to reject the null hypothesis. There isn't enough statistical evidence to indicate that the academic workload and the concentration levels of a student are related.
 
 # Chi Square Test between Living Situation and Stress
 $X^2 =4.9936$, *df*=6, *p-value* =0.5446
 
-
 Since the calculated *p-value* was 0.5446 and is greater than $\alpha = 0.05$, we fail to reject the null hypothesis. There isn't enough statistical evidence that the living situation and the stress levels of a student are related.
-
 
 # Chi Square Test between Living Situation and Anxiety
 $X^2=6.6042$, *df*=6, *p-value* =0.359
-
 
 Since the calculated p-value was 0.359 and is greater than a=0.05, we fail to reject the null hypothesis. There isn't enough statistical evidence that the living situation and the anxiety levels of a student are related.
 
@@ -242,6 +234,8 @@ Since the calculated p-value was 0.7236 and is greater than $\alpha=0.05$, we fa
 X-squared =6.1471, df=8, p-value =0.6308
 
 Since the calculated p-value was 0.6308 and is greater than $\alpha=0.05$, we fail to reject the null hypothesis.  There isn't enough statistical evidence that the financial situation and the concentration levels of a student are related.
+
+
 # Section 3. Simple and Multiple Linear Regressions
 This part of the analysis focuses on applying linear regression to address the three research questions outlined in the introduction. We will explore whether there is a relationship between students' academic workload and the prevalence of mental health issues; between academic workload, the amount of sleep students get, and its impact on mental health; and finally, between mental health, students' living situations, and their ability to maintain a work-life balance. All of these relationships were found to be statistically significant.
 
@@ -519,7 +513,7 @@ Overall, the results of this study show that stress and anxiety among university
 
 # 6. Limitations
 
-Three major limitations that our study faced were failing to reject the null hypotheses, survey limitations, and the indirect nature of our research.
+Four major limitations that our study faced were failing to reject the null hypotheses, survey limitations, the indirect nature of our research, and our failure to meet the expected counts for each group.
 
 1. Failing to Reject Null Hypotheses \
 Many additional tests not included in this report failed to produce statistically significant results. For example, one linear regression test concluded that there is no relationship between academic workload and some mental health issues. This sort of result seemed counterintuitive and difficult to accept, which suggested there might be other factors that influence mental health that we did not consider.
@@ -527,40 +521,13 @@ Many additional tests not included in this report failed to produce statisticall
 2. Survey Limitations \
 Students may have rushed through the survey in order to receive course credit, without taking the time to reflect on their responses. Also, students may have not felt comfortable answering questions about their mental health truthfully, which could have led to response bias. 
 
-
 3. Indirect Nature of Research \
 Mental health is a complex topic, and it is difficult to be certain about the reliability and validity of our results when our study relied on indirect measures such as stress and anxiety to represent the broad spectrum of mental health.
-  
+
+4. Expected Counts \
+In regards to the chi square test, we were not able to satisfy the assumption that the expected counts for all groups is greater than or equal to five. In particular, only a single person rated their academic workload less than 3, and very few people responded 'never' to the questions about their stress, anxiety and concentration. The groups could not be combined in a way that ensured the expected counts would be equal to or greater than five, while also still providing meaningful data.
+
 In the future, to address these limitations, we plan to incorporate attention-check questions to identify rushed or careless responses. We will also explore additional variables that may influence mental health to ensure a comprehensive understanding of the complexities of mental health. Finally, some open-ended questions could help students elaborate on their responses.
-
-# 7. Conclusion 
-
-The linear regression analysis conducted for the three research questions of this study provides valuable insights into the factors affecting student stress and mental health. For Research Question 1, we found a significant positive relationship between academic workload and stress levels, suggesting that students with heavier workloads tend to experience higher levels of stress. In Research Question 2, while academic workload did not significantly impact the amount of sleep, missed social events were found to significantly reduce hours of sleep, which may contribute to poor mental health. For Research Question 3, missed social events and living situations were marginally significant predictors of stress, indicating that students who miss social events or live on campus tend to report higher stress levels. These findings highlight the importance of considering multiple factors in understanding a student's overall well-being. However, the limitations of this analysis, including potential issues with sample randomization and measurement quality, should be addressed in future research to enhance the robustness and accuracy of the results. Future studies should also explore other possible variables, such as social support and coping mechanisms, which may further explain the mental health challenges faced by students.
-
-
-Overall, the results of the Kruskal-Wallis tests show that the stress levels of the students sampled are primarily related to none of the anticipated factors, with  academic workload, lifestyle factors such as sleep and socializing having less of an impact on their mental health than expected. In addition, this voluntary response method was likely to result in selection bias.
-
-For the chi square tests of independence between academic workload and stress, anxiety, the respective p values are 0.0002288 and 0.0284 which are both less than the alpha a=0.05, so we retain the null hypothesis. For the chi square tests of independence between academic workload and concentration, the p value is 0.3696, which is greater than the alpha a=0.05, therefore we reject the null hypothesis. This suggests that a student's academic workload has an effect on their concentration but not their stress or anxiety. 
-
-The linear regression analysis conducted for the three research questions of this study provides valuable insights into the factors affecting student stress and mental health. For Research Question 1, we found a significant positive relationship between academic workload and stress levels, suggesting that students with heavier workloads tend to experience higher levels of stress. In Research Question 2, while academic workload did not significantly impact the amount of sleep, missed social events were found to significantly reduce hours of sleep, which may contribute to poor mental health. For Research Question 3, missed social events and living situations were marginally significant predictors of stress, indicating that students who miss social events or live on campus tend to report higher stress levels. These findings highlight the importance of considering multiple factors in understanding a student's overall well-being. However, the limitations of this analysis, including potential issues with sample randomization and measurement quality, should be addressed in future research to enhance the robustness and accuracy of the results. Future studies should also explore other possible variables, such as social support and coping mechanisms, which may further explain the mental health challenges faced by students.
-
-Chi square tests between students' financials and their stress, anxiety and concentration yield p values of 0.7223, 0.7236, and 0.6308 respectively. All of these p values are greater than the alpha a=0.05, therefore we reject the null hypothesis for all three of these chi square tests. This means that a student's financial situation has some effect on their stress, anxiety and concentration.
-
-Overall, the results of the chi square tests of independence indicate that the mental health of a student is primarily related to lifestyle factors, with the academic workload only being related to students' concentration.
-
-# Limitations
-
-## Limitations
-This experiment investigated the relationship between academic workload, stress, sleep, and work life-balance among STA304 students. There were many difficulties and limitations in conducting this experiment.
-
-### Sampling
-First, we used Simple Random Sampling (SRS) to sample the responses from the survey, but I am not sure that randomness was guaranteed. Certain students may have been more active in the survey, which may not generalize the results. Therefore, I think that various methods such as stratified sampling should be used instead of SRS. Also, there is a question of voluntariness, because the students did not voluntarily participate in the survey, but responded as part of their course participation.
-
-### Questionnaire Design
-We think that personal bias may occur due to the ambiguity of the questions in the questionnaire, such as the mental health questions, because they are not objective parameters that can be subjective to the people who answer them. These parameters were measured indirectly in the questionnaire, but this can increase the likelihood of measurement error.
-
-### Sample Size
-Third, there is the issue of sample size: while the sample size of this experiment is relatively large compared to the population, the population itself may be limited and the findings may not be generalizable. We would expect the results to be more generalizable if the experiment were conducted on a larger population. A larger population would also allow for us to assume that all of our categorical groups have a normal population distribution, one of the assumptions needed for our ANOVA testing.
 
 
 ## Conclusion
@@ -579,7 +546,9 @@ Research question 1 (RQ1), questions if academic workload contributes to a stude
 
 Next, the ANOVA test for the second research question, if a student’s mental health is affected by their quality of sleep, suggested that there is not enough evidence to imply that there is a relationship between the variables hours_sleep and stress.
 
-Finally, the ANOVA test for RQ3 gave us insight on whether a student’s mental health is affected by their ability to keep a work-life balance. The results of this analysis did not show evidence pointing towards a significant relationship between the variables, missed_social_events and stress. 
+Finally, the ANOVA test for RQ3 gave us insight on whether a student’s mental health is affected by their ability to keep a work-life balance. The results of this analysis did not show evidence pointing towards a significant relationship between the variables, missed_social_events and stress.
+
+We also performed the  Chi-Squared Test of Independence for the first and third research questions. For research question 1, the results of the chi square test suggest there is a relationship between academic_workload and the variables stress and anxiety. For research question 3, the chi square test did not indicate a significant relationship between the variables living_situation, time_management, financial_problems and the stress, anxiety or concentration levels of a student. 
 
 Future and further research would greatly benefit from having a larger population size, since we could not go with the assumption that each group has a normal population distribution in each categorical group, since the CLT could not be satisfied due to the fact that each group did not have more than 30 observations.
 

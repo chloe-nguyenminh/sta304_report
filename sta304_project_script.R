@@ -42,6 +42,7 @@ sample_data$stress_numeric <- as.numeric(factor(sample_data$stress, levels = c("
 rq1_stress.lm = lm(stress_numeric ~ academic_workload, data = sample_data)
 summary(rq1_stress.lm)
 
+
 # Assumptions for Research Question 1 - Simple Linear Regression
 png("residuals_rq1.png", width = 800, height = 600)
 # Plot code goes here, for example:
@@ -53,6 +54,8 @@ dev.off()
 rq2.lm = lm(hours_sleep ~ academic_workload + missed_social_events, data = sample_data)
 summary(rq2.lm)
 
+
+{r}
 # Assumptions for Research Question 2 - Multiple Linear Regression
 png("residuals_rq2.png", width = 800, height = 600)
 # Plot code goes here, for example:
