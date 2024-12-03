@@ -553,14 +553,16 @@ We also performed the  Chi-Squared Test of Independence for the first and third 
 Future and further research would greatly benefit from having a larger population size, since we could not go with the assumption that each group has a normal population distribution in each categorical group, since the CLT could not be satisfied due to the fact that each group did not have more than 30 observations.
 
 
-## Documentation of AI Tool Usage
+## Citations:
 
-We utilized generative AI tools, namely ChatGPT, to help refine our ideas and improve readability. These tools were used primarily for brainstorming, grammar corrections, and the explanations of certain sections. However, all the analytical work, including statistical methods and interpretation of results, was done by the authors.
-
-https://chatgpt.com/share/674a3a7d-83e4-8013-a381-4192bb2028da
-
-
-1. Beiter, R., Nash, R., McCrady, M., Rhoades, D., Linscomb, M., Clarahan, M., & Sammut, S. (2015). The prevalence and correlates of depression, anxiety, and stress in a sample of college students. *Journal of Affective Disorders*, 173(3), 90-96.
-2. Galambos, N. L., Howard, A. L., & Krahn, H. J. (2009). Work, stress, and academic performance in university students. *Journal of Youth and Adolescence*, 38(4), 490-503.
-3. Hershner, S. D., & Chervin, R. D. (2014). Causes and consequences of sleepiness among college students. *Nature and Science of Sleep*, 6, 73-84.
-4. Kim, E., & Koh, K. (2018). Work-life balance and well-being among college students: A critical literature review. *Journal of College Counseling*, 21(3), 247-261.
+1. https://chatgpt.com/share/674a3a7d-83e4-8013-a381-4192bb2028da
+2. Beiter R, Nash R, McCrady M, Rhoades D, Linscomb M, Clarahan M, Sammut S. The prevalence and
+correlates of depression, anxiety, and stress in a sample of college students. J Affect Disord. 2015 Mar
+1;173:90-6. doi: 10.1016/j.jad.2014.10.054.
+(https://www.sciencedirect.com/science/article/abs/pii/S0165032714006867?via%3Dihub). Epub 2014
+Nov 8. PMID: 25462401.
+3. Hysing M, Harvey AG, Linton SJ, Askeland KG, Sivertsen B. Sleep and academic performance in later
+adolescence: results from a large population-based study. J Sleep Res. 2016 Jun;25(3):318-24.
+doi:10.1111/jsr.12373. Epub 2016 Jan 30. PMID: 26825591.
+4. Hershner SD, Chervin RD. Causes and consequences of sleepiness among college students. Nat Sci
+Sleep. 2014 Jun 23;6:73-84. doi:10.2147/NSS.S62907. PMID: 25018659; PMCID: PMC4075951.
