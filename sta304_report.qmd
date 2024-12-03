@@ -40,13 +40,13 @@ Given the above potential factors, we seek to address the following research que
   - **Alternative Hypothesis:** Students' mental health is significantly affected by their living situation and their ability to maintain a work-life balance.
 
 
-This study focuses on students enrolled in STA304H5 during Fall 2024, aiming to provide valuable insights into the effects of academic workload on their overall well-being. By exploring these relationships, the findings may inform strategies to enhance student support services and improve academic experiences.
+This study focuses on students enrolled in STA304H5 during Fall 2024, aiming to provide valuable insights into the effects of academic workload on their overall well-being. By exploring these relationships, the findings may inform strategies to enhance student support services and improve academic exiences.
 
 # 3. Methodology
 
 ## 3.1. Data Collection
 
-Between October 8th, 2024, and October 20th, 2024, the questionnaire's Google Form link was posted on the STA304H5 Piazza course discussion board. We utilized Simple Random Sampling (SRS) by using the R random generator to randomly sample 45 students from the received questionnaire responses. This method was chosen because it gives all respondents an equal chance of being included in the sample, making the sample representative. This experiment does not require methods like stratified or cluster sampling because the population in this experiment is relatively uniform and doesn’t need to be divided into strata or clusters.
+Between October 8th, 2024, and October 20th, 2024, the questionnaire's Google Form link was posted on the STA304H5 Piazza course discussion board. We utilized Simple Random Sampling (SRS) by using the R random generator to randomly sample 45 students from the received questionnaire responses. This method was chosen because it gives all respondents an equal chance of being included in the sample, making the sample representative. This eximent does not require methods like stratified or cluster sampling because the population in this experiment is relatively uniform and doesn’t need to be divided into strata or clusters.
 
 We considered alternative methods, such as stratified sampling or cluster sampling. However, these methods are more suitable when the characteristics of specific subpopulations need to be accounted for. Since the characteristics of students taking STA304 were expected to be similar, we decided that it would not be meaningful to distinguish between the subpopulations. Since our goal was to capture the characteristics of all students, we determined that SRS was the most appropriate method for this experiment.
 
@@ -237,7 +237,7 @@ Since the calculated *p-value* was 0.0002288 and is less than $\alpha = 0.05$, w
 
 $\chi^2 =14.113$,*df*=6, *p-value* =0.0284
 
-Since the calculated *p-value* was 0.0284 and is less than $\alpha = 0.05$, we reject the null hypothesis. There is enough statistical evidence that there is a significant association between the academic workload and the anxiety levels of a student.
+Since the calculated *p-value* was 0.0284 and is less than $\alpha = 0.05$, we reject the null hypothesis. There is enough statistical evidence to indicate that a significant association between the academic workload and the anxiety levels of a student exists.
 
 
 **Chi-squared Test between Academic Workload and Concentration**
@@ -362,11 +362,9 @@ plot(residuals(rq1_stress.lm))
 
 <!-- ![Residuals Plot](residuals_rq1.png){width=80%} -->
 
- - Independence of errors: Since the plot has no noticable pattern, the independence assumption is satisfied.
-
- - Normality of errors: Since our sample size is sufficiently large, by the Central Limit Theorem the sample mean (and by extension, the sampling distribution of residuals) approximately follows a Normal distribution.
-
- - Homogeneity of variances amongst errors: Since the residuals plot has a "horizontal band appearance", this suggests that variance of the residuals are the same for all values of the independent variable academic_workload.
+ 1. Independence of errors: Since the plot has no noticeable pattern, the independence assumption is satisfied.
+ 2. Normality of errors: Since our sample size is sufficiently large, by the Central Limit Theorem the sample mean (and by extension, the sampling distribution of residuals) approximately follows a Normal distribution. 
+ 3. Homogeneity of variances amongst errors: Since the residuals plot has a "horizontal band appearance", this suggests that variance of the residuals are the same for all values of the independent variable academic_workload.
 
  Since all the assumptions are met, we proceed with the regression analysis.
 
@@ -472,8 +470,8 @@ $$
 \text{Hours of Sleep} = 8.5521 − 0.1412 \cdot \text{Academic Workload} - 0.3763 \cdot \text{Missed Social Events}
 $$
 
-### Interpretation
-The output of the regression analysis shows that the missed social events has a statistically significant negative association with hours of sleep ($p = 0.00327$). However, academic workload does not have a significant relationship with hours of sleep ($p = 0.40208$).
+### d. Interpretation
+The output of the regression analysis shows that the missed social events have a statistically significant negative association with hours of sleep ($p = 0.00327$). However, academic workload does not have a significant relationship with hours of sleep ($p = 0.40208$).
 
 ## 4.3.3. Research Question 3
 
@@ -620,17 +618,26 @@ However, the limitations of this analysis, including potential issues with sampl
 
 We also conducted Kruskal-Wallis testing for the three research questions for this study. 
 
-Research question 1 (RQ1), questions if academic workload contributes to a student’s stress levels. The results of the Kruskal-Wallis test between the variables, stress and academic_workload also suggested that there is a not a significant relationship between a student's academic workload and levels and stress. 
+Research question 1 (RQ1), questions if academic workload contributes to a student’s stress levels. The results of the Kruskal-Wallis test between the variables, stress and academic_workload also suggested that there is not a significant relationship between a student's academic workload and levels and stress. 
+
+Next, the ANOVA test for the second research question, if a student’s mental health is affected by their quality of sleep, suggested that there is not enough evidence to imply that there is a relationship between the variables hours_sleep and stress.
+
+Finally, the ANOVA test for RQ3 gave us insight on whether a student’s mental health is affected by their ability to keep a work-life balance. The results of this analysis did not show evidence pointing towards a significant relationship between the variables, missed_social_events and stress.
 
 We also performed the  Chi-Squared Test of Independence for the first and third research questions. For research question 1, the results of the chi square test suggest there is a relationship between academic_workload and the variables stress and anxiety. For research question 3, the chi square test did not indicate a significant relationship between the variables living_situation, time_management, financial_problems and the stress, anxiety or concentration levels of a student. 
 
 Future and further research would greatly benefit from having a larger population size, since we could not go with the assumption that each group has a normal population distribution in each categorical group, since the CLT could not be satisfied due to the fact that each group did not have more than 30 observations.
 
-## 8. Documentation of AI Tool Usage
+## Documentation of AI Tool Usage
+
+We utilized generative AI tools, namely ChatGPT, to help refine our ideas and improve readability. These
+tools were used primarily for brainstorming, grammar corrections, and the explanations of certain sections.
+However, all the analytical work, including statistical methods and interpretation of results, was done by the
+authors.
 
 We utilized generative AI tools, namely ChatGPT, to help refine our ideas and improve readability. These tools were used primarily for brainstorming, grammar corrections, and the explanations of certain sections. However, all the analytical work, including statistical methods and interpretation of results, was done by the authors.
 
-## 9. Citations: 
+## 8. Citations: 
 1. https://chatgpt.com/share/674a3a7d-83e4-8013-a381-4192bb2028da
 
 2. Beiter R, Nash R, McCrady M, Rhoades D, Linscomb M, Clarahan M, Sammut S. The prevalence and correlates of depression, anxiety, and stress in a sample of college students. J Affect Disord. 2015 Mar 1;173:90-6. doi: 10.1016/j.jad.2014.10.054.(https://www.sciencedirect.com/science/article/abs/pii/S0165032714006867?via%3Dihub). Epub 2014 Nov 8. PMID: 25462401.
