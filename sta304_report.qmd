@@ -40,13 +40,13 @@ Given the above potential factors, we seek to address the following research que
   - **Alternative Hypothesis:** Students' mental health is significantly affected by their living situation and their ability to maintain a work-life balance.
 
 
-This study focuses on students enrolled in STA304H5 during Fall 2024, aiming to provide valuable insights into the effects of academic workload on their overall well-being. By exploring these relationships, the findings may inform strategies to enhance student support services and improve academic exiences.
+This study focuses on students enrolled in STA304H5 during Fall 2024, aiming to provide valuable insights into the effects of academic workload on their overall well-being. By exploring these relationships, the findings may inform strategies to enhance student support services and improve academic experiences.
 
 # 3. Methodology
 
 ## 3.1. Data Collection
 
-Between October 8th, 2024, and October 20th, 2024, the questionnaire's Google Form link was posted on the STA304H5 Piazza course discussion board. We utilized Simple Random Sampling (SRS) by using the R random generator to randomly sample 45 students from the received questionnaire responses. This method was chosen because it gives all respondents an equal chance of being included in the sample, making the sample representative. This eximent does not require methods like stratified or cluster sampling because the population in this experiment is relatively uniform and doesn’t need to be divided into strata or clusters.
+Between October 8th, 2024, and October 20th, 2024, the questionnaire's Google Form link was posted on the STA304H5 Piazza course discussion board. We utilized Simple Random Sampling (SRS) by using the R random generator to randomly sample 45 students from the received questionnaire responses. This method was chosen because it gives all respondents an equal chance of being included in the sample, making the sample representative. This experiment does not require methods like stratified or cluster sampling because the population in this experiment is relatively uniform and doesn’t need to be divided into strata or clusters.
 
 We considered alternative methods, such as stratified sampling or cluster sampling. However, these methods are more suitable when the characteristics of specific subpopulations need to be accounted for. Since the characteristics of students taking STA304 were expected to be similar, we decided that it would not be meaningful to distinguish between the subpopulations. Since our goal was to capture the characteristics of all students, we determined that SRS was the most appropriate method for this experiment.
 
